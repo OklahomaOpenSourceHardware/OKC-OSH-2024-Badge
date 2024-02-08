@@ -1,0 +1,4 @@
+Comment,Designator,Footprint,JLCPCB PN
+WS2812B,"D35, D36, D37, D38",footprints:WS2812B-4020,
+Conn_02x03_Counter_Clockwise,J3,Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical,
+ATtiny816-M,U1,Package_DFN_QFN:VQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm,

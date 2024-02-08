@@ -1,0 +1,26 @@
+Drill report for B-Sides 2024.kicad_pcb
+Created on 2/5/2024 11:17:43 PM
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  B.Cu                      back
+
+
+Drill file 'B-Sides 2024-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.600mm  0.0236"  (4 holes)  (with 4 slots)
+    T2  0.750mm  0.0295"  (5 holes)
+    T3  0.900mm  0.0354"  (7 holes)
+    T4  1.000mm  0.0394"  (18 holes)
+
+    Total plated holes count 34
+
+
+Drill file 'B-Sides 2024-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  0.650mm  0.0256"  (2 holes)
+
+    Total unplated holes count 2
