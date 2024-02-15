@@ -521,7 +521,7 @@
       "/XIN": "micro",
       "/XOUT": "micro",
       "/spi_clk": "micro",
-      "GND": "micro",
+      "GND": "power",
       "Net-(U5-SW)": "power",
       "VCC": "micro"
     },
