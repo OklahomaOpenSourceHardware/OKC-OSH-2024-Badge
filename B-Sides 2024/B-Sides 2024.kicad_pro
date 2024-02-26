@@ -55,12 +55,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "hole_clearance|139805000|80060000|ce8e7220-b10e-4e50-8605-5d3a7920efe6|627e87a4-f03e-423d-86c0-9a5c9cd0db78",
-        "hole_clearance|139805000|80060000|ce8e7220-b10e-4e50-8605-5d3a7920efe6|692fe560-22eb-4eec-a8bb-01a7364bdf49",
-        "hole_clearance|139805000|86160000|a8915d22-f8da-43ca-88e7-bdc16f3583d7|e70b64f3-74de-4b38-b0e9-4060dea5c448",
-        "hole_clearance|139805000|86160000|a8915d22-f8da-43ca-88e7-bdc16f3583d7|ed3fea8f-f8c3-469f-8ac1-f195674cb565"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -530,7 +525,7 @@
     "net_colors": null,
     "netclass_assignments": {
       "+1V2": "micro",
-      "+3.3V": "micro",
+      "+3.3V": "power",
       "/A0": "micro",
       "/A1": "micro",
       "/A2": "micro",
@@ -580,7 +575,7 @@
       "/XIN": "micro",
       "/XOUT": "micro",
       "/spi_clk": "micro",
-      "GND": "micro",
+      "GND": "power",
       "Net-(U3-USB_DM)": "micro",
       "Net-(U3-USB_DP)": "micro"
     },
