@@ -1,8 +1,8 @@
 {
   "board": {
-    "active_layer": 39,
+    "active_layer": 31,
     "active_layer_preset": "",
-    "auto_track_width": false,
+    "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -34,7 +34,6 @@
       3,
       4,
       5,
-      7,
       8,
       9,
       10,
@@ -62,15 +61,14 @@
       34,
       35,
       36,
-      37,
       39,
       40
     ],
-    "visible_layers": "7ffffff_80000001",
+    "visible_layers": "fffff7f_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "B-Sides 2024.kicad_prl",
+    "filename": "SAO_2024.kicad_prl",
     "version": 3
   },
   "project": {
