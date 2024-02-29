@@ -4,4 +4,5 @@
   (lib (name "TSSP6038TT")(type "KiCad")(uri "${KIPRJMOD}/footprints/TSSP6038TT.kicad_sym")(options "")(descr ""))
   (lib (name "IRM_H638T")(type "KiCad")(uri "${KIPRJMOD}/footprints/IRM_H638T .kicad_sym")(options "")(descr ""))
   (lib (name "Simple_Addon_v2")(type "KiCad")(uri "${KIPRJMOD}/footprints/Simple_Addon_v2.kicad_sym")(options "")(descr ""))
+  (lib (name "ws2812b-2020")(type "KiCad")(uri "${KIPRJMOD}/footprints/ws2812b-2020.kicad_sym")(options "")(descr ""))
 )
