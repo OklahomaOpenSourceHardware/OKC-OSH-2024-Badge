@@ -66,8 +66,14 @@
       39,
       40
     ],
-    "visible_layers": "7ffffff_80000001",
+    "visible_layers": "7fdffff_80000001",
     "zone_display_mode": 0
+  },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
   },
   "meta": {
     "filename": "B-Sides 2024.kicad_prl",
