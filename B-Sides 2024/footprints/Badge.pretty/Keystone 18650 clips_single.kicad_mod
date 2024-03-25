@@ -1,0 +1,167 @@
+(footprint "Keystone 18650 clips_single"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 0.5 0)
+		(layer "F.SilkS")
+		(uuid "efacfab5-f5f2-4648-9d5b-b315daccd33a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Keystone 54 18650 clips"
+		(at 0 -0.5 0)
+		(layer "F.Fab")
+		(uuid "17c2444b-c462-4080-ad1d-335dc5cdbb50")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7f6e3be6-706e-4aae-98b5-241c10f09c38")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dec58701-e662-4dd6-b29b-da6e39446f27")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5f2dc0ec-5405-4dc3-b130-76fd7dd44700")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 0 -9.2)
+		(end 32.51 -9.2)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cea8f890-5e8f-4307-8922-ea20f8354a33")
+	)
+	(fp_line
+		(start 32.5 -9.2)
+		(end 32.5 9.2)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a19c7431-d495-4a9a-9d99-6b175bf11bb3")
+	)
+	(fp_line
+		(start 32.5 -9.2)
+		(end 32.5 9.2)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a19c7431-d495-4a9a-9d99-6b175bf11bb3")
+	)
+	(fp_line
+		(start 32.52 9.2)
+		(end 0 9.2)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9a5aed1e-a6e5-4f7b-b187-c38cc3b73435")
+	)
+	(fp_line
+		(start 34.5 7)
+		(end 34.5 -7)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4508cf1b-ccb0-427a-9f85-51913c361ee6")
+	)
+	(fp_line
+		(start 34.5 7)
+		(end 34.5 -7)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4508cf1b-ccb0-427a-9f85-51913c361ee6")
+	)
+	(pad "1" thru_hole roundrect
+		(at 20.125 0 270)
+		(size 5.1 4.2)
+		(drill oval 1.7 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.25)
+		(uuid "c84cc24a-62da-4f95-9c4a-f214e16436f0")
+	)
+	(pad "1" thru_hole circle
+		(at 20.9 -2.54 270)
+		(size 4 4)
+		(drill oval 1.7 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "0a0e511a-b87a-438a-b176-32844395dce3")
+	)
+	(pad "1" thru_hole circle
+		(at 20.9 2.54 270)
+		(size 4 4)
+		(drill oval 1.7 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9e5843c9-48b5-42f5-a50b-4515df5937fe")
+	)
+	(pad "1" thru_hole circle
+		(at 28.5 0 270)
+		(size 4 4)
+		(drill oval 1.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "be8f5e79-dfee-42f2-8c3c-90be3f4bd102")
+	)
+	(pad "1" thru_hole roundrect
+		(at 36.125 0 270)
+		(size 3.4 3.4)
+		(drill oval 1.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.25)
+		(uuid "1de14305-672e-4af5-bd27-7dab19938f18")
+	)
+)

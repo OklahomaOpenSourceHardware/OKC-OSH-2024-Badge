@@ -616,7 +616,7 @@
       "/XIN": "micro",
       "/XOUT": "micro",
       "/spi_clk": "micro",
-      "GND": "micro",
+      "GND": "power",
       "Net-(U3-USB_DM)": "micro",
       "Net-(U3-USB_DP)": "micro"
     },
@@ -836,7 +836,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Gerber/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

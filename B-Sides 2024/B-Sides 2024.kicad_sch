@@ -27414,7 +27414,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_4mm"
+		(property "Footprint" "Badge:MountingHole_4.3mm_M4_11mm_slot"
 			(at 110.49 234.95 0)
 			(effects
 				(font
@@ -29451,7 +29451,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C73929"
+		(property "LCSC" "C131280"
 			(at 457.835 262.255 0)
 			(effects
 				(font
@@ -33208,7 +33208,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C131337"
+		(property "LCSC" "C173752"
 			(at 64.135 194.31 0)
 			(effects
 				(font
@@ -35387,7 +35387,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_4mm"
+		(property "Footprint" "Badge:MountingHole_4.3mm_M4_11mm_slot"
 			(at 110.49 243.84 0)
 			(effects
 				(font
