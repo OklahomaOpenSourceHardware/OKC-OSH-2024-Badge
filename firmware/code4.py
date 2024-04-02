@@ -5,7 +5,6 @@
 
 #Board files
 #https://github.com/OklahomaOpenSourceHardware/OKC-OSH-2024-Badge/tree/main-2/B-Sides%202024
-#import array
 import time
 import board
 import random
@@ -15,8 +14,6 @@ import digitalio
 import pulseio
 import adafruit_irremote
 
-#system variables and constants
-
 # packet format [wait_time_mS,inverse (wait_time_mS), colorwheel(0:255), inverse colorwheel(0:255)]
 #each badge has a timeslot 0-255 with a time window of 108mS, and a full cycle of 27.54 seconds
 #every approximately 0.5 minutes, the badge will self segrigate into an empty timeslot, and attempt to phase match the incoming pulses
@@ -25,22 +22,23 @@ import adafruit_irremote
 #the color is selectable by pressing buttons (BTN_0,BTN_1)
 
 #as your badge recieves messages, the color will shift based on the colors of people around you
-
+trigger_microseconds = 108
 
 
 tornado_pixels = 40
 SAO_2024_pixels = 4
 
+
+
+
+
+
 #GPIO0 button 0
-btn_0 = digitalio.DigitalInOut(board.GP0)
-btn_0.direction = digitalio.Direction.INPUT
-btn_0.pull = digitalio.Pull.DOWN
-prev_state_0 = btn_0.value
+
+
 #GPIO1 button 1
-btn_1 = digitalio.DigitalInOut(board.GP1)
-btn_1.direction = digitalio.Direction.INPUT
-btn_1.pull = digitalio.Pull.DOWN
-prev_state_1 = btn_1.value
+
+
 #GPIO2 SDA_QUICC
 #GPIO3 SCL_QUICC
 
@@ -89,41 +87,15 @@ nonblocking_decoder = adafruit_irremote.NonblockingGenericDecode(pulsein)
 t0 = next_heartbeat = time.monotonic()
 
 
-RED = (255, 0, 0)
-YELLOW = (255, 150, 0)
-GREEN = (0, 255, 0)
-CYAN = (0, 255, 255)
-BLUE = (0, 0, 255)
-PURPLE = (180, 0, 255)
-pin.value = True
-color_choice = (random.randint(0, 255))
-
-trigger_microseconds = 0.108
-time_slot = random.randint(0, 255)
-free_time_slots = [True] * 255
-free_time_slots[time_slot] = False
-next_time_slot = time_slot
-next_transmission_microseconds = trigger_microseconds * 255 + t0
-time_offset = 0
-
-def find_next_occurrence(array, value):
-  start_index = 0
-  while start_index < len(array):
-    index = array.index(value, start_index)
-    if index != -1:
-      return index
-    start_index += 1
-  return -1
-
-def color_chase(pixels,num_pixels, color, wait):
+def color_chase(pixels, color, wait):
     for i in range(num_pixels):
         pixels[i] = color
         time.sleep(wait)
         pixels.show()
-    #time.sleep(0.1)
+    time.sleep(0.1)
 
 
-def rainbow_cycle(pixels,num_pixels,wait):
+def rainbow_cycle(wait):
     for j in range(255):
         for i in range(num_pixels):
             rc_index = (i * 256 // num_pixels) + j
@@ -141,39 +113,31 @@ def fuzzy_pulse_compare(pulse1, pulse2, fuzzyness=0.2):
     return True
 
 def bit_invert(n: int) -> int:
-    if n < 0:
-        # Convert negative integer to its equivalent positive value
-        unsigned_n = 256 + n  # Assuming 8-bit integers
-    else:
-        unsigned_n = n
-    return (unsigned_n ^ 0xFF) & 0xFF
+    return n ^ ((1 << n.bit_length()) - 1)
+#system variables and constants
 
 
+RED = (255, 0, 0)
+YELLOW = (255, 150, 0)
+GREEN = (0, 255, 0)
+CYAN = (0, 255, 255)
+BLUE = (0, 0, 255)
+PURPLE = (180, 0, 255)
+pin.value = True
 
+color_choice = random.randint(0, 255)
+time_slot = random.randint(0, 255)
 received_code = [time_slot, bit_invert(time_slot), color_choice, bit_invert(color_choice)] #[random.randint(0, 255),random.randint(0, 255),random.randint(0, 255),random.randint(0, 255)] #[255, 5, 255, 5]
 print(received_code)
 transmitted_code = received_code
-
 while True:
-       
-    t_now = time.monotonic()
-    if  btn_0.value:
-        print("BTN_0 is down")
-        color_choice -=1
-    if  btn_1.value:
-        print("BTN_1 is down")
-        color_choice +=1        
-
-    if t_now > next_transmission_microseconds:
-        print("transmission slot: ", next_time_slot)
-        if next_time_slot == time_slot:
-            encoder.transmit(pulseout, transmitted_code)
-        next_time_slot += 1
-        if next_time_slot > 255:
-            next_time_slot = 0
-        next_transmission_microseconds = trigger_microseconds + t_now + time_offset
-        
+    
+    
+    t = time.monotonic()
+    if t > next_heartbeat + (time_slot * trigger_microseconds):
+        encoder.transmit(pulseout, transmitted_code)    
     for message in nonblocking_decoder.read():
+
         print(f"t={time.monotonic() - t0:.3} New Message")
         print("Heard", len(message.pulses), "Pulses:", message.pulses)
         print("statistics", (adafruit_irremote.bin_data(message.pulses)))
@@ -182,11 +146,8 @@ while True:
             try:
                 received_code = decoder.decode_bits(message.code)
                 print("Decoded:", received_code)
-                if(received_code[0] == bit_invert(received_code[1]) and received_code[2] == bit_invert(received_code[3])):
-                    free_time_slots[received_code[0]] = False
-                    
-                    color_chase(pixels_DIO_Tornado,tornado_pixels,colorwheel(received_code[2]), 0.0)
-                    color_choice = (color_choice+received_code[2])/2
+                if(recieved_code[0] == bit_invert(recieved_code[1]) && recieved_code[2] == bit_invert(recieved_code[3])):
+                    color_choice = (color_choice+recieved_code[2])/2
                     pin_led.value = True
                     print("success")
                 else:
@@ -219,19 +180,43 @@ while True:
         next_heartbeat = t + 0.1
 
   
-    #print((color_choice))
-    color_chase(pixels_DIO_Tornado,tornado_pixels,colorwheel(color_choice), 0.0)
-    color_chase(pixels_DIO_Tornado,tornado_pixels,colorwheel(color_choice+6), 0.0)
-    rainbow_cycle(pixels_SAO_H,SAO_2024_pixels,0)  # Increase the number to slow down the rainbow
-    rainbow_cycle(pixels_SAO_45,SAO_2024_pixels,0)  # Increase the number to slow down the rainbow
+ 
+        
+    
+    
+  
+    color_chase(pixels_DIO_Tornado,color_choice-1, 0.1)
+    color_chase(pixels_DIO_Tornado,color_choice, 0.1)
+    color_chase(pixels_DIO_Tornado,color_choice+1, 0.1)
     # Clear the rest
     #pulsein.clear()
     # Resume with an 80 microsecond active pulse
     #pulsein.resume() #trigger_microseconds
-
-
-
+  #  time.sleep(1)  
+#    if pin_pwr.value == True :
+#        pin_led.value = False
+#    if pin_pwr.value == False :
+#        pin_led.value = True
     
+   # pixels.fill(RED)
+   # pixels.show()
+    # Increase or decrease to change the speed of the solid color change.
+   # time.sleep(1)
+   # pixels.fill(GREEN)
+   # pixels.show()
+   # time.sleep(1)
+   # pixels.fill(BLUE)
+   # pixels.show()
+   # time.sleep(1)
+
+   # color_chase(RED, 0.1)  # Increase the number to slow down the color chase
+   # color_chase(YELLOW, 0.1)
+   # color_chase(GREEN, 0.1)
+   # color_chase(CYAN, 0.1)
+   # color_chase(BLUE, 0.1)
+   # color_chase(PURPLE, 0.1)
+
+    #rainbow_cycle(0)  # Increase the number to slow down the rainbow
 
 
 
