@@ -168,50 +168,53 @@ while True:
         print("transmission slot: ", next_time_slot)
         if next_time_slot == time_slot:
             encoder.transmit(pulseout, transmitted_code)
+    #    if (len(nonblocking_decoder.read()) >= 1) and free_time_slots[next_time]:
         next_time_slot += 1
         if next_time_slot > 255:
             next_time_slot = 0
         next_transmission_microseconds = trigger_microseconds + t_now + time_offset
         
-    for message in nonblocking_decoder.read():
-        print(f"t={time.monotonic() - t0:.3} New Message")
-        print("Heard", len(message.pulses), "Pulses:", message.pulses)
-        print("statistics", (adafruit_irremote.bin_data(message.pulses)))
-        if isinstance(message, adafruit_irremote.IRMessage):
-            print("Decoded:", message.code)
-            try:
-                received_code = decoder.decode_bits(message.code)
-                print("Decoded:", received_code)
-                if(received_code[0] == bit_invert(received_code[1]) and received_code[2] == bit_invert(received_code[3])):
-                    free_time_slots[received_code[0]] = False
-                    
-                    color_chase(pixels_DIO_Tornado,tornado_pixels,colorwheel(received_code[2]), 0.0)
-                    color_choice = (color_choice+received_code[2])/2
-                    pin_led.value = True
-                    print("success")
-                else:
-                    pin_led.value = False
-                    print("failed")
-                for x , y in zip(received_code , transmitted_code ):
-                    y = (x+y)/2
         
-                print(received_code[1:4])
-                print(transmitted_code)
-    
-            except adafruit_irremote.FailedToDecode:
-                print("Failed to decode")
-                trigger_microseconds += 1
-            except adafruit_irremote.IRNECRepeatException:  # unusual short code!
+        
+        for message in nonblocking_decoder.read():
+            print(f"t={time.monotonic() - t0:.3} New Message")
+            print("Heard", len(message.pulses), "Pulses:", message.pulses)
+            print("statistics", (adafruit_irremote.bin_data(message.pulses)))
+            if isinstance(message, adafruit_irremote.IRMessage):
+                print("Decoded:", message.code)
+                try:
+                    received_code = decoder.decode_bits(message.code)
+                    print("Decoded:", received_code)
+                    if(received_code[0] == bit_invert(received_code[1]) and received_code[2] == bit_invert(received_code[3])):
+                        free_time_slots[received_code[0]] = False
+                        
+                        color_chase(pixels_DIO_Tornado,tornado_pixels,colorwheel(received_code[2]), 0.0)
+                        color_choice = (color_choice+received_code[2])/2
+                        pin_led.value = True
+                        print("success")
+                    else:
+                        pin_led.value = False
+                        print("failed")
+                    for x , y in zip(received_code , transmitted_code ):
+                        y = (x+y)/2
+            
+                    print(received_code[1:4])
+                    print(transmitted_code)
+        
+                except adafruit_irremote.FailedToDecode:
+                    print("Failed to decode")
+                    trigger_microseconds += 1
+                except adafruit_irremote.IRNECRepeatException:  # unusual short code!
+                    print("NEC repeat!")
+                except adafruit_irremote.IRDecodeException as e:     # failed to decode
+                    print("Failed to decode: ", e.args)
+            
+            elif isinstance(message, adafruit_irremote.NECRepeatIRMessage):
                 print("NEC repeat!")
-            except adafruit_irremote.IRDecodeException as e:     # failed to decode
-                print("Failed to decode: ", e.args)
-        
-        elif isinstance(message, adafruit_irremote.NECRepeatIRMessage):
-            print("NEC repeat!")
-        elif isinstance(message, adafruit_irremote.UnparseableIRMessage):
-            print("Failed to decode", message.reason)
-        print("----------------------------")
-   
+            elif isinstance(message, adafruit_irremote.UnparseableIRMessage):
+                print("Failed to decode", message.reason)
+            print("----------------------------")
+       
     # This heartbeat confirms that we are not blocked somewhere above.
     t = time.monotonic()
     if t > next_heartbeat:
