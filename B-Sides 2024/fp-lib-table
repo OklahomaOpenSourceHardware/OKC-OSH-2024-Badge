@@ -3,4 +3,5 @@
   (lib (name "footprints")(type "KiCad")(uri "${KIPRJMOD}/footprints")(options "")(descr ""))
   (lib (name "tssp60")(type "KiCad")(uri "${KIPRJMOD}/footprints/tssp60.pretty")(options "")(descr ""))
   (lib (name "Badge")(type "KiCad")(uri "${KIPRJMOD}/footprints/Badge.pretty")(options "")(descr ""))
+  (lib (name "Simple_Addon_v2")(type "KiCad")(uri "${KIPRJMOD}/footprints/Simple_Addon_v2.pretty")(options "")(descr ""))
 )
