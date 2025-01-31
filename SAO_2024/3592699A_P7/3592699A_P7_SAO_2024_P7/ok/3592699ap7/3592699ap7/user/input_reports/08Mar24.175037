@@ -1,0 +1,1045 @@
+Date : 08 Mar 2024
+Time : 17:50
+
+
+----------------------------------------------------------------------
+(*)  1. Path : (File) E:/1/sao_2024-b_cu.gbr
+----------------------------------------------------------------------
+        File size         : 100269 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-b_cu.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+
+        Macro  converted to standard symbol. See configuration parameter iol_274x_convert_macro 
+        
+
+        Assigned Dcodes
+        ===============
+         1.D010, Symbol = rect39.37x124.016 mil (rect1000x3150 my), Count = 6
+         2.D011, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 2
+         3.D012, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 4
+         4.D013, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 4
+         5.D014, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 6
+         6.D015, Symbol = rect35.433x59.055 mil (rect900x1500 my), Count = 12
+         7.D016, Symbol = rect59.055x35.433 mil (rect1500x900 my), Count = 4
+         8.D017, Symbol = r9.843 mil (r250 my), Count = 38
+         9.D018, Symbol = r0.98 mil (r24.89 my), Count = 181
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  2. Path : (File) E:/1/sao_2024-b_mask.gbr
+----------------------------------------------------------------------
+        File size         : 4818 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-b_mask.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : nl
+
+        Macro  converted to standard symbol. See configuration parameter iol_274x_convert_macro 
+        
+
+        Assigned Dcodes
+        ===============
+         1.D010, Symbol = rect39.37x124.016 mil (rect1000x3150 my), Count = 6
+         2.D011, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 2
+         3.D012, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 4
+         4.D013, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 4
+         5.D014, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 6
+         6.D015, Symbol = rect35.433x59.055 mil (rect900x1500 my), Count = 12
+         7.D016, Symbol = rect59.055x35.433 mil (rect1500x900 my), Count = 4
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  3. Path : (File) E:/1/sao_2024-b_paste.gbr
+----------------------------------------------------------------------
+        File size         : 4831 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-b_paste.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : nl
+
+        Macro  converted to standard symbol. See configuration parameter iol_274x_convert_macro 
+        
+
+        Assigned Dcodes
+        ===============
+         1.D010, Symbol = rect39.37x124.016 mil (rect1000x3150 my), Count = 6
+         2.D011, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 2
+         3.D012, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 4
+         4.D013, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 4
+         5.D014, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 6
+         6.D015, Symbol = rect35.433x59.055 mil (rect900x1500 my), Count = 12
+         7.D016, Symbol = rect59.055x35.433 mil (rect1500x900 my), Count = 4
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  4. Path : (File) E:/1/sao_2024-b_silks.gbr
+----------------------------------------------------------------------
+        File size         : 6260 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-b_silks.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+
+        Macro  converted to standard symbol. See configuration parameter iol_274x_convert_macro 
+        
+
+        Assigned Dcodes
+        ===============
+         1.D010, Symbol = r4.724 mil (r120 my), Count = 39
+         2.D011, Symbol = rect39.37x124.016 mil (rect1000x3150 my), Count = 6
+         3.D012, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 2
+         4.D013, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 4
+         5.D014, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 4
+         6.D015, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 6
+         7.D016, Symbol = rect35.433x59.055 mil (rect900x1500 my), Count = 12
+         8.D017, Symbol = rect59.055x35.433 mil (rect1500x900 my), Count = 4
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  5. Path : (File) E:/1/sao_2024-edge_cuts.gbr
+----------------------------------------------------------------------
+        File size         : 30438 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-edge_cuts.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+
+        Assigned Dcodes
+        ===============
+         1.D010, Symbol = r1.998 mil (r50.75 my), Count = 657
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  6. Path : (File) E:/1/sao_2024-f_cu.gbr
+----------------------------------------------------------------------
+        File size         : 61245 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-f_cu.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  7. Path : (File) E:/1/sao_2024-f_mask.gbr
+----------------------------------------------------------------------
+        File size         : 99665 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-f_mask.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  8. Path : (File) E:/1/sao_2024-f_paste.gbr
+----------------------------------------------------------------------
+        File size         : 211 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-f_paste.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+
+        Warning! Layer is empty after input. Please verify identified separator.
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*)  9. Path : (File) E:/1/sao_2024-f_silks.gbr
+----------------------------------------------------------------------
+        File size         : 221553 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-f_silks.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+
+        Assigned Dcodes
+        ===============
+         1.D010, Symbol = r0.98 mil (r24.89 my), Count = 68
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+(*) 10. Path : (File) E:/1/sao_2024-user_comments.gbr
+----------------------------------------------------------------------
+        File size         : 217 Bytes
+        Format            : Gerber274x
+        Step  name        : orig
+        Layer name        : sao_2024-user_comments.gbr
+
+        Start translation : 17:50:37
+        End   translation : 17:50:37
+
+        Data type         : ascii
+        Units             : inch
+        Coordinates       : absolute
+        Zeroes omitted    : leading
+        Number format     : 2.6
+        Separator char    : *
+
+        Warning! Layer is empty after input. Please verify identified separator.
+        
+ 
+ The following Configuration params may affect the Input  :
+ ==========================================================
+
+       iol_inp_inconsistent_arc_note_threshold - 0.010000 mils
+
+       iol_accept_raw_data - no
+
+       iol_force_no_break_sr - no
+
+       iol_274x_circle_as_edge_in_poly - yes
+
+       iol_274x_dont_accumulate_of - no
+
+       iol_274x_set_octagon_rotation - yes
+
+       iol_274x_set_polygon_rotation - no
+
+       iol_gbr_brk_diag_sqrs - yes
+
+       iol_gbr_ignore_zero_radius_arc - no
+
+       iol_gbr_diag_type - 2
+
+       iol_274x_ill_polygon - yes
+
+       iol_fix_ill_polygon - yes
+
+       iol_274x_contourize_neg_symbol - yes
+
+       iol_274x_contourize_neg_symbol_color - 1 (Yellow)
+
+       iol_274x_ko_polarity - Absolute
+
+       iol_274x_aname_with_comma - yes
+
+       iol_274x_sr_merge_pcb - yes
+
+       iol_gbr_polygon_break - 1 (Allow)
+
+       iol_diag_rect_line - 1 (line)
+
+       iol_274x_limit_dcode - no
+
+       iol_gbr_eof_err - no
+
+       iol_gbr_arc_as_full_circle - yes
+
+       iol_274x_convert_macro - yes
+
+       iol_274x_convert_macro_tolerance - 0.25
+
+       iol_274x_g75_current_arc - no
+
+       iol_274x_ignore_d01_alone - no
+
+       iol_274x_sr_ij_scaled - no
+
+       iol_inp_default_multi_quadrant - no
+
+       iol_gbr_japan_gerber - no
+
+       iol_gbr_report_japan_gerber - no
+
+       iol_274x_ip_background - no
+
+       iol_274x_am_prim_rot_center - yes
+
+       iol_inp_reinput - no
+
+       iol_gbr_arc_on_axis - no
+ 
+ ==========================================================
+
+----------------------------------------------------------------------
+
+
+        ****************************
+        *Grand Total Dcodes Summary*
+        ****************************
+
+        Assigned Dcodes
+        ===============
+         1.D010, Symbol = r4.724 mil (r120 my), Count = 39
+         2.D010, Symbol = r0.98 mil (r24.89 my), Count = 68
+         3.D010, Symbol = r1.998 mil (r50.75 my), Count = 657
+         4.D010, Symbol = rect39.37x124.016 mil (rect1000x3150 my), Count = 18
+         5.D011, Symbol = rect39.37x124.016 mil (rect1000x3150 my), Count = 6
+         6.D011, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 6
+         7.D012, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 2
+         8.D012, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 12
+         9.D013, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 4
+        10.D013, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 12
+        11.D014, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 18
+        12.D014, Symbol = rect24.4x22xr5.5 mil (rect619.75x558.8xr139.7 my), Count = 4
+        13.D015, Symbol = rect35.433x59.055 mil (rect900x1500 my), Count = 36
+        14.D015, Symbol = rect22x24.4xr5.5 mil (rect558.8x619.75xr139.7 my), Count = 6
+        15.D016, Symbol = rect35.433x59.055 mil (rect900x1500 my), Count = 12
+        16.D016, Symbol = rect59.055x35.433 mil (rect1500x900 my), Count = 12
+        17.D017, Symbol = rect59.055x35.433 mil (rect1500x900 my), Count = 4
+        18.D017, Symbol = r9.843 mil (r250 my), Count = 38
+        19.D018, Symbol = r0.98 mil (r24.89 my), Count = 181
+        

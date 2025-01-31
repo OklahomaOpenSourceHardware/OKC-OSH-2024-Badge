@@ -1,0 +1,15 @@
+DISPLAY {
+    L0 = bs
+}
+DISPLAY {
+    L0 = bs
+    L1 = drl
+}
+DISPLAY {
+    L0 = bs
+    L1 = bl
+}
+DISPLAY {
+    L0 = bs
+    L1 = ko
+}

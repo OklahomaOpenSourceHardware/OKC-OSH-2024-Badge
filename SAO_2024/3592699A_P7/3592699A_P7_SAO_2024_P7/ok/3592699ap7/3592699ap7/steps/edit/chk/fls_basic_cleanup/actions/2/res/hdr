@@ -1,0 +1,971 @@
+STAT = D
+SEVERITY = 0
+LAST_TIME = 1709891571
+DURATION = 1 SECONDS
+CATEGORY {
+    NAME = ar_pth
+    TITLE = PTH annular Ring
+    DESCRIPTION = Spacing;PTH
+    SORT_ORDER = 0
+    RANGE = 0.0058000 0.0060000 0.0080000 
+}
+CATEGORY {
+    NAME = ar_npth
+    TITLE = NPTH annular Ring
+    DESCRIPTION = Spacing;NPTH
+    SORT_ORDER = 1
+    RANGE = 0.0030000 0.0040000 0.0050000 
+}
+CATEGORY {
+    NAME = ar_via
+    TITLE = Via annular Ring
+    DESCRIPTION = Spacing;Via
+    SORT_ORDER = 2
+    RANGE = 0.0060000 0.0090000 0.0100000 
+}
+CATEGORY {
+    NAME = ar_smd
+    TITLE = SMD annular Ring
+    DESCRIPTION = Spacing;SMD;Clearance
+    SORT_ORDER = 3
+    RANGE = 0.0014000 0.0015000 0.0020000 
+}
+CATEGORY {
+    NAME = f2sm
+    TITLE = Fiducial To SM
+    DESCRIPTION = Spacing;Fiducial
+    SORT_ORDER = 4
+    RANGE = 0.0070000 0.0090000 0.0100000 
+}
+CATEGORY {
+    NAME = ar_pad
+    TITLE = Pad annular Ring
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 5
+    RANGE = 0.0013000 0.0014000 0.0015000 
+}
+CATEGORY {
+    NAME = coverage
+    TITLE = Coverage
+    DESCRIPTION = Spacing;Circuit
+    SORT_ORDER = 19
+    RANGE = 0.0029000 0.0030000 0.0040000 
+}
+CATEGORY {
+    NAME = same_net_coverage
+    TITLE = Same Net Coverage
+    DESCRIPTION = Spacing;Circuit
+    SORT_ORDER = 20
+    RANGE = 0.0030000 0.0060000 0.0080000 
+}
+CATEGORY {
+    NAME = cover_several_nets
+    TITLE = Clearance Cover Several Nets
+    DESCRIPTION = Limit
+    SORT_ORDER = 21
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = ar_larger_coverage
+    TITLE = AR Larger than Coverage
+    DESCRIPTION = Coverage
+    SORT_ORDER = 9
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = rout
+    TITLE = Rout spacing
+    DESCRIPTION = Spacing;Feature
+    SORT_ORDER = 22
+    RANGE = 0.0010000 0.0000000 0.0000000 
+}
+CATEGORY {
+    NAME = no_bridge
+    TITLE = No bridge
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 24
+    RANGE = 0.0039000 0.0040000 0.0040000 
+}
+CATEGORY {
+    NAME = same_net_no_bridge
+    TITLE = No bridge (Same Net)
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 25
+    RANGE = 0.0039000 0.0040000 0.0040000 
+}
+CATEGORY {
+    NAME = smd_no_bridge
+    TITLE = No Bridge (SMD Pads)
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 26
+    RANGE = 0.0039000 0.0040000 0.0040000 
+}
+CATEGORY {
+    NAME = smd_bridge
+    TITLE = SMDs Clearance Bridge
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 27
+    RANGE = 0.0039000 0.0040000 0.0040000 
+}
+CATEGORY {
+    NAME = smd2pad_bridge
+    TITLE = SMD to Pad Clearance Bridge
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 28
+    RANGE = 0.0039000 0.0040000 0.0041000 
+}
+CATEGORY {
+    NAME = pad2pad_bridge
+    TITLE = Pad to Pad Clearance Bridge
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 29
+    RANGE = 0.0039000 0.0040000 0.0041000 
+}
+CATEGORY {
+    NAME = sn_pad2pad_bridge
+    TITLE = Pad to Pad Clearance Bridge (Same Net)
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 30
+    RANGE = 0.0039000 0.0040000 0.0041000 
+}
+CATEGORY {
+    NAME = sliver
+    TITLE = SM slivers
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 31
+    RANGE = 0.0039000 0.0040000 0.0040000 
+}
+CATEGORY {
+    NAME = self_sliver
+    TITLE = ** Not in Use **
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 32
+}
+CATEGORY {
+    NAME = local_spacing
+    TITLE = SM local spacing
+    DESCRIPTION = Spacing;Feature 1;Feature 2
+    SORT_ORDER = 33
+    RANGE = 0.0040000 0.0060000 0.0080000 
+}
+CATEGORY {
+    NAME = npth2m
+    TITLE = NPTH touches mask
+    DESCRIPTION = Spacing;NPTH
+    SORT_ORDER = 18
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = smd_miss
+    TITLE = Missing SMD clearance
+    DESCRIPTION = SMD
+    SORT_ORDER = 39
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = pth_miss
+    TITLE = Missing PTH clearance
+    DESCRIPTION = PTH
+    SORT_ORDER = 41
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = via_miss
+    TITLE = Missing VIA clearance
+    DESCRIPTION = VIA
+    SORT_ORDER = 43
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = cov_via_to_sm
+    TITLE = Covered VIA to SM
+    DESCRIPTION = Spacing;Via
+    SORT_ORDER = 44
+    RANGE = 0.0030000 0.0060000 0.0080000 
+}
+CATEGORY {
+    NAME = npth_miss
+    TITLE = Missing NPTH clearance
+    DESCRIPTION = NPTH
+    SORT_ORDER = 42
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = smd_partial
+    TITLE = SMD Partial Clearance
+    DESCRIPTION = Clearance;Pad
+    SORT_ORDER = 45
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = ndrl_partial
+    TITLE = Undrilled Pad Partial Clearance
+    DESCRIPTION = Clearance;Pad
+    SORT_ORDER = 46
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = ar_pth_pad
+    TITLE = PTH Pad annular Ring
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 6
+    RANGE = 0.0030000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ar_npth_pad
+    TITLE = NPTH Pad annular Ring
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 7
+    RANGE = 0.0030000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ar_via_pad
+    TITLE = VIA Pad annular Ring
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 8
+    RANGE = 0.0020000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ar_ndrl_pad
+    TITLE = Undrilled Pad annular Ring
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 9
+    RANGE = 0.0030000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ar_exposed_line
+    TITLE = Fully Exposed Line annular Ring
+    DESCRIPTION = Spacing;Line
+    SORT_ORDER = 10
+    RANGE = 0.0030000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ar_partial_line
+    TITLE = Partial Exposed Line annular Ring
+    DESCRIPTION = Spacing;Line
+    SORT_ORDER = 11
+    RANGE = 0.0030000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = pad_to_pad
+    TITLE = Pad to Pad Spacing
+    DESCRIPTION = Spacing;Pad;Pad
+    SORT_ORDER = 34
+    RANGE = 0.0039000 0.0040000 0.0041000 
+}
+CATEGORY {
+    NAME = same_net_pad2pad
+    TITLE = Pad to Pad Spacing(Same Net)
+    DESCRIPTION = Spacing;Pad;Pad
+    SORT_ORDER = 35
+    RANGE = 0.0039000 0.0040000 0.0041000 
+}
+CATEGORY {
+    NAME = pad_to_non
+    TITLE = Pad to Non-Pad Spacing
+    DESCRIPTION = Spacing;Pad;Non-Pad
+    SORT_ORDER = 36
+    RANGE = 0.0050000 0.0070000 0.0090000 
+}
+CATEGORY {
+    NAME = non_to_non
+    TITLE = Non-Pad to Non-Pad Spacing
+    DESCRIPTION = Spacing;Non-Pad;Non-Pad
+    SORT_ORDER = 37
+    RANGE = 0.0050000 0.0070000 0.0090000 
+}
+CATEGORY {
+    NAME = exposed_td
+    TITLE = Fully Exposed Tear Drop Pad
+    DESCRIPTION = Pad
+    SORT_ORDER = 39
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = neg_ar_ndrl_pad
+    TITLE = Undrilled Pad Gasket
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 17
+    RANGE = 0.0030000 0.0020000 0.0000000 
+}
+CATEGORY {
+    NAME = neg_ar_smd
+    TITLE = SMD Pad Gasket
+    DESCRIPTION = Spacing;SMD;Clearance
+    SORT_ORDER = 12
+    RANGE = 0.0030000 0.0020000 0.0000000 
+}
+CATEGORY {
+    NAME = neg_ar_pth_pad
+    TITLE = PTH Pad Gasket
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 13
+    RANGE = 0.0030000 0.0020000 0.0000000 
+}
+CATEGORY {
+    NAME = neg_ar_npth_pad
+    TITLE = NPTH Pad Gasket
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 14
+    RANGE = 0.0030000 0.0020000 0.0000000 
+}
+CATEGORY {
+    NAME = neg_ar_npth_hole
+    TITLE = NPTH Hole Gasket
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 15
+    RANGE = 0.0030000 0.0020000 0.0000000 
+}
+CATEGORY {
+    NAME = neg_ar_via_pad
+    TITLE = VIA Pad Gasket
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 16
+    RANGE = 0.0030000 0.0020000 0.0000000 
+}
+CATEGORY {
+    NAME = zero_ar_ndrl_pad
+    TITLE = Undrilled Pad and Clearance Same Size
+    DESCRIPTION = Pad;Clearance
+    SORT_ORDER = 46
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = zero_ar_smd
+    TITLE = SMD Pad and Clearance Same Size
+    DESCRIPTION = SMD;Clearance
+    SORT_ORDER = 47
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = zero_ar_pth_pad
+    TITLE = PTH Pad and Clearance Same Size
+    DESCRIPTION = Pad;Clearance
+    SORT_ORDER = 48
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = zero_ar_npth_pad
+    TITLE = NPTH Pad and Clearance Same Size
+    DESCRIPTION = Pad;Clearance
+    SORT_ORDER = 49
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = zero_ar_npth_hole
+    TITLE = NPTH Hole and Clearance Same Size
+    DESCRIPTION = Hole
+    SORT_ORDER = 50
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = zero_ar_via_pad
+    TITLE = VIA Pad and Clearance Same Size
+    DESCRIPTION = Pad;Clearance
+    SORT_ORDER = 51
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = rout_clearance
+    TITLE = Missing Rout Clearance
+    DESCRIPTION = Spacing;Clearance
+    SORT_ORDER = 23
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = too_large_nets
+    TITLE = Net Too Large
+    DESCRIPTION = Shape
+    SORT_ORDER = 38
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = ndrl_miss
+    TITLE = Missing Undrilled Pad clearance
+    DESCRIPTION = Pad
+    SORT_ORDER = 40
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = exposed_line
+    TITLE = Fully Exposed Line
+    DESCRIPTION = Line
+    SORT_ORDER = 47
+    RANGE = 0.0000000 1.0000000 1.0010000 
+}
+CATEGORY {
+    NAME = partial_on_via
+    TITLE = Partial Clearance on VIA drilled pad
+    DESCRIPTION = Clearance;Pad
+    SORT_ORDER = 56
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = partial_on_npth
+    TITLE = Partial Clearance on NPTH drilled pad
+    DESCRIPTION = Clearance;Pad
+    SORT_ORDER = 57
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = partial_on_pth
+    TITLE = Partial Clearance on PTH drilled pad
+    DESCRIPTION = Clearance;Pad
+    SORT_ORDER = 58
+    RANGE = 1.0000000 1.0010000 1.0020000 
+}
+CATEGORY {
+    NAME = ar_smd_partial
+    TITLE = Partial SMD Clearance annular Ring
+    DESCRIPTION = Spacing;Pad;Clearance
+    SORT_ORDER = 59
+    RANGE = 0.0025000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = smd_partial_gasket
+    TITLE = Partial SMD Clearance gasket
+    DESCRIPTION = Spacing
+    SORT_ORDER = 60
+    RANGE = 0.0025000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ndrl_partial_ar
+    TITLE = Partial Undrilled Pad Clearance annular Ring
+    DESCRIPTION = Spacing
+    SORT_ORDER = 61
+    RANGE = 0.0025000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ndrl_partial_gasket
+    TITLE = Partial Undrilled Pad Clearance gasket
+    DESCRIPTION = Spacing
+    SORT_ORDER = 62
+    RANGE = 0.0025000 0.0050000 0.0060000 
+}
+CATEGORY {
+    NAME = ignored_net
+    TITLE = Ignored Net
+    DESCRIPTION = Shape
+    SORT_ORDER = 48
+    RANGE = 10.0000000 10.0010000 10.0020000 
+}
+CATEGORY {
+    NAME = c2c_con
+    TITLE = Clearance to Clearance Connection
+    DESCRIPTION = Shape
+    SORT_ORDER = 52
+    RANGE = 10.0000000 10.0010000 10.0020000 
+}
+CATEGORY {
+    NAME = via_2_smd_sm
+    TITLE = Via to SMD Clearance
+    DESCRIPTION = Spacing;Via;Clearance
+    SORT_ORDER = 49
+    RANGE = 0.0050000 0.0070000 0.0090000 
+}
+CATEGORY {
+    NAME = pth_2_smd_sm
+    TITLE = PTH to SMD Clearance
+    DESCRIPTION = Spacing;PTH;Clearance
+    SORT_ORDER = 50
+    RANGE = 0.0050000 0.0070000 0.0090000 
+}
+CATEGORY {
+    NAME = npth_2_smd_sm
+    TITLE = NPTH to SMD Clearance
+    DESCRIPTION = Spacing;NPTH;Clearance
+    SORT_ORDER = 51
+    RANGE = 0.0050000 0.0070000 0.0090000 
+}
+CATEGORY {
+    NAME = problem_con
+    TITLE = Feature too small to check
+    DESCRIPTION = Shape
+    SORT_ORDER = 53
+    RANGE = 10.0000000 10.0010000 10.0020000 
+}
+ATTRIBUTE {
+    ts_dra_ar_pth = N/A
+    ts_min_ar_pth = N/A
+    ts_typ_ar_pth = N/A
+    ts_dra_ar_npth = N/A
+    ts_min_ar_npth = N/A
+    ts_typ_ar_npth = N/A
+    ts_dra_ar_via = N/A
+    ts_min_ar_via = N/A
+    ts_typ_ar_via = N/A
+    ts_dra_ar_smd = N/A
+    ts_min_ar_smd = N/A
+    ts_typ_ar_smd = N/A
+    ts_dra_f2sm = N/A
+    ts_min_f2sm = N/A
+    ts_typ_f2sm = N/A
+    ts_dra_ar_pad = N/A
+    ts_min_ar_pad = N/A
+    ts_typ_ar_pad = N/A
+    ts_dra_ar_pth_pad = N/A
+    ts_min_ar_pth_pad = N/A
+    ts_typ_ar_pth_pad = N/A
+    ts_dra_ar_npth_pad = N/A
+    ts_min_ar_npth_pad = N/A
+    ts_typ_ar_npth_pad = N/A
+    ts_dra_ar_via_pad = N/A
+    ts_min_ar_via_pad = N/A
+    ts_typ_ar_via_pad = N/A
+    ts_dra_ar_ndrl_pad = N/A
+    ts_min_ar_ndrl_pad = N/A
+    ts_typ_ar_ndrl_pad = N/A
+    ts_dra_ar_exposed_line = N/A
+    ts_min_ar_exposed_line = N/A
+    ts_typ_ar_exposed_line = N/A
+    ts_dra_ar_partial_line = N/A
+    ts_min_ar_partial_line = N/A
+    ts_typ_ar_partial_line = N/A
+    ts_dra_ar_smd_partial = N/A
+    ts_min_ar_smd_partial = N/A
+    ts_typ_ar_smd_partial = N/A
+    ts_dra_neg_ar_smd = N/A
+    ts_min_neg_ar_smd = N/A
+    ts_typ_neg_ar_smd = N/A
+    ts_max_neg_ar_smd = N/A
+    ts_dra_neg_ar_ndrl_pad = N/A
+    ts_min_neg_ar_ndrl_pad = N/A
+    ts_typ_neg_ar_ndrl_pad = N/A
+    ts_max_neg_ar_ndrl_pad = N/A
+    ts_dra_neg_ar_pth_pad = N/A
+    ts_min_neg_ar_pth_pad = N/A
+    ts_typ_neg_ar_pth_pad = N/A
+    ts_max_neg_ar_pth_pad = N/A
+    ts_dra_neg_ar_npth_pad = N/A
+    ts_min_neg_ar_npth_pad = N/A
+    ts_typ_neg_ar_npth_pad = N/A
+    ts_max_neg_ar_npth_pad = N/A
+    ts_dra_neg_ar_npth_hole = N/A
+    ts_min_neg_ar_npth_hole = N/A
+    ts_typ_neg_ar_npth_hole = N/A
+    ts_max_neg_ar_npth_hole = N/A
+    ts_dra_neg_ar_via_pad = N/A
+    ts_min_neg_ar_via_pad = N/A
+    ts_typ_neg_ar_via_pad = N/A
+    ts_max_neg_ar_via_pad = N/A
+    ts_dra_zero_ar_ndrl_pad = N/A
+    ts_min_zero_ar_ndrl_pad = N/A
+    ts_typ_zero_ar_ndrl_pad = N/A
+    ts_max_zero_ar_ndrl_pad = N/A
+    ts_dra_zero_ar_smd = N/A
+    ts_min_zero_ar_smd = N/A
+    ts_typ_zero_ar_smd = N/A
+    ts_max_zero_ar_smd = N/A
+    ts_dra_zero_ar_pth_pad = N/A
+    ts_min_zero_ar_pth_pad = N/A
+    ts_typ_zero_ar_pth_pad = N/A
+    ts_max_zero_ar_pth_pad = N/A
+    ts_dra_zero_ar_npth_pad = N/A
+    ts_min_zero_ar_npth_pad = N/A
+    ts_typ_zero_ar_npth_pad = N/A
+    ts_max_zero_ar_npth_pad = N/A
+    ts_dra_zero_ar_npth_hole = N/A
+    ts_min_zero_ar_npth_hole = N/A
+    ts_typ_zero_ar_npth_hole = N/A
+    ts_max_zero_ar_npth_hole = N/A
+    ts_dra_zero_ar_via_pad = N/A
+    ts_min_zero_ar_via_pad = N/A
+    ts_typ_zero_ar_via_pad = N/A
+    ts_max_zero_ar_via_pad = N/A
+    ts_dra_coverage = 0.000
+    ts_min_coverage = 0.000
+    ts_typ_coverage = 0.000
+    ts_dra_sn_coverage = N/A
+    ts_min_sn_coverage = N/A
+    ts_typ_sn_coverage = N/A
+    ts_dra_cov_via_to_sm = N/A
+    ts_min_cov_via_to_sm = N/A
+    ts_typ_cov_via_to_sm = N/A
+    ts_dra_cover_several_nets = N/A
+    ts_min_cover_several_nets = N/A
+    ts_typ_cover_several_nets = N/A
+    ts_dra_ar_larger_coverage = N/A
+    ts_min_ar_larger_coverage = N/A
+    ts_typ_ar_larger_coverage = N/A
+    ts_dra_npth2m = N/A
+    ts_min_npth2m = N/A
+    ts_typ_npth2m = N/A
+    ts_dra_sm2r = 0.000
+    ts_min_sm2r = 0.000
+    ts_typ_sm2r = 0.000
+    ts_num_rout_clearance = 0
+    ts_num_no_bridge = 0
+    ts_num_same_net_no_bridge = 0
+    ts_min_smd_no_bridge = N/A
+    ts_num_smd_no_bridge = 0
+    ts_typ_smd_no_bridge = N/A
+    ts_min_smd_bridge = N/A
+    ts_num_smd_bridge = 0
+    ts_typ_smd_bridge = N/A
+    ts_min_smd2pad_bridge = N/A
+    ts_num_smd2pad_bridge = 0
+    ts_typ_smd2pad_bridge = N/A
+    ts_min_pad2pad_bridge = N/A
+    ts_num_pad2pad_bridge = 0
+    ts_typ_pad2pad_bridge = N/A
+    ts_min_sn_pad2pad_bridge = N/A
+    ts_num_sn_pad2pad_bridge = 0
+    ts_typ_sn_pad2pad_bridge = N/A
+    ts_min_sliver = 112.438
+    ts_num_sliver = 71
+    ts_min_local_spacing = 199.275
+    ts_num_local_spacing = 2
+    ts_num_smd_miss = 0
+    ts_num_ndrl_miss = 0
+    ts_num_pth_miss = 0
+    ts_num_via_miss = 0
+    ts_num_cov_via_to_sm = 0
+    ts_num_npth_miss = 0
+    ts_min_pad_to_pad = N/A
+    ts_num_pad_to_pad = 0
+    ts_min_same_net_pad2pad = N/A
+    ts_num_same_net_pad2pad = 0
+    ts_min_pad_to_non = N/A
+    ts_num_pad_to_non = 0
+    ts_min_non_to_non = 112.438
+    ts_num_non_to_non = 42
+    ts_num_smd_partial = 0
+    ts_num_ndrl_partial = 0
+    ts_min_exposed_line = N/A
+    ts_num_exposed_line = 0
+    ts_typ_exposed_line = N/A
+    ts_num_partial_on_via = 0
+    ts_num_partial_on_npth = 0
+    ts_num_partial_on_pth = 0
+    ts_num_c2c_con = 0
+    ts_num_via_2_smd_sm = 0
+    ts_num_pth_2_smd_sm = 0
+    ts_num_npth_2_smd_sm = 0
+    ts_num_smd_partial_gasket = 0
+    ts_num_ndrl_partial_ar = 0
+    ts_num_ndrl_partial_gasket = 0
+    ts_num_problem_con = 0
+    ts_dra = N/A
+    bs_dra_ar_pth = N/A
+    bs_min_ar_pth = N/A
+    bs_typ_ar_pth = N/A
+    bs_dra_ar_npth = N/A
+    bs_min_ar_npth = N/A
+    bs_typ_ar_npth = N/A
+    bs_dra_ar_via = N/A
+    bs_min_ar_via = N/A
+    bs_typ_ar_via = N/A
+    bs_dra_ar_smd = N/A
+    bs_min_ar_smd = N/A
+    bs_typ_ar_smd = N/A
+    bs_dra_f2sm = N/A
+    bs_min_f2sm = N/A
+    bs_typ_f2sm = N/A
+    bs_dra_ar_pad = -126.500
+    bs_min_ar_pad = 0.500
+    bs_typ_ar_pad = 38.100
+    bs_dra_ar_pth_pad = N/A
+    bs_min_ar_pth_pad = N/A
+    bs_typ_ar_pth_pad = N/A
+    bs_dra_ar_npth_pad = N/A
+    bs_min_ar_npth_pad = N/A
+    bs_typ_ar_npth_pad = N/A
+    bs_dra_ar_via_pad = N/A
+    bs_min_ar_via_pad = N/A
+    bs_typ_ar_via_pad = N/A
+    bs_dra_ar_ndrl_pad = N/A
+    bs_min_ar_ndrl_pad = N/A
+    bs_typ_ar_ndrl_pad = N/A
+    bs_dra_ar_exposed_line = N/A
+    bs_min_ar_exposed_line = N/A
+    bs_typ_ar_exposed_line = N/A
+    bs_dra_ar_partial_line = N/A
+    bs_min_ar_partial_line = N/A
+    bs_typ_ar_partial_line = N/A
+    bs_dra_ar_smd_partial = N/A
+    bs_min_ar_smd_partial = N/A
+    bs_typ_ar_smd_partial = N/A
+    bs_dra_neg_ar_smd = N/A
+    bs_min_neg_ar_smd = N/A
+    bs_typ_neg_ar_smd = N/A
+    bs_max_neg_ar_smd = N/A
+    bs_dra_neg_ar_ndrl_pad = N/A
+    bs_min_neg_ar_ndrl_pad = N/A
+    bs_typ_neg_ar_ndrl_pad = N/A
+    bs_max_neg_ar_ndrl_pad = N/A
+    bs_dra_neg_ar_pth_pad = N/A
+    bs_min_neg_ar_pth_pad = N/A
+    bs_typ_neg_ar_pth_pad = N/A
+    bs_max_neg_ar_pth_pad = N/A
+    bs_dra_neg_ar_npth_pad = N/A
+    bs_min_neg_ar_npth_pad = N/A
+    bs_typ_neg_ar_npth_pad = N/A
+    bs_max_neg_ar_npth_pad = N/A
+    bs_dra_neg_ar_npth_hole = N/A
+    bs_min_neg_ar_npth_hole = N/A
+    bs_typ_neg_ar_npth_hole = N/A
+    bs_max_neg_ar_npth_hole = N/A
+    bs_dra_neg_ar_via_pad = N/A
+    bs_min_neg_ar_via_pad = N/A
+    bs_typ_neg_ar_via_pad = N/A
+    bs_max_neg_ar_via_pad = N/A
+    bs_dra_zero_ar_ndrl_pad = N/A
+    bs_min_zero_ar_ndrl_pad = N/A
+    bs_typ_zero_ar_ndrl_pad = N/A
+    bs_max_zero_ar_ndrl_pad = N/A
+    bs_dra_zero_ar_smd = N/A
+    bs_min_zero_ar_smd = N/A
+    bs_typ_zero_ar_smd = N/A
+    bs_max_zero_ar_smd = N/A
+    bs_dra_zero_ar_pth_pad = N/A
+    bs_min_zero_ar_pth_pad = N/A
+    bs_typ_zero_ar_pth_pad = N/A
+    bs_max_zero_ar_pth_pad = N/A
+    bs_dra_zero_ar_npth_pad = N/A
+    bs_min_zero_ar_npth_pad = N/A
+    bs_typ_zero_ar_npth_pad = N/A
+    bs_max_zero_ar_npth_pad = N/A
+    bs_dra_zero_ar_npth_hole = N/A
+    bs_min_zero_ar_npth_hole = N/A
+    bs_typ_zero_ar_npth_hole = N/A
+    bs_max_zero_ar_npth_hole = N/A
+    bs_dra_zero_ar_via_pad = N/A
+    bs_min_zero_ar_via_pad = N/A
+    bs_typ_zero_ar_via_pad = N/A
+    bs_max_zero_ar_via_pad = N/A
+    bs_dra_coverage = 49.383
+    bs_min_coverage = 49.383
+    bs_typ_coverage = 149.860
+    bs_dra_sn_coverage = N/A
+    bs_min_sn_coverage = N/A
+    bs_typ_sn_coverage = N/A
+    bs_dra_cov_via_to_sm = N/A
+    bs_min_cov_via_to_sm = N/A
+    bs_typ_cov_via_to_sm = N/A
+    bs_dra_cover_several_nets = N/A
+    bs_min_cover_several_nets = N/A
+    bs_typ_cover_several_nets = N/A
+    bs_dra_ar_larger_coverage = N/A
+    bs_min_ar_larger_coverage = N/A
+    bs_typ_ar_larger_coverage = N/A
+    bs_dra_npth2m = N/A
+    bs_min_npth2m = N/A
+    bs_typ_npth2m = N/A
+    bs_dra_sm2r = 0.000
+    bs_min_sm2r = 0.000
+    bs_typ_sm2r = 0.000
+    bs_num_rout_clearance = 0
+    bs_num_no_bridge = 0
+    bs_num_same_net_no_bridge = 0
+    bs_min_smd_no_bridge = N/A
+    bs_num_smd_no_bridge = 0
+    bs_typ_smd_no_bridge = N/A
+    bs_min_smd_bridge = N/A
+    bs_num_smd_bridge = 0
+    bs_typ_smd_bridge = N/A
+    bs_min_smd2pad_bridge = N/A
+    bs_num_smd2pad_bridge = 0
+    bs_typ_smd2pad_bridge = N/A
+    bs_min_pad2pad_bridge = N/A
+    bs_num_pad2pad_bridge = 0
+    bs_typ_pad2pad_bridge = N/A
+    bs_min_sn_pad2pad_bridge = N/A
+    bs_num_sn_pad2pad_bridge = 0
+    bs_typ_sn_pad2pad_bridge = N/A
+    bs_min_sliver = N/A
+    bs_num_sliver = 0
+    bs_min_local_spacing = N/A
+    bs_num_local_spacing = 0
+    bs_num_smd_miss = 0
+    bs_num_ndrl_miss = 0
+    bs_num_pth_miss = 0
+    bs_num_via_miss = 0
+    bs_num_cov_via_to_sm = 0
+    bs_num_npth_miss = 0
+    bs_min_pad_to_pad = N/A
+    bs_num_pad_to_pad = 0
+    bs_min_same_net_pad2pad = N/A
+    bs_num_same_net_pad2pad = 0
+    bs_min_pad_to_non = N/A
+    bs_num_pad_to_non = 0
+    bs_min_non_to_non = N/A
+    bs_num_non_to_non = 0
+    bs_num_smd_partial = 0
+    bs_num_ndrl_partial = 0
+    bs_min_exposed_line = N/A
+    bs_num_exposed_line = 0
+    bs_typ_exposed_line = N/A
+    bs_num_partial_on_via = 0
+    bs_num_partial_on_npth = 0
+    bs_num_partial_on_pth = 0
+    bs_num_c2c_con = 0
+    bs_num_via_2_smd_sm = 0
+    bs_num_pth_2_smd_sm = 0
+    bs_num_npth_2_smd_sm = 0
+    bs_num_smd_partial_gasket = 0
+    bs_num_ndrl_partial_ar = 0
+    bs_num_ndrl_partial_gasket = 0
+    bs_num_problem_con = 0
+    bs_dra = -126.500
+    dra_ar_pth = N/A
+    min_ar_pth = N/A
+    typ_ar_pth = N/A
+    dra_ar_npth = N/A
+    min_ar_npth = N/A
+    typ_ar_npth = N/A
+    dra_ar_via = N/A
+    min_ar_via = N/A
+    typ_ar_via = N/A
+    dra_ar_smd = N/A
+    min_ar_smd = N/A
+    typ_ar_smd = N/A
+    dra_f2sm = N/A
+    min_f2sm = N/A
+    typ_f2sm = N/A
+    dra_ar_pad = -126.500
+    min_ar_pad = 0.500
+    typ_ar_pad = 38.100
+    dra_ar_pth_pad = N/A
+    min_ar_pth_pad = N/A
+    typ_ar_pth_pad = N/A
+    dra_ar_npth_pad = N/A
+    min_ar_npth_pad = N/A
+    typ_ar_npth_pad = N/A
+    dra_ar_via_pad = N/A
+    min_ar_via_pad = N/A
+    typ_ar_via_pad = N/A
+    dra_ar_ndrl_pad = N/A
+    min_ar_ndrl_pad = N/A
+    typ_ar_ndrl_pad = N/A
+    dra_ar_exposed_line = N/A
+    min_ar_exposed_line = N/A
+    typ_ar_exposed_line = N/A
+    dra_ar_partial_line = N/A
+    min_ar_partial_line = N/A
+    typ_ar_partial_line = N/A
+    dra_ar_smd_partial = N/A
+    min_ar_smd_partial = N/A
+    typ_ar_smd_partial = N/A
+    dra_neg_ar_smd = N/A
+    min_neg_ar_smd = N/A
+    typ_neg_ar_smd = N/A
+    max_neg_ar_smd = N/A
+    dra_neg_ar_ndrl_pad = N/A
+    min_neg_ar_ndrl_pad = N/A
+    typ_neg_ar_ndrl_pad = N/A
+    max_neg_ar_ndrl_pad = N/A
+    dra_neg_ar_pth_pad = N/A
+    min_neg_ar_pth_pad = N/A
+    typ_neg_ar_pth_pad = N/A
+    max_neg_ar_pth_pad = N/A
+    dra_neg_ar_npth_pad = N/A
+    min_neg_ar_npth_pad = N/A
+    typ_neg_ar_npth_pad = N/A
+    max_neg_ar_npth_pad = N/A
+    dra_neg_ar_npth_hole = N/A
+    min_neg_ar_npth_hole = N/A
+    typ_neg_ar_npth_hole = N/A
+    max_neg_ar_npth_hole = N/A
+    dra_neg_ar_via_pad = N/A
+    min_neg_ar_via_pad = N/A
+    typ_neg_ar_via_pad = N/A
+    max_neg_ar_via_pad = N/A
+    dra_zero_ar_ndrl_pad = N/A
+    min_zero_ar_ndrl_pad = N/A
+    typ_zero_ar_ndrl_pad = N/A
+    max_zero_ar_ndrl_pad = N/A
+    dra_zero_ar_smd = N/A
+    min_zero_ar_smd = N/A
+    typ_zero_ar_smd = N/A
+    max_zero_ar_smd = N/A
+    dra_zero_ar_pth_pad = N/A
+    min_zero_ar_pth_pad = N/A
+    typ_zero_ar_pth_pad = N/A
+    max_zero_ar_pth_pad = N/A
+    dra_zero_ar_npth_pad = N/A
+    min_zero_ar_npth_pad = N/A
+    typ_zero_ar_npth_pad = N/A
+    max_zero_ar_npth_pad = N/A
+    dra_zero_ar_npth_hole = N/A
+    min_zero_ar_npth_hole = N/A
+    typ_zero_ar_npth_hole = N/A
+    max_zero_ar_npth_hole = N/A
+    dra_zero_ar_via_pad = N/A
+    min_zero_ar_via_pad = N/A
+    typ_zero_ar_via_pad = N/A
+    max_zero_ar_via_pad = N/A
+    dra_coverage = 0.000
+    min_coverage = 0.000
+    typ_coverage = 149.860
+    dra_sn_coverage = N/A
+    min_sn_coverage = N/A
+    typ_sn_coverage = N/A
+    dra_cov_via_to_sm = N/A
+    min_cov_via_to_sm = N/A
+    typ_cov_via_to_sm = N/A
+    dra_cover_several_nets = N/A
+    min_cover_several_nets = N/A
+    typ_cover_several_nets = N/A
+    dra_ar_larger_coverage = N/A
+    min_ar_larger_coverage = N/A
+    typ_ar_larger_coverage = N/A
+    dra_npth2m = N/A
+    min_npth2m = N/A
+    typ_npth2m = N/A
+    dra_sm2r = 0.000
+    min_sm2r = 0.000
+    typ_sm2r = 0.000
+    num_rout_clearance = 0
+    num_no_bridge = 0
+    num_same_net_no_bridge = 0
+    min_smd_no_bridge = N/A
+    num_smd_no_bridge = 0
+    typ_smd_no_bridge = N/A
+    min_smd_bridge = N/A
+    num_smd_bridge = 0
+    typ_smd_bridge = N/A
+    min_smd2pad_bridge = N/A
+    num_smd2pad_bridge = 0
+    typ_smd2pad_bridge = N/A
+    min_pad2pad_bridge = N/A
+    num_pad2pad_bridge = 0
+    typ_pad2pad_bridge = N/A
+    min_sn_pad2pad_bridge = N/A
+    num_sn_pad2pad_bridge = 0
+    typ_sn_pad2pad_bridge = N/A
+    min_sliver = 112.438
+    num_sliver = 71
+    min_local_spacing = 199.275
+    num_local_spacing = 2
+    num_smd_miss = 0
+    num_ndrl_miss = 0
+    num_pth_miss = 0
+    num_via_miss = 0
+    num_cov_via_to_sm = 0
+    num_npth_miss = 0
+    min_pad_to_pad = N/A
+    num_pad_to_pad = 0
+    min_same_net_pad2pad = N/A
+    num_same_net_pad2pad = 0
+    min_pad_to_non = N/A
+    num_pad_to_non = 0
+    min_non_to_non = 112.438
+    num_non_to_non = 42
+    num_smd_partial = 0
+    num_ndrl_partial = 0
+    min_exposed_line = N/A
+    num_exposed_line = 0
+    typ_exposed_line = N/A
+    num_partial_on_via = 0
+    num_partial_on_npth = 0
+    num_partial_on_pth = 0
+    num_c2c_con = 0
+    num_via_2_smd_sm = 0
+    num_pth_2_smd_sm = 0
+    num_npth_2_smd_sm = 0
+    num_smd_partial_gasket = 0
+    num_ndrl_partial_ar = 0
+    num_ndrl_partial_gasket = 0
+    num_problem_con = 0
+    dra = -126.500
+}
