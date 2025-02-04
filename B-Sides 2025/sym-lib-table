@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Simple_Addon_v2")(type "KiCad")(uri "${KIPRJMOD}/footprints/Simple_Addon_v2.kicad_sym")(options "")(descr ""))
+)

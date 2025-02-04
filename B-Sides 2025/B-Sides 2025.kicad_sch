@@ -1959,6 +1959,88 @@
 				)
 			)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "Sensor_Optical:KPS-3227"
 			(pin_numbers hide)
 			(exclude_from_sim no)
@@ -2477,6 +2559,102 @@
 				)
 			)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "power:VDD"
 			(power)
 			(pin_numbers hide)
@@ -2755,10 +2933,22 @@
 		(uuid "c694bb9e-6eb8-448a-a113-7de449ae0713")
 	)
 	(junction
+		(at 59.436 183.642)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d35883bd-2bef-4547-b96e-48e36ad64d18")
+	)
+	(junction
 		(at 227.838 46.228)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e13d58e1-a4cb-409d-b328-1d7a69ffdc7f")
+	)
+	(junction
+		(at 201.168 98.552)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e51cf344-d3b2-412c-be73-1b7676168abc")
 	)
 	(wire
 		(pts
@@ -2782,7 +2972,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 102.87) (xy 129.794 102.87)
+			(xy 115.57 102.87) (xy 131.572 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2802,7 +2992,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.928 188.722) (xy 58.928 190.5)
+			(xy 59.436 188.722) (xy 59.436 190.5)
 		)
 		(stroke
 			(width 0)
@@ -2952,6 +3142,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.168 115.316) (xy 201.168 112.014)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37b0b18a-aa33-45b2-977c-30d55616e521")
+	)
+	(wire
+		(pts
 			(xy 240.538 27.178) (xy 242.57 27.178)
 		)
 		(stroke
@@ -2982,6 +3182,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.628 168.148) (xy 71.628 167.894)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41862d08-85a0-4045-99fe-c07afca97e8f")
+	)
+	(wire
+		(pts
 			(xy 34.29 44.45) (xy 45.72 44.45)
 		)
 		(stroke
@@ -3002,13 +3212,13 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 105.41) (xy 81.026 105.41)
+			(xy 115.57 115.57) (xy 131.572 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "460f9802-0629-4f78-933d-09f338961564")
+		(uuid "4a1bb76a-ae5a-4aa6-98fd-967e44e3123c")
 	)
 	(wire
 		(pts
@@ -3072,13 +3282,23 @@
 	)
 	(wire
 		(pts
-			(xy 67.564 162.814) (xy 77.089 162.814)
+			(xy 67.564 162.814) (xy 76.454 162.814)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5c4257f6-fbd7-455d-a5cd-8922d35b720f")
+	)
+	(wire
+		(pts
+			(xy 64.77 105.41) (xy 64.77 102.362)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d7dc0ea-6bfa-4d89-9e4e-d0dd30f0c114")
 	)
 	(wire
 		(pts
@@ -3139,6 +3359,26 @@
 			(type default)
 		)
 		(uuid "6593f9ee-4b32-4d64-a923-e0d9207c35df")
+	)
+	(wire
+		(pts
+			(xy 81.026 102.362) (xy 81.026 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6aaf9766-538a-482e-9352-f38e1779cf60")
+	)
+	(wire
+		(pts
+			(xy 59.436 183.642) (xy 59.69 183.642)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6afe619e-f74a-4171-a1c7-43fc864490f3")
 	)
 	(wire
 		(pts
@@ -3222,6 +3462,16 @@
 	)
 	(wire
 		(pts
+			(xy 131.572 118.11) (xy 115.57 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7eaf21d7-ac3b-4c0f-80a0-23e0bb51ab0d")
+	)
+	(wire
+		(pts
 			(xy 227.838 46.228) (xy 227.838 26.924)
 		)
 		(stroke
@@ -3229,6 +3479,16 @@
 			(type default)
 		)
 		(uuid "7f527116-2d41-4e45-83cb-745654424bbf")
+	)
+	(wire
+		(pts
+			(xy 201.168 101.854) (xy 201.168 98.552)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f6c5f78-17ab-4491-ad66-98b673ff8038")
 	)
 	(wire
 		(pts
@@ -3242,7 +3502,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 105.41) (xy 131.826 105.41)
+			(xy 115.57 105.41) (xy 131.572 105.41)
 		)
 		(stroke
 			(width 0)
@@ -3282,7 +3542,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.452 186.182) (xy 53.594 186.182)
+			(xy 59.436 186.182) (xy 53.594 186.182)
 		)
 		(stroke
 			(width 0)
@@ -3309,6 +3569,16 @@
 			(type default)
 		)
 		(uuid "8c6c8ae4-384e-4575-b989-ae14ad4c9e9d")
+	)
+	(wire
+		(pts
+			(xy 73.406 102.362) (xy 81.026 102.362)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d2bd447-e256-4fce-b2cf-7f945793c0b5")
 	)
 	(wire
 		(pts
@@ -3372,6 +3642,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.168 96.012) (xy 201.168 98.552)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "974cf555-6570-4dc2-9b4b-58b16e432d30")
+	)
+	(wire
+		(pts
 			(xy 57.15 44.45) (xy 54.61 44.45)
 		)
 		(stroke
@@ -3422,6 +3702,16 @@
 	)
 	(wire
 		(pts
+			(xy 71.628 167.894) (xy 67.564 167.894)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a18de39c-3f95-42f8-8355-25ad60a5bb9c")
+	)
+	(wire
+		(pts
 			(xy 242.57 39.878) (xy 254 39.878)
 		)
 		(stroke
@@ -3429,6 +3719,16 @@
 			(type default)
 		)
 		(uuid "a1ee6252-ecf9-426b-b070-526558b1e562")
+	)
+	(wire
+		(pts
+			(xy 201.168 98.552) (xy 208.534 98.552)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a41eb056-f55d-4cd7-8f0a-9cda9e8eb9c4")
 	)
 	(wire
 		(pts
@@ -3482,7 +3782,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.594 188.722) (xy 58.928 188.722)
+			(xy 53.594 188.722) (xy 59.436 188.722)
 		)
 		(stroke
 			(width 0)
@@ -3552,6 +3852,16 @@
 	)
 	(wire
 		(pts
+			(xy 64.77 105.41) (xy 95.25 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbc0166b-a1cf-4ef5-b39e-929554e2588c")
+	)
+	(wire
+		(pts
 			(xy 24.384 141.224) (xy 39.624 141.224)
 		)
 		(stroke
@@ -3602,7 +3912,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.302 107.95) (xy 115.57 107.95)
+			(xy 131.572 107.95) (xy 115.57 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3752,6 +4062,16 @@
 	)
 	(wire
 		(pts
+			(xy 131.064 125.73) (xy 115.57 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbe8e80a-d13c-4e47-95fb-c79dd858bd66")
+	)
+	(wire
+		(pts
 			(xy 229.87 32.258) (xy 229.87 26.924)
 		)
 		(stroke
@@ -3762,7 +4082,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.564 167.894) (xy 81.534 167.894)
+			(xy 71.628 168.148) (xy 70.866 168.148)
 		)
 		(stroke
 			(width 0)
@@ -3822,7 +4142,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 110.49) (xy 131.826 110.49)
+			(xy 115.57 110.49) (xy 131.572 110.49)
 		)
 		(stroke
 			(width 0)
@@ -3859,6 +4179,16 @@
 			(type default)
 		)
 		(uuid "eae3d3de-5fb6-4af8-8e7e-02883e2e187f")
+	)
+	(wire
+		(pts
+			(xy 131.064 123.19) (xy 115.57 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb773f48-f76e-45d4-a7d7-18db01890f70")
 	)
 	(wire
 		(pts
@@ -3942,7 +4272,7 @@
 		)
 		(uuid "f9dc3b7b-fdb5-4a09-800d-d124724712d5")
 	)
-	(label "SDA{slash}MOSI{slash}DATA"
+	(label "SDA"
 		(at 25.654 162.814 0)
 		(effects
 			(font
@@ -3951,6 +4281,16 @@
 			(justify left bottom)
 		)
 		(uuid "00492a62-9c55-434d-b145-bc49d08ef439")
+	)
+	(label "ROT_A"
+		(at 25.654 157.734 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "009679d5-6257-424b-adc3-e3f5c50c6f0a")
 	)
 	(label "GPIO_X1"
 		(at 201.93 39.878 0)
@@ -3962,7 +4302,7 @@
 		)
 		(uuid "11832e97-e8fd-4358-8a30-5f4187e3e681")
 	)
-	(label "GPIO6"
+	(label "ROT_B"
 		(at 76.454 157.734 180)
 		(effects
 			(font
@@ -3970,7 +4310,17 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "16ced7c2-301a-498c-a53e-cceb603aac74")
+		(uuid "13f85897-93c5-4396-a508-966e4b16505d")
+	)
+	(label "SDA"
+		(at 81.026 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "16b7febe-7f39-4c86-827f-85fa8ea7de48")
 	)
 	(label "GPIO_X2"
 		(at 201.93 51.308 0)
@@ -3983,12 +4333,12 @@
 		(uuid "19e057fa-f58a-44ec-aeef-52e266b320f7")
 	)
 	(label "GPIO_Y2"
-		(at 81.026 105.41 0)
+		(at 131.572 118.11 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "271d2e39-4094-435a-ad24-1be03c92ff74")
 	)
@@ -4001,6 +4351,16 @@
 			(justify left bottom)
 		)
 		(uuid "305ad702-d477-44aa-9ff6-39f0cea0d12a")
+	)
+	(label "PA2"
+		(at 76.454 131.064 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31adcc80-cc74-478f-aaab-638e0653f731")
 	)
 	(label "ROT_B"
 		(at 82.55 54.61 0)
@@ -4022,16 +4382,6 @@
 		)
 		(uuid "411f304e-65bb-4208-81ee-179e01c0cd05")
 	)
-	(label "CS{slash}MISO_1"
-		(at 25.654 157.734 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4b059fb8-6495-401b-b4aa-51f2c6fe5ca3")
-	)
 	(label "SAO_VIN"
 		(at 25.654 167.894 0)
 		(effects
@@ -4052,8 +4402,8 @@
 		)
 		(uuid "5d4487bb-af4b-4678-a2da-ab1fc87d1688")
 	)
-	(label "SCL{slash}SCK"
-		(at 77.089 162.814 180)
+	(label "SCL"
+		(at 76.454 162.814 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4061,6 +4411,16 @@
 			(justify right bottom)
 		)
 		(uuid "5e770f43-f9dd-4e5e-b1ae-e6b090cc0bd0")
+	)
+	(label "PA1"
+		(at 131.064 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5f63298f-8311-475c-97f0-755b8b928a99")
 	)
 	(label "GPIO_Y2"
 		(at 227.838 26.924 0)
@@ -4073,7 +4433,7 @@
 		(uuid "62e4d7ae-519a-4a96-b446-bca86ef0fcd0")
 	)
 	(label "DIO"
-		(at 60.452 186.182 180)
+		(at 59.436 186.182 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4083,7 +4443,7 @@
 		(uuid "657d45e6-6213-4d20-994f-c2c78f516c02")
 	)
 	(label "GPIO_PHOTO_B"
-		(at 131.826 110.49 180)
+		(at 131.572 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4111,6 +4471,16 @@
 			(justify left bottom)
 		)
 		(uuid "6fc3fff6-a6fa-42d8-a550-df9e96642d21")
+	)
+	(label "PA1"
+		(at 24.384 131.064 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "70c70225-538a-406f-8cc8-6daefb2fe4d1")
 	)
 	(label "GPIO_PHOTO_A"
 		(at 131.572 113.03 180)
@@ -4172,6 +4542,16 @@
 		)
 		(uuid "8cef8e70-2c97-43d6-9051-5443abbc46c0")
 	)
+	(label "SAO_VIN"
+		(at 59.69 183.642 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9425485e-cbe0-4abc-b0fe-d67235ade4ba")
+	)
 	(label "GPIO_PHOTO_A"
 		(at 145.542 149.86 0)
 		(effects
@@ -4202,6 +4582,16 @@
 		)
 		(uuid "9cc0426a-783a-44e1-be89-059ed0497d07")
 	)
+	(label "SCL"
+		(at 81.026 105.41 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9f19d9d0-62ea-418c-97dc-b5768ac4efcb")
+	)
 	(label "GPIO_Y1"
 		(at 81.026 107.95 0)
 		(effects
@@ -4212,18 +4602,8 @@
 		)
 		(uuid "a3aefef8-de68-40c0-9752-07dad871519c")
 	)
-	(label "CS{slash}MISO_0"
-		(at 24.384 131.064 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a7163dac-534e-42bb-8a7a-253192814a69")
-	)
 	(label "DIO"
-		(at 129.794 102.87 180)
+		(at 131.572 102.87 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4272,18 +4652,8 @@
 		)
 		(uuid "bc03bc01-3734-460e-b039-0e5162b20fa1")
 	)
-	(label "UPDI_0"
-		(at 76.454 131.064 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "bc20b343-4ec7-4eb2-825a-ab909dcf35a5")
-	)
 	(label "GPIO_ROT_B"
-		(at 131.826 105.41 180)
+		(at 131.572 105.41 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4303,7 +4673,7 @@
 		(uuid "c65ed2d8-c11b-4b32-84cf-74aeec6d4280")
 	)
 	(label "GPIO_BUTTON"
-		(at 130.302 107.95 180)
+		(at 131.572 107.95 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4322,7 +4692,7 @@
 		)
 		(uuid "d32723dc-fc1f-40df-af07-118cdba4223e")
 	)
-	(label "SDA{slash}MOSI{slash}DATA"
+	(label "SDA"
 		(at 24.384 136.144 0)
 		(effects
 			(font
@@ -4342,17 +4712,27 @@
 		)
 		(uuid "d56db049-273b-45d9-ab27-dc6b4ba7170f")
 	)
-	(label "GPIO_Y3"
-		(at 81.026 102.87 0)
+	(label "PA2"
+		(at 131.064 125.73 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
+		)
+		(uuid "db2e0a00-1ed6-4e71-a48c-913b7495bcda")
+	)
+	(label "GPIO_Y3"
+		(at 131.572 115.57 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
 		)
 		(uuid "ea21c776-cd8e-490f-9a43-64e69407b976")
 	)
-	(label "SCL{slash}SCK"
+	(label "SCL"
 		(at 76.454 136.144 180)
 		(effects
 			(font
@@ -4390,7 +4770,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 36.068 0)
 			(effects
 				(font
@@ -4418,6 +4798,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 242.57 36.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 242.57 36.068 0)
 			(effects
 				(font
@@ -4601,7 +4990,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 142.24 156.464 0)
 			(effects
 				(font
@@ -4637,6 +5026,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 142.24 156.464 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "42e6a7c9-9d78-46d4-ac78-a5a0bab4e71f")
 		)
@@ -4647,6 +5045,72 @@
 			(project "B-Sides 2025"
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDD")
+		(at 64.77 97.282 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f4ec164-82df-4155-833f-472b2749fff2")
+		(property "Reference" "#PWR025"
+			(at 64.77 101.092 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDD"
+			(at 64.77 92.202 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
+			(at 64.77 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6275d4e1-5f1a-4153-954b-2141f6365efe")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -4746,7 +5210,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 229.87 36.068 0)
 			(effects
 				(font
@@ -4782,6 +5246,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 229.87 36.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "eeafb691-d51a-4845-aa97-0ccee05fd448")
 		)
@@ -4808,7 +5281,7 @@
 		(fields_autoplaced yes)
 		(uuid "1172de08-7952-45a7-bdfc-82e615b5ec77")
 		(property "Reference" "C3"
-			(at 134.366 52.8382 0)
+			(at 134.62 52.8382 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4816,8 +5289,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_Small"
-			(at 134.366 55.3782 0)
+		(property "Value" "100n"
+			(at 134.62 55.3782 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4825,7 +5298,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 131.826 54.102 0)
 			(effects
 				(font
@@ -4853,6 +5326,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 131.826 54.102 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 131.826 54.102 0)
 			(effects
 				(font
@@ -4904,7 +5386,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 215.9 37.338 0)
 			(effects
 				(font
@@ -4932,6 +5414,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 215.9 37.338 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 215.9 37.338 0)
 			(effects
 				(font
@@ -4983,7 +5474,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 229.87 58.928 0)
 			(effects
 				(font
@@ -5011,6 +5502,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 229.87 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 229.87 58.928 0)
 			(effects
 				(font
@@ -5062,7 +5562,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -5090,6 +5590,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 254 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -5181,7 +5690,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 58.928 190.5 0)
+		(at 59.436 190.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5190,7 +5699,7 @@
 		(fields_autoplaced yes)
 		(uuid "27a752f4-84c2-456e-9ed3-c98fe4dab8cf")
 		(property "Reference" "#PWR016"
-			(at 58.928 196.85 0)
+			(at 59.436 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5199,7 +5708,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 58.928 195.58 0)
+			(at 59.436 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5207,7 +5716,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 58.928 190.5 0)
+			(at 59.436 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5216,7 +5725,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 58.928 190.5 0)
+			(at 59.436 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5225,7 +5734,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 58.928 190.5 0)
+			(at 59.436 190.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5316,6 +5825,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 53.594 136.144 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "202e70cb-9027-4cf1-b888-986ba7ed37a6")
 		)
@@ -5338,6 +5856,79 @@
 			(project "B-Sides 2025"
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 39.116 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "330ada31-02c3-49b0-bd21-8b729a72747e")
+		(property "Reference" "H1"
+			(at 41.656 97.7899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 41.656 100.3299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Badge:MountingHole_4.3mm_M4_11mm_slot"
+			(at 39.116 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 39.116 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 39.116 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 39.116 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -5371,7 +5962,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -5399,6 +5990,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 215.9 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -5516,7 +6116,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 47.498 0)
 			(effects
 				(font
@@ -5552,6 +6152,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 215.9 47.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1c79e6c-60b9-44ae-8f19-7c7b130dc4b0")
 		)
@@ -5562,6 +6171,85 @@
 			(project "B-Sides 2025"
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 64.77 99.822 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4497e302-5eae-4671-9a2d-79e051d5be6a")
+		(property "Reference" "R14"
+			(at 67.31 98.5519 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 67.31 101.0919 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 64.77 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 64.77 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 64.77 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5cfe4c86-5837-4139-853d-07d5d2d157ef")
+		)
+		(pin "2"
+			(uuid "7e3a43ec-afb1-4885-8ef3-38925b2e8f65")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -5661,7 +6349,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 242.57 60.198 0)
 			(effects
 				(font
@@ -5697,6 +6385,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 242.57 60.198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "398e8ed3-989a-4f4c-8718-d3759036c21d")
 		)
@@ -5707,6 +6404,72 @@
 			(project "B-Sides 2025"
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDD")
+		(at 92.964 85.598 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "51ff1e64-2bce-4e46-b565-6f27c8c165ea")
+		(property "Reference" "#PWR023"
+			(at 92.964 89.408 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDD"
+			(at 92.964 80.518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.964 85.598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.964 85.598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
+			(at 92.964 85.598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4e50a61f-1f82-4104-8d27-7c69008d8bf4")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -5731,7 +6494,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_Small"
+		(property "Value" "100n"
 			(at 49.53 71.1262 0)
 			(effects
 				(font
@@ -5740,7 +6503,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 46.99 69.85 0)
 			(effects
 				(font
@@ -5768,6 +6531,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 46.99 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 46.99 69.85 0)
 			(effects
 				(font
@@ -5921,6 +6693,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 175.006 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d8b1b87d-a896-45fc-ba45-320f70c015d1")
 		)
@@ -5953,22 +6734,22 @@
 		(fields_autoplaced yes)
 		(uuid "63bbff14-a6b0-4c26-878d-26e7ceb60904")
 		(property "Reference" "R11"
-			(at 128.778 44.196 90)
+			(at 128.778 43.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "R_Small"
-			(at 128.778 46.736 90)
+		(property "Value" "1k"
+			(at 128.778 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 128.778 49.276 0)
 			(effects
 				(font
@@ -5996,6 +6777,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 128.778 49.276 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 128.778 49.276 0)
 			(effects
 				(font
@@ -6047,7 +6837,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 229.87 48.768 0)
 			(effects
 				(font
@@ -6075,6 +6865,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 229.87 48.768 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 229.87 48.768 0)
 			(effects
 				(font
@@ -6154,6 +6953,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 142.494 139.446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 142.494 139.446 0)
 			(effects
 				(font
@@ -6278,7 +7086,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -6306,6 +7114,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 254 36.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -6591,6 +7408,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 105.41 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "d65473e1-49cc-42b4-b608-0bb60712fb7f")
 		)
@@ -6755,7 +7581,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 47.498 0)
 			(effects
 				(font
@@ -6783,6 +7609,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 242.57 47.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 242.57 47.498 0)
 			(effects
 				(font
@@ -6872,6 +7707,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 92.964 90.678 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a136ae97-c8bc-4fca-82e1-9330a9546367")
+		(property "Reference" "#PWR020"
+			(at 92.964 97.028 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 92.964 95.758 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 92.964 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 92.964 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 92.964 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1087f562-14b1-43fb-94ec-2e22aea86fac")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VDD")
 		(at 113.03 39.37 0)
 		(unit 1)
@@ -6932,6 +7833,72 @@
 			(project "B-Sides 2025"
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
 					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 208.534 98.552 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aa01e144-f67c-4a5f-bdc1-33cf779fc6c1")
+		(property "Reference" "#FLG01"
+			(at 208.534 96.647 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 208.534 93.726 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.534 98.552 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 208.534 98.552 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 208.534 98.552 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4fe27705-503d-48f0-ab97-5e3987c6e022")
+		)
+		(instances
+			(project ""
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -7004,6 +7971,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VDD")
+		(at 201.168 96.012 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "afafe28b-80b2-40b1-93f5-f2060682033a")
+		(property "Reference" "#PWR022"
+			(at 201.168 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDD"
+			(at 201.168 90.932 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 201.168 96.012 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 96.012 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
+			(at 201.168 96.012 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5b990e50-8a9b-49ca-93c4-156100ed1a86")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 55.88 60.96 0)
 		(unit 1)
@@ -7031,7 +8064,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 55.88 60.96 0)
 			(effects
 				(font
@@ -7059,6 +8092,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 55.88 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 55.88 60.96 0)
 			(effects
 				(font
@@ -7240,7 +8282,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 49.53 44.45 0)
 			(effects
 				(font
@@ -7276,6 +8318,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 49.53 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9a3d635f-e0c5-4c45-b78a-78043625de7c")
 		)
@@ -7286,6 +8337,85 @@
 			(project ""
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 73.406 99.822 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cb20cf24-0725-4143-82ba-1ccdbbb12698")
+		(property "Reference" "R9"
+			(at 75.946 98.5519 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 75.946 101.0919 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 73.406 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 73.406 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 73.406 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 73.406 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d4d3630b-66ab-4a29-8acf-7e355fe3a238")
+		)
+		(pin "2"
+			(uuid "c2938efc-c284-40c6-8379-17c1ea21d45a")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -7317,7 +8447,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 50.8 66.04 0)
 			(effects
 				(font
@@ -7345,6 +8475,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 50.8 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 50.8 66.04 0)
 			(effects
 				(font
@@ -7422,6 +8561,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 48.514 186.182 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 48.514 186.182 0)
 			(effects
 				(font
@@ -7519,6 +8667,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 53.594 162.814 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2abc319a-ea20-4190-ab64-6d8290952d39")
 		)
@@ -7548,7 +8705,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery")
-		(at 201.168 103.632 0)
+		(at 201.168 106.934 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7557,7 +8714,7 @@
 		(fields_autoplaced yes)
 		(uuid "d88d7723-7777-477e-83e7-66c325e337c9")
 		(property "Reference" "BT1"
-			(at 204.978 101.7904 0)
+			(at 204.978 105.0924 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7566,7 +8723,7 @@
 			)
 		)
 		(property "Value" "Battery"
-			(at 204.978 104.3304 0)
+			(at 204.978 107.6324 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7575,7 +8732,7 @@
 			)
 		)
 		(property "Footprint" "Battery:BatteryHolder_Keystone_3008_1x2450"
-			(at 201.168 102.108 90)
+			(at 201.168 105.41 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7584,7 +8741,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2411271947_MYOUNG-MY-2450-01_C964845.pdf"
-			(at 201.168 102.108 90)
+			(at 201.168 105.41 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7593,7 +8750,7 @@
 			)
 		)
 		(property "Description" "Multiple-cell battery"
-			(at 201.168 103.632 0)
+			(at 201.168 106.934 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7602,7 +8759,16 @@
 			)
 		)
 		(property "LCSC" "C964845"
-			(at 201.168 103.632 0)
+			(at 201.168 106.934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 201.168 106.934 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7653,7 +8819,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -7681,6 +8847,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 254 47.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -7732,7 +8907,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 70.358 0)
 			(effects
 				(font
@@ -7760,6 +8935,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 242.57 70.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 242.57 70.358 0)
 			(effects
 				(font
@@ -7845,6 +9029,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 96.52 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "S1"
 			(uuid "4fdb1a30-c807-4bdf-90d3-755473310089")
 		)
@@ -7900,7 +9093,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 175.006 150.368 0)
 			(effects
 				(font
@@ -7928,6 +9121,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 175.006 150.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 175.006 150.368 0)
 			(effects
 				(font
@@ -7970,7 +9172,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_Small"
+		(property "Value" "100n"
 			(at 48.26 49.5362 0)
 			(effects
 				(font
@@ -7979,7 +9181,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 45.72 48.26 0)
 			(effects
 				(font
@@ -8015,6 +9217,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 45.72 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0ee89e81-6487-4730-91c9-7621538ebe34")
 		)
@@ -8025,6 +9236,145 @@
 			(project ""
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDD")
+		(at 73.406 97.282 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e77a7338-c9c7-4c11-b632-336cecfc823c")
+		(property "Reference" "#PWR024"
+			(at 73.406 101.092 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDD"
+			(at 73.406 92.202 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.406 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.406 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDD\""
+			(at 73.406 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "adbc2525-5c6c-4c76-b0f1-e5f9347ea8c8")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 39.116 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "e9bb16cd-a383-4e7d-aaa9-a9958ef8adc1")
+		(property "Reference" "H2"
+			(at 41.656 106.6799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 41.656 109.2199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Badge:MountingHole_4.3mm_M4_11mm_slot"
+			(at 39.116 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 39.116 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 39.116 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 39.116 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -8058,7 +9408,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 229.87 70.358 0)
 			(effects
 				(font
@@ -8094,6 +9444,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 229.87 70.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "96cfdb50-b652-4eed-9f36-d7a636d8444f")
 		)
@@ -8111,7 +9470,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 81.534 167.894 90)
+		(at 70.866 168.148 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8120,7 +9479,7 @@
 		(fields_autoplaced yes)
 		(uuid "ebacb4b9-0087-439d-b5c7-d0366a9ae487")
 		(property "Reference" "#PWR019"
-			(at 87.884 167.894 0)
+			(at 77.216 168.148 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8129,7 +9488,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 86.614 167.894 0)
+			(at 75.946 168.148 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8137,7 +9496,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 81.534 167.894 0)
+			(at 70.866 168.148 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8146,7 +9505,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 81.534 167.894 0)
+			(at 70.866 168.148 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8155,7 +9514,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 81.534 167.894 0)
+			(at 70.866 168.148 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8177,7 +9536,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 216.154 103.632 0)
+		(at 92.964 88.138 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8186,7 +9545,7 @@
 		(fields_autoplaced yes)
 		(uuid "ebce9bcb-4c08-4ffc-b242-3c47b7aa1790")
 		(property "Reference" "C4"
-			(at 218.694 102.3682 0)
+			(at 96.52 86.8742 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8194,8 +9553,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C_Small"
-			(at 218.694 104.9082 0)
+		(property "Value" "2u"
+			(at 96.52 89.4142 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8203,8 +9562,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 216.154 103.632 0)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 92.964 88.138 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8213,7 +9572,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 216.154 103.632 0)
+			(at 92.964 88.138 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8222,7 +9581,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 216.154 103.632 0)
+			(at 92.964 88.138 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8231,7 +9590,16 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 216.154 103.632 0)
+			(at 92.964 88.138 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 92.964 88.138 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8321,6 +9689,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 201.168 115.316 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ebf3c95e-3b8c-49c9-bd13-27912962cc5f")
+		(property "Reference" "#PWR021"
+			(at 201.168 121.666 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 201.168 120.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 201.168 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 201.168 115.316 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "84ecf380-60cb-44ff-a7ca-cea0b2739eed")
+		)
+		(instances
+			(project "B-Sides 2025"
+				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 113.03 44.45 0)
 		(unit 1)
@@ -8348,7 +9782,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 113.03 44.45 0)
 			(effects
 				(font
@@ -8376,6 +9810,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 113.03 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 113.03 44.45 0)
 			(effects
 				(font
@@ -8427,7 +9870,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 254 71.628 0)
 			(effects
 				(font
@@ -8455,6 +9898,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 254 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 71.628 0)
 			(effects
 				(font
@@ -8506,7 +9958,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 70.358 0)
 			(effects
 				(font
@@ -8534,6 +9986,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 215.9 70.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 215.9 70.358 0)
 			(effects
 				(font
@@ -8585,7 +10046,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 54.61 39.37 0)
 			(effects
 				(font
@@ -8613,6 +10074,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 54.61 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 54.61 39.37 0)
 			(effects
 				(font

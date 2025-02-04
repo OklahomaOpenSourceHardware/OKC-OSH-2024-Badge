@@ -52,7 +52,11 @@
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "copper_edge_clearance|135131784|66647288|e4de332a-d2ed-46a2-b4c9-61cafac61da6|56f384e8-0789-4a9b-8889-d47ee6c81f85",
+        "copper_edge_clearance|186527047|65945888|4b9e2803-3a28-4768-93e1-15263e09509e|0d565a95-fa6e-4ddb-bb5f-ab29705bebe8",
+        "copper_edge_clearance|193366376|67780779|fc443823-c5a0-4584-b570-e110ad8d803f|9e720ece-de61-4af7-9200-1f7c389078c9"
+      ],
       "meta": {
         "version": 2
       },
@@ -469,7 +473,7 @@
       "plot": "Gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "B-Sides 2025.step",
       "svg": "",
       "vrml": ""
     },
@@ -550,6 +554,12 @@
           "group_by": false,
           "label": "Description",
           "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "price",
+          "name": "price",
           "show": false
         }
       ],
