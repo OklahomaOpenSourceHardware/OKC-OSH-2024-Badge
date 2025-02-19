@@ -214,10 +214,10 @@ void test_led(int led)
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), high);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
             break;
         case 1:
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
@@ -236,17 +236,17 @@ void test_led(int led)
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), high);
             break;
         case 3:
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), high);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
             break;
         case 4:
@@ -260,70 +260,70 @@ void test_led(int led)
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
             break;
         case 5:
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), high);
             break;
         case 6:
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), high);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
             break;
         case 7:
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), high);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
             break;
         case 8:
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), high);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
             break;
         case 9:
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), high);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
             break;
         case 10:
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
-            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), low);
+            GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), high);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 7), low);
             break;
         case 11:
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 5), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 6), GPIO_pinMode_O_pushPull, GPIO_Speed_10MHz);
-            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 7), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+            GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 5), low);
             GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 6), high);
@@ -447,23 +447,23 @@ void charliplex_led( uint8_t  data )
  ******************************************************************************************/
 void t2encoder_init( void )
 {
-	// Enable GPIOC, TIM2, and AFIO *very important!*
-	RCC->APB2PCENR |= RCC_APB2Periph_AFIO | RCC_APB2Periph_GPIOC;
-	RCC->APB1PCENR |= RCC_APB1Periph_TIM2;
+	// Enable GPIOD, TIM1, and AFIO *very important!*
+	RCC->APB2PCENR |= RCC_APB2Periph_AFIO | RCC_APB2Periph_GPIOD | RCC_APB2Periph_TIM1;
+	//RCC->APB1PCENR |= ;
 
-	AFIO->PCFR1 |= AFIO_PCFR1_TIM2_REMAP_PARTIALREMAP1; //set partial remap mode 1
+	//AFIO->PCFR1 |= AFIO_PCFR1_TIM2_REMAP_PARTIALREMAP1; //set partial remap mode 1
 
-	// PC2 is T2CH1_, Input w/ Pullup/down
-	GPIOC->CFGLR &= ~(0xf<<(4*2)); //clear old values
-	GPIOC->CFGLR |= (GPIO_CNF_IN_PUPD)<<(4*2); //set new ones
+	// PD0 is T1CH1N, Input floating
+	GPIOD->CFGLR &= ~(0xf<<(4*0)); //clear old values
+	GPIOD->CFGLR |= (GPIO_CNF_IN_FLOATING)<<(4*0); //set new ones
 	//1 = pull-up, 0 = pull-down
-	GPIOC->OUTDR |= 1<<2;
+	//GPIOD->OUTDR |= 1<<0;
 
-	// PC5 is T2CH2_, Input w/ Pullup/down
-	GPIOC->CFGLR &= ~(0xf<<(4*5)); //clear values
-	GPIOC->CFGLR |= (GPIO_CNF_IN_PUPD)<<(4*5); //set new ones
+	// PD2 is T2CH1N, Input floating
+	GPIOD->CFGLR &= ~(0xf<<(4*2)); //clear values
+	GPIOD->CFGLR |= (GPIO_CNF_IN_FLOATING)<<(4*2); //set new ones
 	//1 = pull-up, 0 = pull-down
-	GPIOC->OUTDR |= 1<<5;
+	//GPIOD->OUTDR |= 1<<2;
 	
 	// Reset TIM2 to init all regs
 	RCC->APB1PRSTR |= RCC_APB1Periph_TIM2;
