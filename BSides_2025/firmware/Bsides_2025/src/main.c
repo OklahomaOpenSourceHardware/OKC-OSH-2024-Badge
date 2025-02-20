@@ -75,15 +75,14 @@ Timer 2 pin mappings by AFIO->PCFR1
 
 #define I2C_ADDR 0x68
 
+#define MAX_ENCODER_COUNT 0x00ff
 
 uint32_t count;
+uint32_t ROT_A;
+uint32_t ROT_B;
+uint32_t ROT_SW;
 
-int last = 0;
-void handle_debug_input( int numbytes, uint8_t * data )
-{
-	last = data[0];
-	count += numbytes;
-}
+
 
 
 /******************************************************************************************
@@ -442,32 +441,71 @@ void charliplex_led( uint8_t  data )
    // GPIOC->BSHR = 1<<(charliplex_led_push_pull[led] );
 //}
 
+
+void EXTI7_0_IRQHandler( void ) __attribute__((interrupt));
+void EXTI7_0_IRQHandler( void )
+{
+    if( EXTI->INTFR & EXTI_Line0 )
+    {
+        ROT_A++;
+        EXTI->INTFR = EXTI_Line0;
+    }
+    if( EXTI->INTFR & EXTI_Line2 )
+    {
+        ROT_B++;
+        EXTI->INTFR = EXTI_Line2;
+    }
+    if( EXTI->INTFR & EXTI_Line3 )
+    {
+        ROT_SW++;
+        EXTI->INTFR = EXTI_Line3;
+    }
+
+}
+
 /******************************************************************************************
  * initialize TIM2 for PWM
  ******************************************************************************************/
-void t2encoder_init( void )
+void encoder_init( void )
 {
+    
+    funPinMode( PD0, GPIO_CFGLR_IN_FLOAT );
+    funPinMode( PD2, GPIO_CFGLR_IN_FLOAT );
+    funPinMode( PD3, GPIO_CFGLR_IN_FLOAT );
+
+	asm volatile(
+        #if __GNUC__ > 10
+                ".option arch, +zicsr\n"
+        #endif
+                 "addi t1, x0, 3\n"
+                "csrrw x0, 0x804, t1\n"
+                 : : :  "t1" );
+    // Configure the IO as an interrupt.
+	AFIO->EXTICR = AFIO_EXTICR_EXTI0_PD | AFIO_EXTICR_EXTI2_PD| AFIO_EXTICR_EXTI3_PD;   //AFIO_EXTICR_EXTI3_PD;
+	EXTI->INTENR = EXTI_INTENR_MR0|EXTI_INTENR_MR2|EXTI_INTENR_MR3; // Enable EXT3
+	EXTI->RTENR = EXTI_FTENR_TR0|EXTI_FTENR_TR2|EXTI_FTENR_TR3;// Falling edge trigger
+    NVIC_EnableIRQ( EXTI7_0_IRQn );
 	// Enable GPIOD, TIM1, and AFIO *very important!*
-	RCC->APB2PCENR |= RCC_APB2Periph_AFIO | RCC_APB2Periph_GPIOD | RCC_APB2Periph_TIM1;
+	//RCC->APB2PCENR |= RCC_APB2Periph_AFIO | RCC_APB2Periph_GPIOD | RCC_APB2Periph_TIM1;
 	//RCC->APB1PCENR |= ;
 
 	//AFIO->PCFR1 |= AFIO_PCFR1_TIM2_REMAP_PARTIALREMAP1; //set partial remap mode 1
 
 	// PD0 is T1CH1N, Input floating
-	GPIOD->CFGLR &= ~(0xf<<(4*0)); //clear old values
-	GPIOD->CFGLR |= (GPIO_CNF_IN_FLOATING)<<(4*0); //set new ones
+	//GPIOD->CFGLR &= ~(0xf<<(4*0)); //clear old values
+	//GPIOD->CFGLR |= (GPIO_CNF_IN_FLOATING)<<(4*0); //set new ones
 	//1 = pull-up, 0 = pull-down
 	//GPIOD->OUTDR |= 1<<0;
 
 	// PD2 is T2CH1N, Input floating
-	GPIOD->CFGLR &= ~(0xf<<(4*2)); //clear values
-	GPIOD->CFGLR |= (GPIO_CNF_IN_FLOATING)<<(4*2); //set new ones
+	//GPIOD->CFGLR &= ~(0xf<<(4*2)); //clear values
+	//GPIOD->CFGLR |= (GPIO_CNF_IN_FLOATING)<<(4*2); //set new ones
 	//1 = pull-up, 0 = pull-down
 	//GPIOD->OUTDR |= 1<<2;
 	
 	// Reset TIM2 to init all regs
-	RCC->APB1PRSTR |= RCC_APB1Periph_TIM2;
-	RCC->APB1PRSTR &= ~RCC_APB1Periph_TIM2;
+	//RCC->APB1PRSTR |= RCC_APB1Periph_TIM2;
+	//RCC->APB1PRSTR &= ~RCC_APB1Periph_TIM2;
 	
 	// set TIM2 clock prescaler If you want to reduce the resolution of the encoder
 	//TIM2->PSC = 0x0000;
@@ -476,17 +514,18 @@ void t2encoder_init( void )
 	//TIM2->ATRLR = 0xffff;
 
 	// SMCFGR: set encoder mode SMS=011b
-	TIM2->SMCFGR |= TIM_EncoderMode_TI12;
+	//TIM2->SMCFGR |= TIM_EncoderMode_TI12;
 
 	// initialize timer
-	TIM2->SWEVGR |= TIM_UG;
+	//TIM2->SWEVGR |= TIM_UG;
 
 	// set count to about mid-scale to avoid wrap-around
-	TIM2->CNT = 0x8fff;
+	//TIM2->CNT = 0x8fff;
 
 	// Enable TIM2
-	TIM2->CTLR1 |= TIM_CEN;
+	//TIM2->CTLR1 |= TIM_CEN;
 };
+
 
 /*****************************************************************************************
  * entry
@@ -499,11 +538,11 @@ int main()
 
 
 	Delay_Ms( 100 );
-	t2encoder_init();
+	encoder_init();
 
     GPIO_port_enable(GPIO_port_C);
-	uint16_t initial_count = TIM2->CNT;
-	uint16_t last_count = TIM2->CNT;
+	//uint16_t initial_count = TIM2->CNT;
+	uint16_t last_count = 0;
 	while(1)
 	{
         int i;
@@ -522,9 +561,10 @@ int main()
             //GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low );
             Delay_Ms( 100 );
         }
-		uint16_t count = TIM2->CNT;
+        uint16_t count = ROT_A-ROT_B;
+		//uint16_t count = TIM2->CNT;
 		if( count != last_count) {
-			printf("Position relative=%ld absolute=%u delta=%ld\n",(int32_t)count - initial_count, count, (int32_t)count-last_count);
+			printf("Position relative=%ld absolute=%ld delta=%ld\n",(int32_t) count, (int32_t)ROT_A+ROT_B, (int32_t)count-last_count);
 			last_count = count;
 		}
 		Delay_Ms(50);
