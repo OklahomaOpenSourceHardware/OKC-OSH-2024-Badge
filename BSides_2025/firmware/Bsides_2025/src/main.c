@@ -536,7 +536,7 @@ int main()
 
     while( !DebugPrintfBufferFree() );
 
-
+    printf("hello world");
 	Delay_Ms( 100 );
 	encoder_init();
 

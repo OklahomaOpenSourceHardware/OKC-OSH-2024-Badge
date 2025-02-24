@@ -4272,6 +4272,26 @@
 		)
 		(uuid "2001d148-fdee-4d44-8e56-845b98c98300")
 	)
+	(text "R4 2.9 both sides\nR3 1.5 both sides\nR6 1.5v both sides\nR5 1.5v both sides"
+		(exclude_from_sim no)
+		(at 237.744 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "26aab485-2331-400e-b2bc-dcf917ca2e08")
+	)
+	(text "gpio Y4,Y3,Y2,Y1 (PC0,PD6, PD7, PC3)\n\nD1 = HH01\nD2 = H0H1\nD3 = 0HH1\nD4 = HH10\nD5 = H01H\nD6 = 0H1H\nD7 = H1H0\nD8 = H10H\nD9 = 01HH\nD10= 1HH0\nD11= 1H0H\nD12= 10HH\n"
+		(exclude_from_sim no)
+		(at 183.642 91.186 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "74b3d12a-d841-419f-adf5-95f825b95ec8")
+	)
 	(text "C965868\nC693905\nC965861\nC965869\nC965862\n"
 		(exclude_from_sim no)
 		(at 203.2 26.162 0)
@@ -4282,6 +4302,16 @@
 		)
 		(uuid "95bbefbe-515e-40d1-b0ed-477f41d99916")
 	)
+	(text "3v"
+		(exclude_from_sim no)
+		(at 232.664 52.832 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c2d030fa-58d7-4708-b49b-0c61f9b5e801")
+	)
 	(text "gpio X4,X3,X2,X1 (7,6,5,4)\n\nD1 = HH10\nD2 = H1H0\nD3 = 1HH0\nD4 = HH01\nD5 = H10H\nD6 = 1H0H\nD7 = H0H1\nD8 = H01H\nD9 = 10HH\nD10= 0HH1\nD11= 0H1H\nD12= 01HH\n"
 		(exclude_from_sim no)
 		(at 185.928 55.88 0)
@@ -4291,6 +4321,16 @@
 			)
 		)
 		(uuid "ce3d86b0-116c-4190-932e-cd9313bfa43f")
+	)
+	(text "3v"
+		(exclude_from_sim no)
+		(at 226.314 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e02d5e4a-346c-498d-8821-3fddca803240")
 	)
 	(text "C2687283\nC470753 (preferred)"
 		(exclude_from_sim no)
