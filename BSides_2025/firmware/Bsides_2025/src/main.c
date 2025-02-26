@@ -83,6 +83,8 @@ uint32_t ROT_B;
 uint32_t ROT_SW;
 uint16_t last_led;
 
+uint8_t encoderClicked = 0;
+int encoderClicks = 0;
 
 /*
 D1 = HH10
@@ -424,22 +426,37 @@ void charliplex_led( uint8_t  data )
 void EXTI7_0_IRQHandler( void ) __attribute__((interrupt));
 void EXTI7_0_IRQHandler( void )
 {
-    if( EXTI->INTFR & EXTI_Line0 )
+    // if( EXTI->INTFR & EXTI_Line0 )
+    // {
+    //     ROT_A++;
+    //     EXTI->INTFR = EXTI_Line0;
+    // }
+
+    if ( EXTI->INTFR & EXTI_Line0 )
     {
-        ROT_A++;
+        encoderClicked = 1;
+
+        if (funDigitalRead(PD2) == 1)
+        {
+            encoderClicks++;
+        }
+        else
+        {
+            encoderClicks--;
+        }
+        
         EXTI->INTFR = EXTI_Line0;
     }
-    if( EXTI->INTFR & EXTI_Line2 )
-    {
-        ROT_B++;
-        EXTI->INTFR = EXTI_Line2;
-    }
-    if( EXTI->INTFR & EXTI_Line3 )
-    {
-        ROT_SW++;
-        EXTI->INTFR = EXTI_Line3;
-    }
-
+     if( EXTI->INTFR & EXTI_Line2 )
+     {
+         ROT_B++;
+         EXTI->INTFR = EXTI_Line2;
+     }
+     if( EXTI->INTFR & EXTI_Line3 )
+     {
+         ROT_SW++;
+         EXTI->INTFR = EXTI_Line3;
+     }
 }
 
 /******************************************************************************************
@@ -512,42 +529,53 @@ int check_rst();
 int main()
 {
 	//SystemInit();
-   // check_rst();
+    check_rst();
    	// Enable GPIOs
 	funGpioInitAll();
     while( !DebugPrintfBufferFree() );
 
     printf("hello world");
 	Delay_Ms( 100 );
-	//encoder_init();
+	encoder_init();
+    int i;
+    for( i = 0; i < 12; i++ )
+    {
+        charlie_led(i%12);
 
+
+
+
+       //GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), CHARLIE_X1(CHARLIEPLEX_IO), GPIO_Speed_10MHz);
+
+      // GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
+        
+        //GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), CHARLIEPLEX_LED(CHARLIE_X1) );
+        //GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low );
+        Delay_Ms( 100 );
+    }
     //GPIO_port_enable(GPIO_port_C);
 	//uint16_t initial_count = TIM2->CNT;
 	uint16_t last_count = 0;
 	while(1)
 	{
-        int i;
-        for( i = 0; i < 12; i++ )
-        {
-            charlie_led(i);
+
+            charlie_led(encoderClicks%12);
 
 
 
-
-           //GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), CHARLIE_X1(CHARLIEPLEX_IO), GPIO_Speed_10MHz);
-
-          // GPIO_pinMode(GPIOv_from_PORT_PIN(GPIO_port_C, 4), GPIO_pinMode_I_floating, GPIO_Speed_10MHz);
-            
-		    //GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), CHARLIEPLEX_LED(CHARLIE_X1) );
-            //GPIO_digitalWrite(GPIOv_from_PORT_PIN(GPIO_port_C, 4), low );
             Delay_Ms( 100 );
-        }
+
         uint16_t count = ROT_A-ROT_B;
 		//uint16_t count = TIM2->CNT;
 		if( count != last_count) {
 			printf("Position relative=%ld absolute=%ld delta=%ld\n",(int32_t) count, (int32_t)ROT_A+ROT_B, (int32_t)count-last_count);
 			last_count = count;
 		}
+        if(encoderClicked == 1)
+        {
+            encoderClicked = 0; 
+            printf("Encoder value: %d\r\n", encoderClicks);
+        }
 		Delay_Ms(50);
 	}
 }
