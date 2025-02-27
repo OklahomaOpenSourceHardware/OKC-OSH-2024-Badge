@@ -3274,12 +3274,6 @@
 		(uuid "7441e118-e38c-49fd-bd0a-ad4186bf8950")
 	)
 	(junction
-		(at 142.24 149.86)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7cd30b6b-6928-42b8-bb74-9ccea2a7860b")
-	)
-	(junction
 		(at 131.826 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3697,16 +3691,6 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 149.86) (xy 142.24 153.924)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5519a9ba-4bcb-4b6d-9376-39c1b3b2ff7e")
-	)
-	(wire
-		(pts
 			(xy 242.57 62.738) (xy 254 62.738)
 		)
 		(stroke
@@ -3744,16 +3728,6 @@
 			(type default)
 		)
 		(uuid "5dd76a19-7e85-45c6-bcbd-c588a73f14ec")
-	)
-	(wire
-		(pts
-			(xy 142.24 144.526) (xy 142.24 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e7e566f-7496-4480-b136-14f14f291855")
 	)
 	(wire
 		(pts
@@ -4347,16 +4321,6 @@
 	)
 	(wire
 		(pts
-			(xy 145.542 149.86) (xy 142.24 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2e70eff-07a9-4289-8f0c-4959a07d5a19")
-	)
-	(wire
-		(pts
 			(xy 131.572 107.95) (xy 115.57 107.95)
 		)
 		(stroke
@@ -4374,16 +4338,6 @@
 			(type default)
 		)
 		(uuid "c6032ad9-e3bc-458b-8c3a-6794c4054902")
-	)
-	(wire
-		(pts
-			(xy 142.24 144.526) (xy 142.494 144.526)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c62c21a4-d08c-4983-905d-a1dc1a8d1e91")
 	)
 	(wire
 		(pts
@@ -5108,7 +5062,7 @@
 		(uuid "9425485e-cbe0-4abc-b0fe-d67235ade4ba")
 	)
 	(label "GPIO_PHOTO_A"
-		(at 145.542 149.86 0)
+		(at 146.812 150.622 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5361,6 +5315,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 242.57 36.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5aee5167-2ff2-415c-8797-949f1ec4a6f1")
 		)
@@ -5510,7 +5473,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 142.24 156.464 0)
+		(at 146.812 153.162 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5519,7 +5482,7 @@
 		(fields_autoplaced yes)
 		(uuid "0b49319f-feec-4d8b-a383-e0ae00a0870e")
 		(property "Reference" "R7"
-			(at 143.764 155.1939 0)
+			(at 148.336 151.8919 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5528,7 +5491,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 143.764 157.7339 0)
+			(at 148.336 154.4319 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5537,7 +5500,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 142.24 156.464 0)
+			(at 146.812 153.162 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5546,7 +5509,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 142.24 156.464 0)
+			(at 146.812 153.162 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5555,7 +5518,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 142.24 156.464 0)
+			(at 146.812 153.162 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5564,7 +5527,16 @@
 			)
 		)
 		(property "LCSC" "C2961361"
-			(at 142.24 156.464 0)
+			(at 146.812 153.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 146.812 153.162 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5783,6 +5755,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 230.124 34.798 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "eeafb691-d51a-4845-aa97-0ccee05fd448")
 		)
@@ -5854,6 +5835,15 @@
 			)
 		)
 		(property "LCSC" "C1525"
+			(at 131.826 54.102 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 131.826 54.102 0)
 			(effects
 				(font
@@ -5941,6 +5931,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 215.9 37.338 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b15ee5a4-25e6-41b1-8ff7-c091098f36eb")
 		)
@@ -6020,6 +6019,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 229.87 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9789a392-84ec-474b-aade-764821e402da")
 		)
@@ -6091,6 +6099,15 @@
 			)
 		)
 		(property "LCSC" "C693905"
+			(at 254 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -6317,6 +6334,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 53.594 136.144 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "202e70cb-9027-4cf1-b888-986ba7ed37a6")
 		)
@@ -6399,6 +6425,24 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5346821"
+			(at 218.186 137.414 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 218.186 137.414 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "000df04f-50c9-4d52-9103-d4b78039694d")
 		)
@@ -6472,6 +6516,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 39.116 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "B-Sides 2025"
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
@@ -6537,6 +6590,15 @@
 			)
 		)
 		(property "LCSC" "C693905"
+			(at 215.9 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -6690,6 +6752,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 215.9 47.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f1c79e6c-60b9-44ae-8f19-7c7b130dc4b0")
 		)
@@ -6761,6 +6832,15 @@
 			)
 		)
 		(property "LCSC" "C2961361"
+			(at 64.77 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 64.77 99.822 0)
 			(effects
 				(font
@@ -6914,6 +6994,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 242.57 60.198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "398e8ed3-989a-4f4c-8718-d3759036c21d")
 		)
@@ -7059,6 +7148,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 46.99 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "31eec6b6-b309-49f1-95e2-3ae46cf76f7e")
 		)
@@ -7076,7 +7174,7 @@
 	)
 	(symbol
 		(lib_id "power:VDD")
-		(at 142.494 134.366 0)
+		(at 146.812 140.462 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7085,7 +7183,7 @@
 		(fields_autoplaced yes)
 		(uuid "59c5f4d4-1a96-4da1-8b58-bc350568545d")
 		(property "Reference" "#PWR014"
-			(at 142.494 138.176 0)
+			(at 146.812 144.272 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7094,7 +7192,7 @@
 			)
 		)
 		(property "Value" "VDD"
-			(at 142.494 129.286 0)
+			(at 146.812 135.382 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7102,7 +7200,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.494 134.366 0)
+			(at 146.812 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7111,7 +7209,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.494 134.366 0)
+			(at 146.812 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7120,7 +7218,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDD\""
-			(at 142.494 134.366 0)
+			(at 146.812 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7196,6 +7294,15 @@
 			)
 		)
 		(property "LCSC" "C20416370"
+			(at 175.006 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 175.006 142.748 0)
 			(effects
 				(font
@@ -7287,6 +7394,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 128.778 49.276 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6f2dd843-5332-40d0-94eb-8d2de3a1bd73")
 		)
@@ -7366,6 +7482,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 229.87 48.768 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "17d9808d-7580-4728-b911-b68399d6a733")
 		)
@@ -7383,7 +7508,7 @@
 	)
 	(symbol
 		(lib_id "Sensor_Optical:KPS-3227")
-		(at 142.494 139.446 0)
+		(at 146.812 145.542 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7392,7 +7517,7 @@
 		(fields_autoplaced yes)
 		(uuid "6da274b6-7da4-4049-80e6-06d39fc1fcec")
 		(property "Reference" "Q1"
-			(at 145.034 137.4266 0)
+			(at 149.352 143.5226 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7401,7 +7526,7 @@
 			)
 		)
 		(property "Value" "PT19-21C/L41/TR8"
-			(at 145.034 139.9666 0)
+			(at 149.352 146.0626 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7410,7 +7535,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_0603_1608Metric"
-			(at 142.494 135.636 0)
+			(at 146.812 141.732 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7419,7 +7544,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.kingbright.com/attachments/file/psearch/000/00/00/KPS-3227SP1C(Ver.16).pdf"
-			(at 142.494 135.636 0)
+			(at 146.812 141.732 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7428,7 +7553,7 @@
 			)
 		)
 		(property "Description" "Ambient light NPN phototransistor, KPS-3227"
-			(at 142.494 139.446 0)
+			(at 146.812 145.542 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7437,7 +7562,16 @@
 			)
 		)
 		(property "LCSC" "C20416370"
-			(at 142.494 139.446 0)
+			(at 146.812 145.542 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 146.812 145.542 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7492,7 +7626,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
 			(at 47.498 183.896 90)
 			(effects
 				(font
@@ -7511,6 +7645,24 @@
 			)
 		)
 		(property "Description" "Schottky diode, small symbol"
+			(at 47.498 183.896 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 47.498 183.896 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C146335"
 			(at 47.498 183.896 0)
 			(effects
 				(font
@@ -7657,6 +7809,15 @@
 			)
 		)
 		(property "LCSC" "C693905"
+			(at 254 36.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -8009,6 +8170,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 105.41 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "d65473e1-49cc-42b4-b608-0bb60712fb7f")
 		)
@@ -8209,6 +8379,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 242.57 47.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "74443140-711b-428f-a35f-797123262f20")
 		)
@@ -8226,7 +8405,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 142.24 159.004 0)
+		(at 146.812 155.702 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8234,7 +8413,7 @@
 		(dnp no)
 		(uuid "a033a442-cb01-4c90-b17f-233c0bcc9157")
 		(property "Reference" "#PWR010"
-			(at 142.24 165.354 0)
+			(at 146.812 162.052 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8243,7 +8422,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 142.24 164.084 0)
+			(at 146.812 160.782 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8251,7 +8430,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 159.004 0)
+			(at 146.812 155.702 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8260,7 +8439,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 159.004 0)
+			(at 146.812 155.702 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8269,7 +8448,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 142.24 159.004 0)
+			(at 146.812 155.702 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8683,6 +8862,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 55.88 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f14abd38-2b80-4c6a-a5a2-b369313c5efa")
 		)
@@ -8892,6 +9080,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 49.53 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9a3d635f-e0c5-4c45-b78a-78043625de7c")
 		)
@@ -8963,6 +9160,15 @@
 			)
 		)
 		(property "LCSC" "C2961361"
+			(at 73.406 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 73.406 99.822 0)
 			(effects
 				(font
@@ -9048,6 +9254,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 50.8 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0f8fa34c-c62c-4f4b-81d5-16217b7e0894")
 		)
@@ -9117,6 +9332,15 @@
 			)
 		)
 		(property "LCSC" ""
+			(at 39.878 186.436 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 39.878 186.436 0)
 			(effects
 				(font
@@ -9206,6 +9430,15 @@
 			)
 		)
 		(property "price" ""
+			(at 53.594 162.814 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 53.594 162.814 0)
 			(effects
 				(font
@@ -9305,6 +9538,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 220.726 147.574 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3959ad80-ce26-4b84-be55-847b7c625d73")
 		)
@@ -9376,6 +9618,15 @@
 			)
 		)
 		(property "LCSC" "C693905"
+			(at 254 47.498 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -9463,6 +9714,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 242.57 70.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c6a6a6d5-dc47-4f22-8592-0dca6570bb66")
 		)
@@ -9532,6 +9792,15 @@
 			)
 		)
 		(property "LCSC" "C470742"
+			(at 96.52 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 96.52 52.07 0)
 			(effects
 				(font
@@ -9631,6 +9900,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 175.006 150.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6e9f9663-bd26-4af3-8e8b-171a486e8688")
 		)
@@ -9702,6 +9980,15 @@
 			)
 		)
 		(property "LCSC" "C1525"
+			(at 45.72 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 45.72 48.26 0)
 			(effects
 				(font
@@ -9846,6 +10133,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 39.116 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "B-Sides 2025"
 				(path "/e1b4e379-514d-4d28-9daa-2767f37bfd80"
@@ -9911,6 +10207,15 @@
 			)
 		)
 		(property "LCSC" "C693905"
+			(at 229.87 70.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 229.87 70.358 0)
 			(effects
 				(font
@@ -10056,6 +10361,15 @@
 			)
 		)
 		(property "LCSC" "C12530"
+			(at 92.964 88.138 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 92.964 88.138 0)
 			(effects
 				(font
@@ -10275,6 +10589,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 113.03 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d001dd30-1564-4243-b7ec-57a13beef7d8")
 		)
@@ -10346,6 +10669,15 @@
 			)
 		)
 		(property "LCSC" "C106235"
+			(at 254 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 254 71.628 0)
 			(effects
 				(font
@@ -10433,6 +10765,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 215.9 70.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "851662e1-7233-4df0-a12e-71b6a356774b")
 		)
@@ -10504,6 +10845,15 @@
 			)
 		)
 		(property "LCSC" "C2961361"
+			(at 54.61 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 54.61 39.37 0)
 			(effects
 				(font
