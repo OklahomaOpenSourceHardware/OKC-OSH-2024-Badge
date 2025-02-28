@@ -709,175 +709,6 @@
 				)
 			)
 		)
-		(symbol "Device:LED"
-			(pin_numbers hide)
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "LED"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Light emitting diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "LED diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "LED_0_1"
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "LED_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:R_Small"
 			(pin_numbers hide)
 			(pin_names
@@ -2188,6 +2019,332 @@
 				)
 			)
 		)
+		(symbol "PCM_LED_AKL:LED_Generic_Reverse_Amber"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED_Generic_Reverse_Amber"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "LED amber diode generic"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LED_Generic_Reverse_Amber_0_1"
+				(polyline
+					(pts
+						(xy -0.508 1.905) (xy 0.254 3.429)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.397) (xy 1.27 2.921)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27) (xy 1.27 0) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type color)
+						(color 220 180 30 1)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 2.794) (xy -0.254 3.048) (xy 0.254 3.429) (xy 0.254 2.794)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.286) (xy 0.762 2.54) (xy 1.27 2.921) (xy 1.27 2.286)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "LED_Generic_Reverse_Amber_0_2"
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy -0.889 -0.889)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.651 0.889) (xy -2.159 2.413)
+					)
+					(stroke
+						(width 0)
+						(type default)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 1.27) (xy -1.016 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.778) (xy 1.778 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.889 0.889) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.889 -0.889) (xy -1.778 0) (xy 0.889 0.889) (xy 0 -1.778) (xy -0.889 -0.889)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type color)
+						(color 220 180 30 1)
+					)
+				)
+			)
+			(symbol "LED_Generic_Reverse_Amber_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LED_Generic_Reverse_Amber_1_2"
+				(polyline
+					(pts
+						(xy -2.159 2.413) (xy -2.286 1.778) (xy -1.6764 1.9812) (xy -2.159 2.413)
+					)
+					(stroke
+						(width 0)
+						(type default)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 2.794) (xy -1.143 2.159) (xy -0.5334 2.3622) (xy -1.016 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+						(color 220 180 30 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at 2.54 2.54 180)
+					(length 0)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 0)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "PCM_Transistor_MOSFET_AKL:Si2323DS"
 			(pin_names hide)
 			(exclude_from_sim no)
@@ -3184,16 +3341,10 @@
 		)
 	)
 	(junction
-		(at 215.9 74.168)
+		(at 229.87 74.168)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0defefed-64cd-4718-b733-11b646e082f5")
-	)
-	(junction
-		(at 229.87 62.738)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1459377d-9392-4d71-b374-2f242f7ff789")
+		(uuid "0ace338e-616a-4a6c-a631-92c3f6d28183")
 	)
 	(junction
 		(at 240.538 43.18)
@@ -3202,16 +3353,16 @@
 		(uuid "15f2674e-84e5-4681-ac9d-9e887de2e55f")
 	)
 	(junction
+		(at 242.57 74.168)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1ac71659-854d-4c74-82f5-db40c3c25437")
+	)
+	(junction
 		(at 230.124 39.878)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2b0bd4b4-b81f-4090-a168-659a19fa2f93")
-	)
-	(junction
-		(at 242.57 51.308)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3fa8a40f-6ca7-4715-b95e-895a871d0e64")
 	)
 	(junction
 		(at 212.598 55.118)
@@ -3232,22 +3383,10 @@
 		(uuid "552f1250-2a51-4e98-8b1e-b72ecdaf2a56")
 	)
 	(junction
-		(at 242.57 39.878)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "57447685-7793-4779-8dbf-2ca036cc3f0a")
-	)
-	(junction
-		(at 242.57 74.168)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "58d7947a-8e75-474e-b009-a5b001fe5613")
-	)
-	(junction
 		(at 215.9 62.738)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5ee6f313-3d2d-4c20-ac1b-69078ab0d3b5")
+		(uuid "6221c6ee-6ee1-4d51-a19c-d036e958909a")
 	)
 	(junction
 		(at 46.99 66.04)
@@ -3268,10 +3407,22 @@
 		(uuid "6aa7c4d5-7c46-4f1e-b1da-fcec805f6057")
 	)
 	(junction
+		(at 242.57 39.878)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ad40f41-777d-4fb5-b75d-41ae86c524a1")
+	)
+	(junction
 		(at 55.88 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7441e118-e38c-49fd-bd0a-ad4186bf8950")
+	)
+	(junction
+		(at 215.9 74.168)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "836326b2-ce74-493f-9f39-38ef89833c61")
 	)
 	(junction
 		(at 131.826 49.53)
@@ -3292,22 +3443,10 @@
 		(uuid "8f4d86c5-8a0c-4603-9772-a0d92b1dfaa3")
 	)
 	(junction
-		(at 229.87 74.168)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8fd67a8b-776f-40d7-ad10-0f79f1edc832")
-	)
-	(junction
 		(at 113.03 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "980b7897-2aee-431f-866e-23d6be0ae49a")
-	)
-	(junction
-		(at 215.9 51.308)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "acf4df75-13cc-4a79-81f3-7af9afd5a5a6")
 	)
 	(junction
 		(at 212.598 43.688)
@@ -3340,6 +3479,12 @@
 		(uuid "d35883bd-2bef-4547-b96e-48e36ad64d18")
 	)
 	(junction
+		(at 215.9 51.308)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "decd7f29-bdb1-4252-8c17-e8417d2726b2")
+	)
+	(junction
 		(at 227.838 46.228)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3350,6 +3495,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e51cf344-d3b2-412c-be73-1b7676168abc")
+	)
+	(junction
+		(at 242.57 51.308)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee12951d-4f2f-4db2-8c06-1cd871a48b6c")
+	)
+	(junction
+		(at 229.87 62.738)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f323a0f5-f966-457d-b371-2cac439c5f3d")
 	)
 	(no_connect
 		(at 131.572 100.33)
@@ -3471,16 +3628,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 62.738) (xy 229.87 62.738)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c41fd06-c4e0-4736-b8f1-0a07f33efe37")
-	)
-	(wire
-		(pts
 			(xy 131.572 113.03) (xy 115.57 113.03)
 		)
 		(stroke
@@ -3488,16 +3635,6 @@
 			(type default)
 		)
 		(uuid "1ee4eb11-a396-49e6-9a21-c8d7f3c84019")
-	)
-	(wire
-		(pts
-			(xy 229.87 74.168) (xy 242.57 74.168)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f9091db-8ca3-4aae-9f78-cceadbf6e118")
 	)
 	(wire
 		(pts
@@ -3528,16 +3665,6 @@
 			(type default)
 		)
 		(uuid "2f5045f3-ea22-4c68-859f-e51c5acfcaa9")
-	)
-	(wire
-		(pts
-			(xy 215.9 51.308) (xy 229.87 51.308)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f6c0ab1-b566-45e9-8045-f1ba3c760471")
 	)
 	(wire
 		(pts
@@ -3631,16 +3758,6 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 74.168) (xy 229.87 74.168)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4344cdd6-25ae-401f-90ed-5e41a312ebfe")
-	)
-	(wire
-		(pts
 			(xy 115.57 115.57) (xy 131.572 115.57)
 		)
 		(stroke
@@ -3688,6 +3805,16 @@
 			(type default)
 		)
 		(uuid "5091bcd8-9e2f-48b5-8ea2-60770df52073")
+	)
+	(wire
+		(pts
+			(xy 215.9 51.308) (xy 229.87 51.308)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52e03060-1a68-4157-bba9-585c090fc474")
 	)
 	(wire
 		(pts
@@ -3758,6 +3885,16 @@
 			(type default)
 		)
 		(uuid "6521f553-a025-4e20-8141-b384a775852b")
+	)
+	(wire
+		(pts
+			(xy 242.57 51.308) (xy 254 51.308)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6566b956-96d7-4e96-89f4-ed4e0321deab")
 	)
 	(wire
 		(pts
@@ -3878,6 +4015,16 @@
 			(type default)
 		)
 		(uuid "793f782d-7e96-47de-ad01-411803d2b5db")
+	)
+	(wire
+		(pts
+			(xy 215.9 62.738) (xy 229.87 62.738)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e08a110-48ba-4613-8444-d88cb832a6c5")
 	)
 	(wire
 		(pts
@@ -4011,13 +4158,13 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 74.168) (xy 254 74.168)
+			(xy 242.57 39.878) (xy 254 39.878)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8e5471db-9225-44f0-9db3-9e45291c2de1")
+		(uuid "8f3886f1-d43d-42ca-a0b4-24ed74b6044d")
 	)
 	(wire
 		(pts
@@ -4131,16 +4278,6 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 39.878) (xy 254 39.878)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1ee6252-ecf9-426b-b070-526558b1e562")
-	)
-	(wire
-		(pts
 			(xy 220.726 129.032) (xy 228.092 129.032)
 		)
 		(stroke
@@ -4188,16 +4325,6 @@
 			(type default)
 		)
 		(uuid "b00cdc32-8ce3-4e3c-a8a2-0b258d165242")
-	)
-	(wire
-		(pts
-			(xy 242.57 51.308) (xy 254 51.308)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b10b3cd0-0dc2-46c3-96c9-a90019fe631e")
 	)
 	(wire
 		(pts
@@ -4281,6 +4408,16 @@
 	)
 	(wire
 		(pts
+			(xy 229.87 62.738) (xy 242.57 62.738)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbd71339-27e9-43ca-aff0-8c9f46de6c33")
+	)
+	(wire
+		(pts
 			(xy 24.384 141.224) (xy 39.624 141.224)
 		)
 		(stroke
@@ -4288,6 +4425,16 @@
 			(type default)
 		)
 		(uuid "bc118ca9-0ee0-4462-801f-39ea349a1966")
+	)
+	(wire
+		(pts
+			(xy 215.9 74.168) (xy 229.87 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcc14c16-d54f-4271-bb1f-8a3b8fe197b6")
 	)
 	(wire
 		(pts
@@ -4411,16 +4558,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 62.738) (xy 242.57 62.738)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0b1efa2-71cf-414f-93a1-ef230dd67f3f")
-	)
-	(wire
-		(pts
 			(xy 229.87 46.228) (xy 227.838 46.228)
 		)
 		(stroke
@@ -4541,6 +4678,16 @@
 	)
 	(wire
 		(pts
+			(xy 229.87 74.168) (xy 242.57 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2f2f00d-69c7-48d1-b9c7-4410665f5113")
+	)
+	(wire
+		(pts
 			(xy 53.594 183.642) (xy 59.436 183.642)
 		)
 		(stroke
@@ -4618,6 +4765,16 @@
 			(type default)
 		)
 		(uuid "eb773f48-f76e-45d4-a7d7-18db01890f70")
+	)
+	(wire
+		(pts
+			(xy 242.57 74.168) (xy 254 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f15c296a-e3a5-48f6-9014-f4a333f3df2c")
 	)
 	(wire
 		(pts
@@ -5252,8 +5409,8 @@
 		(uuid "f4547ffc-aa8d-442c-a270-5b94d3aec62f")
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 242.57 36.068 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 242.57 36.068 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5262,24 +5419,24 @@
 		(fields_autoplaced yes)
 		(uuid "049e7d55-5ab9-44e7-b9ee-8ff19f71b5b1")
 		(property "Reference" "D2"
-			(at 246.38 36.3854 90)
+			(at 247.65 34.7979 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 246.38 38.9254 90)
+			(at 247.65 37.3379 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 36.068 0)
 			(effects
 				(font
@@ -5297,7 +5454,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 242.57 36.068 0)
 			(effects
 				(font
@@ -5526,7 +5683,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2961361"
+		(property "LCSC" "C60490"
 			(at 146.812 153.162 0)
 			(effects
 				(font
@@ -5692,8 +5849,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 230.124 34.798 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 230.124 34.798 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5702,24 +5859,24 @@
 		(fields_autoplaced yes)
 		(uuid "11627d88-3a59-4922-8cd5-fef63117a815")
 		(property "Reference" "D1"
-			(at 233.934 35.1154 90)
+			(at 234.95 33.5279 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 233.934 37.6554 90)
+			(at 234.95 36.0679 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 230.124 34.798 0)
 			(effects
 				(font
@@ -5737,7 +5894,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 230.124 34.798 0)
 			(effects
 				(font
@@ -5922,7 +6079,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C106235"
+		(property "LCSC" "C163453"
 			(at 215.9 37.338 0)
 			(effects
 				(font
@@ -5956,8 +6113,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 229.87 58.928 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 229.87 58.928 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5966,24 +6123,24 @@
 		(fields_autoplaced yes)
 		(uuid "13aef3f4-3152-43ba-aad6-09de315c07a0")
 		(property "Reference" "D8"
-			(at 233.68 59.2454 90)
+			(at 234.95 57.6579 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 233.68 61.7854 90)
+			(at 234.95 60.1979 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 229.87 58.928 0)
 			(effects
 				(font
@@ -6001,7 +6158,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 229.87 58.928 0)
 			(effects
 				(font
@@ -6044,8 +6201,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 254 58.928 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 254 58.928 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6054,24 +6211,24 @@
 		(fields_autoplaced yes)
 		(uuid "16a3a27a-be21-4cdb-ba3d-9044183cce94")
 		(property "Reference" "D9"
-			(at 257.81 59.2454 90)
+			(at 259.08 57.6579 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 257.81 61.7854 90)
+			(at 259.08 60.1979 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -6089,7 +6246,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -6425,7 +6582,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5346821"
+		(property "LCSC" "C347476"
 			(at 218.186 137.414 0)
 			(effects
 				(font
@@ -6535,8 +6692,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 215.9 58.928 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 215.9 58.928 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6545,24 +6702,24 @@
 		(fields_autoplaced yes)
 		(uuid "3d1d9761-6741-4841-a10c-a426777771d2")
 		(property "Reference" "D7"
-			(at 219.71 59.2454 90)
+			(at 220.98 57.6579 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 219.71 61.7854 90)
+			(at 220.98 60.1979 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -6580,7 +6737,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -6689,8 +6846,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 215.9 47.498 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 215.9 47.498 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6699,24 +6856,24 @@
 		(fields_autoplaced yes)
 		(uuid "43cc8ac1-99a4-4eed-a841-b57a7a62e7a6")
 		(property "Reference" "D4"
-			(at 219.71 47.8154 90)
+			(at 220.98 46.2279 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 219.71 50.3554 90)
+			(at 220.98 48.7679 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 47.498 0)
 			(effects
 				(font
@@ -6734,7 +6891,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 215.9 47.498 0)
 			(effects
 				(font
@@ -6831,7 +6988,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2961361"
+		(property "LCSC" "C60490"
 			(at 64.77 99.822 0)
 			(effects
 				(font
@@ -6985,7 +7142,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C106235"
+		(property "LCSC" "C163453"
 			(at 242.57 60.198 0)
 			(effects
 				(font
@@ -7473,7 +7630,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C106235"
+		(property "LCSC" "C163453"
 			(at 229.87 48.768 0)
 			(effects
 				(font
@@ -7653,7 +7810,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" ""
+		(property "LCSC" "C146335"
 			(at 47.498 183.896 0)
 			(effects
 				(font
@@ -7662,7 +7819,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C146335"
+		(property "Sim.Enable" ""
 			(at 47.498 183.896 0)
 			(effects
 				(font
@@ -7754,8 +7911,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 254 36.068 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 254 36.068 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7764,24 +7921,24 @@
 		(fields_autoplaced yes)
 		(uuid "73f60095-7306-4a28-ab1d-c196c10ef6f1")
 		(property "Reference" "D3"
-			(at 257.81 36.3854 90)
+			(at 259.08 34.7979 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 257.81 38.9254 90)
+			(at 259.08 37.3379 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -7799,7 +7956,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -8316,8 +8473,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 242.57 47.498 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 242.57 47.498 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8326,24 +8483,24 @@
 		(fields_autoplaced yes)
 		(uuid "9ffdc2aa-0496-4733-b80b-6ab97f22f13c")
 		(property "Reference" "D5"
-			(at 246.3666 47.8154 90)
+			(at 247.65 46.2279 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 246.3666 50.3554 90)
+			(at 247.65 48.7679 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 47.498 0)
 			(effects
 				(font
@@ -8361,7 +8518,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 242.57 47.498 0)
 			(effects
 				(font
@@ -8853,7 +9010,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2961361"
+		(property "LCSC" "C60490"
 			(at 55.88 60.96 0)
 			(effects
 				(font
@@ -9159,7 +9316,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2961361"
+		(property "LCSC" "C60490"
 			(at 73.406 99.822 0)
 			(effects
 				(font
@@ -9563,8 +9720,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 254 47.498 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 254 47.498 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9573,24 +9730,24 @@
 		(fields_autoplaced yes)
 		(uuid "da02b105-1e22-4c7b-8467-49b8fd0f507a")
 		(property "Reference" "D6"
-			(at 257.81 47.8154 90)
+			(at 259.08 46.2279 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 257.81 50.3554 90)
+			(at 259.08 48.7679 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -9608,7 +9765,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -9651,8 +9808,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 242.57 70.358 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 242.57 70.358 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9661,24 +9818,24 @@
 		(fields_autoplaced yes)
 		(uuid "dda7c3cf-36e6-4356-ae82-b96f8f4d10f4")
 		(property "Reference" "D12"
-			(at 246.38 70.6754 90)
+			(at 247.65 69.0879 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 246.38 73.2154 90)
+			(at 247.65 71.6279 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 70.358 0)
 			(effects
 				(font
@@ -9696,7 +9853,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 242.57 70.358 0)
 			(effects
 				(font
@@ -9891,7 +10048,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2961361"
+		(property "LCSC" "C60490"
 			(at 175.006 150.368 0)
 			(effects
 				(font
@@ -10152,8 +10309,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 229.87 70.358 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 229.87 70.358 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10162,24 +10319,24 @@
 		(fields_autoplaced yes)
 		(uuid "ea88d505-a4dc-4859-8467-bb8d208676ab")
 		(property "Reference" "D11"
-			(at 233.68 70.6754 90)
+			(at 234.95 69.0879 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 233.68 73.2154 90)
+			(at 234.95 71.6279 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 229.87 70.358 0)
 			(effects
 				(font
@@ -10197,7 +10354,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 229.87 70.358 0)
 			(effects
 				(font
@@ -10580,7 +10737,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2961361"
+		(property "LCSC" "C60490"
 			(at 113.03 44.45 0)
 			(effects
 				(font
@@ -10668,7 +10825,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C106235"
+		(property "LCSC" "C163453"
 			(at 254 71.628 0)
 			(effects
 				(font
@@ -10702,8 +10859,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 215.9 70.358 90)
+		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(at 215.9 70.358 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10712,24 +10869,24 @@
 		(fields_autoplaced yes)
 		(uuid "f90e8a34-c196-4ed9-861c-4ece3363daaa")
 		(property "Reference" "D10"
-			(at 219.71 70.6754 90)
+			(at 220.98 69.0879 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Value" "LED"
-			(at 219.71 73.2154 90)
+			(at 220.98 71.6279 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 70.358 0)
 			(effects
 				(font
@@ -10747,7 +10904,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
 			(at 215.9 70.358 0)
 			(effects
 				(font
@@ -10844,7 +11001,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2961361"
+		(property "LCSC" "C60490"
 			(at 54.61 39.37 0)
 			(effects
 				(font

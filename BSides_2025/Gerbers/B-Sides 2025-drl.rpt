@@ -1,5 +1,5 @@
 Drill report for B-Sides 2025.kicad_pcb
-Created on 2025-02-05T00:10:37-0600
+Created on 2025-02-28T00:55:37-0600
 
 Copper Layer Stackup:
     =============================================================
@@ -10,12 +10,12 @@ Copper Layer Stackup:
 Drill file 'B-Sides 2025-PTH.drl' contains
     plated through holes:
     =============================================================
-    T1  0.300mm  0.0118"  (57 holes)
+    T1  0.300mm  0.0118"  (60 holes)
     T2  1.000mm  0.0394"  (8 holes)
     T3  1.016mm  0.0400"  (12 holes)
     T4  2.600mm  0.1024"  (2 holes)
 
-    Total plated holes count 79
+    Total plated holes count 82
 
 
 Drill file 'B-Sides 2025-NPTH.drl' contains
