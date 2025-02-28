@@ -2019,7 +2019,8 @@
 				)
 			)
 		)
-		(symbol "PCM_LED_AKL:LED_Generic_Reverse_Amber"
+		(symbol "PCM_LED_AKL:LED_Generic"
+			(pin_numbers hide)
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
@@ -2033,7 +2034,7 @@
 					)
 				)
 			)
-			(property "Value" "LED_Generic_Reverse_Amber"
+			(property "Value" "LED_Generic"
 				(at 0 5.08 0)
 				(effects
 					(font
@@ -2059,7 +2060,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+			(property "Description" "LED, generic symbol, Alternate KiCad Library"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2068,7 +2069,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "LED amber diode generic"
+			(property "ki_keywords" "LED diode generic"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2086,7 +2087,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "LED_Generic_Reverse_Amber_0_1"
+			(symbol "LED_Generic_0_1"
 				(polyline
 					(pts
 						(xy -0.508 1.905) (xy 0.254 3.429)
@@ -2094,7 +2095,30 @@
 					(stroke
 						(width 0.1524)
 						(type default)
-						(color 220 180 30 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.921) (xy -0.254 3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.921) (xy 0.254 2.794)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
 					)
 					(fill
 						(type none)
@@ -2107,7 +2131,42 @@
 					(stroke
 						(width 0.1524)
 						(type default)
-						(color 220 180 30 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 2.413) (xy 0.762 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 2.413) (xy 1.27 2.286)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
 					)
 					(fill
 						(type none)
@@ -2134,8 +2193,7 @@
 						(type default)
 					)
 					(fill
-						(type color)
-						(color 220 180 30 1)
+						(type outline)
 					)
 				)
 				(polyline
@@ -2143,9 +2201,8 @@
 						(xy 0.254 2.794) (xy -0.254 3.048) (xy 0.254 3.429) (xy 0.254 2.794)
 					)
 					(stroke
-						(width 0)
-						(type solid)
-						(color 220 180 30 1)
+						(width 0.1524)
+						(type default)
 					)
 					(fill
 						(type outline)
@@ -2158,17 +2215,16 @@
 					(stroke
 						(width 0.1524)
 						(type default)
-						(color 220 180 30 1)
 					)
 					(fill
 						(type outline)
 					)
 				)
 			)
-			(symbol "LED_Generic_Reverse_Amber_0_2"
+			(symbol "LED_Generic_0_2"
 				(polyline
 					(pts
-						(xy -2.54 -2.54) (xy -0.889 -0.889)
+						(xy -2.54 -2.54) (xy 2.54 2.54)
 					)
 					(stroke
 						(width 0)
@@ -2185,7 +2241,6 @@
 					(stroke
 						(width 0)
 						(type default)
-						(color 220 180 30 1)
 					)
 					(fill
 						(type none)
@@ -2198,7 +2253,6 @@
 					(stroke
 						(width 0)
 						(type default)
-						(color 220 180 30 1)
 					)
 					(fill
 						(type none)
@@ -2218,14 +2272,26 @@
 				)
 				(polyline
 					(pts
-						(xy 0.889 0.889) (xy 2.54 2.54)
+						(xy -2.159 2.413) (xy -2.286 1.778) (xy -1.6764 1.9812) (xy -2.159 2.413)
 					)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 2.794) (xy -1.143 2.159) (xy -0.5334 2.3622) (xy -1.016 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 				(polyline
@@ -2237,16 +2303,15 @@
 						(type default)
 					)
 					(fill
-						(type color)
-						(color 220 180 30 1)
+						(type outline)
 					)
 				)
 			)
-			(symbol "LED_Generic_Reverse_Amber_1_1"
+			(symbol "LED_Generic_1_1"
 				(pin passive line
-					(at -3.81 0 0)
+					(at 3.81 0 180)
 					(length 2.54)
-					(name "A"
+					(name "K"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2262,9 +2327,9 @@
 					)
 				)
 				(pin passive line
-					(at 3.81 0 180)
+					(at -3.81 0 0)
 					(length 2.54)
-					(name "K"
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2280,33 +2345,7 @@
 					)
 				)
 			)
-			(symbol "LED_Generic_Reverse_Amber_1_2"
-				(polyline
-					(pts
-						(xy -2.159 2.413) (xy -2.286 1.778) (xy -1.6764 1.9812) (xy -2.159 2.413)
-					)
-					(stroke
-						(width 0)
-						(type default)
-						(color 220 180 30 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 2.794) (xy -1.143 2.159) (xy -0.5334 2.3622) (xy -1.016 2.794)
-					)
-					(stroke
-						(width 0)
-						(type default)
-						(color 220 180 30 1)
-					)
-					(fill
-						(type outline)
-					)
-				)
+			(symbol "LED_Generic_1_2"
 				(pin passive line
 					(at 2.54 2.54 180)
 					(length 0)
@@ -5409,7 +5448,7 @@
 		(uuid "f4547ffc-aa8d-442c-a270-5b94d3aec62f")
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 242.57 36.068 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5436,7 +5475,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 36.068 0)
 			(effects
 				(font
@@ -5454,7 +5493,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 242.57 36.068 0)
 			(effects
 				(font
@@ -5463,7 +5502,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 242.57 36.068 0)
 			(effects
 				(font
@@ -5849,7 +5888,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 230.124 34.798 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5876,7 +5915,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 230.124 34.798 0)
 			(effects
 				(font
@@ -5894,7 +5933,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 230.124 34.798 0)
 			(effects
 				(font
@@ -5903,7 +5942,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 230.124 34.798 0)
 			(effects
 				(font
@@ -6079,7 +6118,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C163453"
+		(property "LCSC" "C25136"
 			(at 215.9 37.338 0)
 			(effects
 				(font
@@ -6113,7 +6152,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 229.87 58.928 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6140,7 +6179,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 229.87 58.928 0)
 			(effects
 				(font
@@ -6158,7 +6197,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 229.87 58.928 0)
 			(effects
 				(font
@@ -6167,7 +6206,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 229.87 58.928 0)
 			(effects
 				(font
@@ -6201,7 +6240,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 254 58.928 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6228,7 +6267,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -6246,7 +6285,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -6255,7 +6294,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 254 58.928 0)
 			(effects
 				(font
@@ -6692,7 +6731,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 215.9 58.928 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6719,7 +6758,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -6737,7 +6776,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -6746,7 +6785,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 215.9 58.928 0)
 			(effects
 				(font
@@ -6846,7 +6885,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 215.9 47.498 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6873,7 +6912,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 47.498 0)
 			(effects
 				(font
@@ -6891,7 +6930,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 215.9 47.498 0)
 			(effects
 				(font
@@ -6900,7 +6939,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 215.9 47.498 0)
 			(effects
 				(font
@@ -7142,7 +7181,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C163453"
+		(property "LCSC" "C25136"
 			(at 242.57 60.198 0)
 			(effects
 				(font
@@ -7630,7 +7669,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C163453"
+		(property "LCSC" "C25136"
 			(at 229.87 48.768 0)
 			(effects
 				(font
@@ -7911,7 +7950,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 254 36.068 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7938,7 +7977,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -7956,7 +7995,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -7965,7 +8004,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 254 36.068 0)
 			(effects
 				(font
@@ -8473,7 +8512,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 242.57 47.498 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8500,7 +8539,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 47.498 0)
 			(effects
 				(font
@@ -8518,7 +8557,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 242.57 47.498 0)
 			(effects
 				(font
@@ -8527,7 +8566,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 242.57 47.498 0)
 			(effects
 				(font
@@ -9442,7 +9481,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ceb61acc-f60b-4133-8327-a327dfa69e0e")
 		(property "Reference" "J1"
@@ -9720,7 +9759,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 254 47.498 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9747,7 +9786,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -9765,7 +9804,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -9774,7 +9813,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 254 47.498 0)
 			(effects
 				(font
@@ -9808,7 +9847,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 242.57 70.358 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9835,7 +9874,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 242.57 70.358 0)
 			(effects
 				(font
@@ -9853,7 +9892,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 242.57 70.358 0)
 			(effects
 				(font
@@ -9862,7 +9901,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 242.57 70.358 0)
 			(effects
 				(font
@@ -10309,7 +10348,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 229.87 70.358 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10336,7 +10375,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 229.87 70.358 0)
 			(effects
 				(font
@@ -10354,7 +10393,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 229.87 70.358 0)
 			(effects
 				(font
@@ -10363,7 +10402,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 229.87 70.358 0)
 			(effects
 				(font
@@ -10825,7 +10864,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C163453"
+		(property "LCSC" "C25136"
 			(at 254 71.628 0)
 			(effects
 				(font
@@ -10859,7 +10898,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_LED_AKL:LED_Generic_Reverse_Amber")
+		(lib_id "PCM_LED_AKL:LED_Generic")
 		(at 215.9 70.358 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10886,7 +10925,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "footprints:LED_0805_APA1606_1.6x0.6mm_Horizontal"
+		(property "Footprint" "LED_SMD:LED_Kingbright_APA1606_1.6x0.6mm_Horizontal"
 			(at 215.9 70.358 0)
 			(effects
 				(font
@@ -10904,7 +10943,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Amber LED, generic symbol, Alternate KiCad Library"
+		(property "Description" "LED, generic symbol, Alternate KiCad Library"
 			(at 215.9 70.358 0)
 			(effects
 				(font
@@ -10913,7 +10952,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C693905"
+		(property "LCSC" "C965862"
 			(at 215.9 70.358 0)
 			(effects
 				(font
