@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "winterrupts.h": "c",
+        "arduino.h": "c",
+        "encoder.h": "c",
+        "functional": "cpp"
+    }
+}
