@@ -1,6 +1,12 @@
 #pragma once
 
+#include <stdint.h>
+
 bool getPhase();
 bool getPreamble();
-void setup_photo();
-void receive();
+
+void setupPhoto();
+bool receive();
+
+int receivedFrames();
+void getFrames(uint16_t *frames);

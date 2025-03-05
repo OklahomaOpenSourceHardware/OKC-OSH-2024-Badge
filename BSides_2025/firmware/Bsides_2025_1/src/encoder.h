@@ -4,4 +4,4 @@
 
 uint16_t getEncoderValue();
 
-void setup_encoder();
+void setupEncoder();

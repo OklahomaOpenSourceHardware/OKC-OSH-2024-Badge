@@ -1,7 +1,7 @@
 #pragma once
 
-void setup_lit();
-void no_lit();
+void setupLit();
+void noLit();
 void lit(int i);
 
-void set_value(int n);
+void setLitValue(int n);

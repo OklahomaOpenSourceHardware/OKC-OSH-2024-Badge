@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                margin: 0;
+            }
+            #main {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                z-index: -20;
+            }
+            #main > * {
+                display: inline-block;
+                width: 49.99%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+            #main.none {
+                display: none;
+            }
+            .s0 > #left, .s1 > #right {
+                background-color: black;
+            }
+            div.circle {
+                position: relative;
+                top: 0; left: 0;
+                width: 80px;
+                height: 80px;
+                border: solid 1px gray;
+            }
+            div.circle input {
+                width: 14px;
+                height: 14px;
+                position: absolute;
+            }
+            div.circle input:nth-child(1) { left: 45px; top: 55px; }
+            div.circle input:nth-child(2) { left: 30px; top: 60px; }
+            div.circle input:nth-child(3) { left: 15px; top: 55px; }
+            div.circle input:nth-child(4) { left: 5px; top: 45px; }
+            div.circle input:nth-child(5) { left: 0px; top: 30px; }
+            div.circle input:nth-child(6) { left: 5px; top: 15px; }
+            div.circle input:nth-child(7) { left: 15px; top: 5px; }
+            div.circle input:nth-child(8) { left: 30px; top: 0px; }
+            div.circle input:nth-child(9) { left: 45px; top: 5px; }
+            div.circle input:nth-child(10) { left: 55px; top: 15px; }
+            div.circle input:nth-child(11) { left: 60px; top: 30px; }
+            div.circle input:nth-child(12) { left: 55px; top: 45px; }
+
+            #grid.hidden {
+                display: none;
+            }
+            #send {
+                margin: 40px 0;
+            }
+            #send::content() {
+                display: block;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main" class="none">
+            <div id="left"></div><div id="right"></div>
+        </div>        
+        <script>
+        function showHideEditor(show) {
+            const grid = document.getElementById("grid");
+            grid.setAttribute("class", show ? "" : "hidden");
+            if (show) main.setAttribute("class", "none");
+        }
+        function transmit(buf) {
+            console.log(buf);
+            showHideEditor(false);
+            const main = document.getElementById("main");
+            const data = [0x55,0xD5,buf.length, ...buf];
+            let i = 0, m = 1, f = true;
+            let int = setInterval(() => {
+                main.setAttribute("class", ((data[i] & m) != 0) == f ? "s1" : "s0");
+                if (!f) {
+                    m <<= 1;
+                    if (m > 128) {
+                        m = 1; i++;
+                        if (i >= data.length) {
+                            setTimeout(() => showHideEditor(true), 500);
+                            clearInterval(int);
+                        }
+                    }
+                    f = true;
+                } else {
+                    f = false;
+                }
+            }, 80)
+        }
+        function addRow(b) {
+            const grid = document.getElementById("grid");
+            const row = document.createElement("tr");
+            row.setAttribute("class", "row");
+            let td = document.createElement("td");
+            const circle = document.createElement("div");
+            circle.className = "circle";
+            for (let i = 0; i < 12; i++) {
+                const ch = document.createElement("input");
+                ch.setAttribute("type", "checkbox");
+                if ((b & (1 << i))) ch.checked = true;
+                ch.value = (1 << i);
+                circle.appendChild(ch);
+            }
+            td.appendChild(circle);
+            row.appendChild(td);
+            td = document.createElement("td");
+            const rm = document.createElement("button");
+            rm.innerText = "-";
+            rm.onclick = () => row.remove();
+            td.appendChild(rm);
+            row.appendChild(td);
+            grid.insertBefore(row, grid.lastElementChild);
+        }
+        function transmitGrid() {
+            const rows = document.querySelectorAll(".row");
+            let data = [];
+            for (let r of rows) {
+                let chs = r.querySelectorAll("div.circle > input[type='checkbox']");
+                let b = 0;
+                for (let j = 0; j < 12; j++) {
+                    b |= chs[j].checked ? (chs[j].value | 0) : 0;
+                }
+                data.push(b & 255, (b>>>8) & 255);
+            }
+            transmit(data);
+        }
+        </script>
+        <button id="send" onclick="transmitGrid()">Send</button>
+        <div id="editor">
+            <table id="grid">
+                <tr><td colspan="2"><button onclick="addRow()">+</button></td></tr>
+            </table>
+        </div>
+        <script>
+            addRow(7);
+            addRow(0x555);
+            addRow(0b10000010);
+        </script>
+    </body>
+</html>

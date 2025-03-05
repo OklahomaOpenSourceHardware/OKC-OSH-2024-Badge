@@ -2,11 +2,11 @@
 
 #include <Arduino.h>
 
-void set_value(int n); // TODO for debug, refactor
+void setLitValue(int n); // TODO for debug, refactor
 
 bool adcFlag = false;
 
-void setup_adc(void)
+void setupAdc(void)
 {
   ADC_InitTypeDef ADC_InitStructure = {0};
   GPIO_InitTypeDef GPIO_InitStructure = {0};
@@ -102,16 +102,8 @@ extern "C"
   }
 }
 
-int buf[31];
-
-void reset_buffer()
-{
-  buf[0] = 4;
-  buf[1] = 8;
-  buf[2] = 4;
-  buf[3] = 2;
-  buf[4] = 1;
-}
+uint8_t buf[31];
+const uint8_t MAX_RECV_BUF = 30; // max buf[0] value
 
 void init_decoder()
 {
@@ -120,21 +112,25 @@ void init_decoder()
   di = 0;
 }
 
-void setup_photo()
+void setupPhoto()
 {
-  setup_adc();
-  reset_buffer();
+  setupAdc();
 
   init_decoder();
   last_t = millis();
 }
 
-void receive()
+inline void indicateStatus(int value)
+{
+  setLitValue(value << 6);
+}
+
+bool receive()
 {
   uint32_t t = last_t;
   int16_t d = (ds[0] + ds[1]) * 3 / 8; // 3/4 of d
 
-  set_value(0b11);
+  indicateStatus(0b001);
 
   bool p, p0;
   uint32_t next = t + d;
@@ -152,14 +148,14 @@ void receive()
     {
       if ((long)(millis() - t) > d)
       {
-        set_value(0b111);
-        return;
+        indicateStatus(0b011);
+        return false;
       }
     }
 
     next = d;
   } while (p == p0);
-  set_value(0b101);
+  indicateStatus(0b101);
   int k = 0;
   int km = 1;
   int len = 1;
@@ -173,8 +169,8 @@ void receive()
     {
       if ((long)(millis() - t) > d)
       {
-        set_value(0b11);
-        return;
+        indicateStatus(0b011);
+        return false;
       }
     }
 
@@ -190,11 +186,27 @@ void receive()
     if (km > 128)
     {
       if (k == 0)
-        len = min(30, buf[0]) + 1;
+        len = min(MAX_RECV_BUF, buf[0]) + 1;
       k++;
       km = 1;
     }
   }
-  set_value(0b11011);
+  indicateStatus(0b111);
   init_decoder();
+  return true;
+}
+
+int receivedFrames()
+{
+  return buf[0] / 2;
+}
+
+void getFrames(uint16_t *frames)
+{
+  int len = receivedFrames();
+  for (int i = 0; i < len; i++)
+  {
+    int j = 1 + (i << 1);
+    frames[i] = (buf[j] | (uint16_t(buf[j + 1]) << 8)) & 0xFFF;
+  }
 }
