@@ -1,4 +1,5 @@
-#include "Arduino.h"
+#include <Arduino.h>
+#include <Wire.h>
 
 #include "leds.h"
 #include "phototrans.h"
@@ -12,12 +13,10 @@ void setup() {
 
 void loop() {
   if (getPreamble()) {
-    lit(1);
-    while(1);
+    set_value(0b1);
     receive(); return;
   }
   int v1 = getEncoderValue(); // millis() / 100;
-  uint32_t display = getPhase() ? 0x03F : 0xFC0;
-  display |= (display << 12);
+  uint32_t display = getPhase() ? 0x03F : 0xFC0; display |= (display << 12);
   set_value(0xFFF & (display >> (v1 % 12)) );
 }

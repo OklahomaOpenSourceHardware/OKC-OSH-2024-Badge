@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-void lit(int n); // TODO for debug, refactor
+void set_value(int n); // TODO for debug, refactor
 
 bool adcFlag = false;
 
@@ -12,14 +12,14 @@ void setup_adc(void)
   GPIO_InitTypeDef GPIO_InitStructure = {0};
   NVIC_InitTypeDef NVIC_InitStructure = {0};
 
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
   RCC_ADCCLKConfig(RCC_PCLK2_Div4);
 
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_5;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_Init(GPIOD, &GPIO_InitStructure);
+  GPIO_Init(GPIOA, &GPIO_InitStructure);
 
   ADC_DeInit(ADC1); // Reset ADC1 and reset all registers of peripheral ADC1 to default values
 
@@ -32,8 +32,8 @@ void setup_adc(void)
   ADC_Init(ADC1, &ADC_InitStructure);
 
   ADC_InjectedSequencerLengthConfig(ADC1, 2);
-  ADC_InjectedChannelConfig(ADC1, ADC_Channel_7, 1, ADC_SampleTime_3Cycles);
-  ADC_InjectedChannelConfig(ADC1, ADC_Channel_5, 2, ADC_SampleTime_3Cycles);
+  ADC_InjectedChannelConfig(ADC1, ADC_Channel_1, 1, ADC_SampleTime_241Cycles);
+  ADC_InjectedChannelConfig(ADC1, ADC_Channel_0, 2, ADC_SampleTime_241Cycles);
 
   NVIC_InitStructure.NVIC_IRQChannel = ADC_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
@@ -71,33 +71,35 @@ const int accept_diff = 10;
 const int min_duration = accept_diff * 5;
 const int max_duration = 500;
 
-extern "C" {
-  
-void ADC1_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
-void ADC1_IRQHandler(void)
+extern "C"
 {
-  if (ADC_GetITStatus(ADC1, ADC_IT_JEOC) == SET)
+
+  void ADC1_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+  void ADC1_IRQHandler(void)
   {
-    a1 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_1);
-    a2 = ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_2);
-    bool newPhase = a1 < a2;
-    if (phase != newPhase) {
-      uint32_t t = millis();
-      ds[di] = t - last_t;
-      di = (di + 1) & 3;
-      last_t = t;
-    
-      int sum = abs(ds[0] - ds[1]) + abs(ds[2] - ds[1]) + abs(ds[2] - ds[3]) + abs(ds[0] - ds[3]);
-      preamble = ds[di] >= min_duration && ds[di] <= max_duration && sum <= 4 * accept_diff;
+    if (ADC_GetITStatus(ADC1, ADC_IT_JEOC) == SET)
+    {
+      const int DECAY = 192;
+      a1 = (a1 * DECAY + (256 - DECAY) * ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_1)) >> 8;
+      a2 = (a2 * DECAY + (256 - DECAY) * ADC_GetInjectedConversionValue(ADC1, ADC_InjectedChannel_2)) >> 8;
+      bool newPhase = a1 < a2;
+      if (phase != newPhase)
+      {
+        uint32_t t = millis();
+        ds[di] = t - last_t;
+        di = (di + 1) & 3;
+        last_t = t;
 
-      phase = newPhase;
+        int sum = abs(ds[0] - ds[1]) + abs(ds[2] - ds[1]) + abs(ds[2] - ds[3]) + abs(ds[0] - ds[3]);
+        preamble = ds[di] >= min_duration && ds[di] <= max_duration && sum <= 4 * accept_diff;
+
+        phase = newPhase;
+      }
+      ADC_SoftwareStartInjectedConvCmd(ADC1, ENABLE);
+
+      ADC_ClearITPendingBit(ADC1, ADC_IT_JEOC);
     }
-    ADC_SoftwareStartInjectedConvCmd(ADC1, ENABLE);
-
-    ADC_ClearITPendingBit(ADC1, ADC_IT_JEOC);
   }
-}
-
 }
 
 int buf[31];
@@ -127,13 +129,12 @@ void setup_photo()
   last_t = millis();
 }
 
-
 void receive()
 {
   uint32_t t = last_t;
   int16_t d = (ds[0] + ds[1]) * 3 / 8; // 3/4 of d
 
-  lit(0);
+  set_value(0b11);
 
   bool p, p0;
   uint32_t next = t + d;
@@ -151,14 +152,14 @@ void receive()
     {
       if ((long)(millis() - t) > d)
       {
-        lit(1);
+        set_value(0b111);
         return;
       }
     }
 
     next = d;
   } while (p == p0);
-  lit(2);
+  set_value(0b101);
   int k = 0;
   int km = 1;
   int len = 1;
@@ -172,7 +173,7 @@ void receive()
     {
       if ((long)(millis() - t) > d)
       {
-        lit(4);
+        set_value(0b11);
         return;
       }
     }
@@ -194,6 +195,6 @@ void receive()
       km = 1;
     }
   }
-  lit(5);
+  set_value(0b11011);
   init_decoder();
 }
