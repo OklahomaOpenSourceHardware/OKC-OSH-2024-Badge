@@ -39,10 +39,24 @@ void loop()
       delay(1000);
       return;
     }
-    frames_len = receivedFrames();
+    frames_len = min(receivedFrames(), 15);
     getFrames(frames);
     last_frame_t = millis();
     next_frame = 0;
+  }
+  ButtonState btn = getButtonState();
+  if (btn.clicked)
+  {
+    if (btn.long_click)
+    {
+      frames_len = 0;
+    }
+    else
+    {
+      frames_len = 2;
+      frames[0] = 0b1010;
+      frames[1] = 0b0101;
+    }
   }
   if (frames_len > 0)
   {
