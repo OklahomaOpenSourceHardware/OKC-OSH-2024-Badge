@@ -5,7 +5,6 @@ extern "C" {
 #endif
 
 void oledDrawText(int x, int y, const char* str, int color, int scale);
-void oledInit();
 void oledClearBuffer(int color);
 void oledRefresh();
 

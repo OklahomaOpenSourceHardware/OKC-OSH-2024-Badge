@@ -8,9 +8,13 @@
 
 #include "utility/twi.h"
 
+extern "C" void ssd1306Init(void);
+
 i2c_t I2Cm;
 bool _hasAccel = false;
 bool _hasOled = false;
+
+uint32_t last_scan;
 
 void setupI2Cm()
 {
@@ -29,11 +33,9 @@ bool hasOled()
   return _hasOled;
 }
 
-int n = 1000;
-
 void scanI2C()
 {
-  if (--n)
+  if (millis() - last_scan < 3000)
   {
     return;
   }
@@ -49,9 +51,10 @@ void scanI2C()
     static uint8_t NoDATA[] = {};
     if (I2C_OK == i2c_master_write(&I2Cm, SSD1306_I2C_ADDR << 1, NoDATA, 0, 1)) {
       _hasOled = true;
+      ssd1306Init();
     }
   }
-  n = 100000;
+  last_scan = millis();
 }
 
 bool errAccel()
@@ -87,6 +90,8 @@ uint8_t ssd1306Send(uint8_t *data, uint8_t sz) {
   uint8_t res = i2c_master_write(&I2Cm, SSD1306_I2C_ADDR << 1, data, sz, 1);
   if (res != I2C_OK) {
     _hasOled = false;
+    static uint8_t OffCMD[] = {0, 0xAE};
+    i2c_master_write(&I2Cm, SSD1306_I2C_ADDR << 1, OffCMD, 2, 1);
   }
   return res;
 }
