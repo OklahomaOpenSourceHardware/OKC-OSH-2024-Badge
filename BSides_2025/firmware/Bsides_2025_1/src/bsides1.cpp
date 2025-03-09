@@ -6,6 +6,7 @@
 #include "leds.h"
 #include "phototrans.h"
 #include "encoder.h"
+#include "ssd1306_mini.h"
 
 enum Action
 {
@@ -142,6 +143,13 @@ void handleButton()
     else if (hasAccel())
     {
       action = ACCEL;
+    }
+    else if (hasOled())
+    {
+      oledInit();
+      oledDrawText(0,0, "Hello,", 1, 1);
+      oledDrawText(20,16, "World!", 1, 1);
+      oledRefresh();
     }
     else
     {

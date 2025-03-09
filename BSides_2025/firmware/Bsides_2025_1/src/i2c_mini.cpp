@@ -10,6 +10,7 @@
 
 i2c_t I2Cm;
 bool _hasAccel = false;
+bool _hasOled = false;
 
 void setupI2Cm()
 {
@@ -21,6 +22,11 @@ void setupI2Cm()
 bool hasAccel()
 {
   return _hasAccel;
+}
+
+bool hasOled()
+{
+  return _hasOled;
 }
 
 int n = 1000;
@@ -37,6 +43,12 @@ void scanI2C()
     if (I2C_OK == i2c_master_write(&I2Cm, MPU6050_I2C_ADDR << 1, MPU6050Init, 2, 1))
     {
       _hasAccel = true;
+    }
+  }
+  if (!_hasOled) {
+    static uint8_t NoDATA[] = {};
+    if (I2C_OK == i2c_master_write(&I2Cm, SSD1306_I2C_ADDR << 1, NoDATA, 0, 1)) {
+      _hasOled = true;
     }
   }
   n = 100000;
@@ -69,4 +81,12 @@ bool readAccel(int16_t *data)
   data[1] = (int16_t(t[2]) << 8) | t[3];
   data[2] = (int16_t(t[4]) << 8) | t[5];
   return true;
+}
+
+uint8_t ssd1306Send(uint8_t *data, uint8_t sz) {
+  uint8_t res = i2c_master_write(&I2Cm, SSD1306_I2C_ADDR << 1, data, sz, 1);
+  if (res != I2C_OK) {
+    _hasOled = false;
+  }
+  return res;
 }
