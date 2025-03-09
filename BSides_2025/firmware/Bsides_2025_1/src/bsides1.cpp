@@ -10,6 +10,7 @@ DefaultScreen defaultScreen;
 AnimationScreen animationScreen;
 AccelerometerScreen accelScreen;
 TextScreen textScreen;
+TestScreen testScreen;
 
 void setup()
 {
@@ -51,18 +52,30 @@ void handleButton()
     {
       defaultScreen.select();
     }
-    else if (hasAccel())
+    else if (defaultScreen.isActive())
     {
-      accelScreen.select();
-    }
-    else if (hasOled())
-    {
-      textScreen.select();
-    }
-    else
-    {
-      animationScreen.setPattern1();
-      animationScreen.select();
+      switch (defaultScreen.level)
+      {
+      case 2:
+        testScreen.select();
+        break;
+      case 5:
+        animationScreen.setPattern1();
+        animationScreen.select();
+        break;
+      case 7:
+        if (hasAccel())
+        {
+          accelScreen.select();
+        }
+        break;
+      case 8:
+        if (hasOled())
+        {
+          textScreen.select();
+        }
+        break;
+      }
     }
   }
 }

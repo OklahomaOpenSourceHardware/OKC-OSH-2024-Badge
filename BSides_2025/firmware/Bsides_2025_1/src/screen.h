@@ -22,16 +22,26 @@ class ScreenBase {
   static void executeCurrent() {
     current->execute();
   }
+  bool isActive() const { return current == this; }
 
   static ScreenBase* defaultScreen;
   static ButtonState buttonState;
 };
 
 class DefaultScreen : public ScreenBase {
+ private:
+   uint16_t lastEncoder;
  public:
+   int level = 1;
+   virtual void enter() override;
    virtual void execute() override;
 };
 
+class TestScreen : public ScreenBase {
+  public:
+    virtual void execute() override;
+};
+ 
 
 class AccelerometerScreen : public ScreenBase {
  private:

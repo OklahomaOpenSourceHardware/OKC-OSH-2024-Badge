@@ -17,8 +17,25 @@ ScreenBase *ScreenBase::current = nullptr;
 ScreenBase* ScreenBase::defaultScreen = nullptr;
 ButtonState ScreenBase::buttonState;
 
+void DefaultScreen::enter()
+{
+  lastEncoder = getEncoderValue();
+}
+
 void DefaultScreen::execute()
 {
+  uint16_t enc = getEncoderValue();
+  int delta = -int16_t(enc - lastEncoder) / 2;
+  if (delta != 0) {
+    lastEncoder = enc;
+    level = max(1, min(11, level + delta));
+  }
+  int pattern = (1 << level) - 1;
+  pattern = (pattern << 2) | (pattern >> 10);
+  setLitValue(pattern);
+}
+
+void TestScreen::execute() {
   int v1 = getEncoderValue(); // millis() / 100;
   uint32_t display = getPhase() ? 0x03F : 0xFC0;
   display |= (display << 12);
