@@ -14,7 +14,7 @@ void ScreenBase::execute() {}
 void ScreenBase::leave() {}
 
 ScreenBase *ScreenBase::current = nullptr;
-ScreenBase* ScreenBase::defaultScreen = nullptr;
+ScreenBase *ScreenBase::defaultScreen = nullptr;
 ButtonState ScreenBase::buttonState;
 
 void DefaultScreen::enter()
@@ -26,7 +26,8 @@ void DefaultScreen::execute()
 {
   uint16_t enc = getEncoderValue();
   int delta = -int16_t(enc - lastEncoder) / 2;
-  if (delta != 0) {
+  if (delta != 0)
+  {
     lastEncoder = enc;
     level = max(1, min(11, level + delta));
   }
@@ -35,7 +36,8 @@ void DefaultScreen::execute()
   setLitValue(pattern);
 }
 
-void TestScreen::execute() {
+void TestScreen::execute()
+{
   int v1 = getEncoderValue(); // millis() / 100;
   uint32_t display = getPhase() ? 0x03F : 0xFC0;
   display |= (display << 12);
@@ -88,16 +90,20 @@ void AnimationScreen::execute()
     return;
   }
   last_frame_t = millis();
-  setLitValue(frames[next_frame]);
-  next_frame = (next_frame + 1) % count;
+  setLitValue(framesData.frames[next_frame]);
+  next_frame = (next_frame + 1) % framesData.count;
 }
 
 void AnimationScreen::setFrames(uint16_t *frames, int count)
 {
-  this->count = count;
-  memcpy(this->frames, frames, count * sizeof(frames[0]));
+  framesData.count = count;
+  memcpy(framesData.frames, frames, count * sizeof(frames[0]));
   next_frame = 0;
 }
+
+const FramesData AnimationScreen::pattern1{
+    2,
+    {0b1010, 0b0101}};
 
 void TextScreen::enter()
 {

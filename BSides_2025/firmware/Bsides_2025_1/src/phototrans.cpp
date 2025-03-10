@@ -2,6 +2,8 @@
 
 #include <Arduino.h>
 
+#include "utils.h"
+
 void setLitValue(int n); // TODO for debug, refactor
 
 bool adcFlag = false;
@@ -102,8 +104,8 @@ extern "C"
   }
 }
 
-uint8_t buf[31];
-const uint8_t MAX_RECV_BUF = 30; // max buf[0] value
+const uint8_t MAX_RECV_BUF = MAX_FRAMES * sizeof(uint16_t); // max buf[0] value
+uint8_t buf[MAX_RECV_BUF + 1];
 
 void init_decoder()
 {
@@ -198,7 +200,7 @@ bool receive()
 
 int receivedFrames()
 {
-  return buf[0] / 2;
+  return min(MAX_FRAMES, buf[0] / 2);
 }
 
 void getFrames(uint16_t *frames)

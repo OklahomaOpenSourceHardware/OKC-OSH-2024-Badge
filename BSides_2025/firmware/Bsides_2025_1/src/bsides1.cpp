@@ -5,6 +5,7 @@
 #include "phototrans.h"
 #include "encoder.h"
 #include "screen.h"
+#include "utils.h"
 
 DefaultScreen defaultScreen;
 AnimationScreen animationScreen;
@@ -34,8 +35,8 @@ void handleAdc()
       return;
     }
     int frames_len = 0;
-    uint16_t frames[15];
-    frames_len = min(receivedFrames(), 15);
+    uint16_t frames[MAX_FRAMES];
+    frames_len = receivedFrames();
     getFrames(frames);
     animationScreen.setFrames(frames, frames_len);
     animationScreen.select();

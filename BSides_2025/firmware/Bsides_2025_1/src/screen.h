@@ -3,6 +3,7 @@
 #include <stdint.h>
 
 #include "encoder.h"
+#include "utils.h"
 
 class ScreenBase {
  protected:
@@ -56,21 +57,18 @@ class AccelerometerScreen : public ScreenBase {
 class AnimationScreen : public ScreenBase {
  private:
    static const uint32_t FRAME_RATE = 333;
-   static const int FRAMES_LEN = 20;
-   uint16_t frames[FRAMES_LEN];
-   int count;
+   static const int FRAMES_LEN = MAX_FRAMES;
+   FramesData framesData;
    int next_frame;
    uint32_t last_frame_t;
- public:
-   AnimationScreen() : ScreenBase(), count(0) {} 
+   static const FramesData pattern1;
+
+  public:
+   AnimationScreen() : ScreenBase(), framesData{0} {} 
    virtual void enter() override;
    virtual void execute() override;
    void setFrames(uint16_t* frames, int count);
-   void setPattern1() {
-    count = 2;
-    frames[0] = 0b1010;
-    frames[1] = 0b0101;
-   }
+   void setPattern1() { framesData = pattern1; }
 };
 
 class TextScreen : public ScreenBase {

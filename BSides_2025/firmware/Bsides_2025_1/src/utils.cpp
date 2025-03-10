@@ -2,6 +2,8 @@
 
 #include <stdlib.h>
 
+#include "PinConfigured.h"
+
 // Pseudo atan2.
 // Returns number from 0 to 11 that reflects the angle.
 int patan2(int y, int x)
@@ -43,4 +45,16 @@ int patan2(int y, int x)
   {
     return y > 0 ? 3 : 9;
   }
+}
+
+void configPinInput(uint32_t pin)
+{
+  PinName p = digitalPinToPinName(pin);
+  pin_function(p, CH_PIN_DATA(CH_MODE_INPUT, CH_CNF_INPUT_FLOAT, 0, 0));
+}
+
+void configPinOutput(uint32_t pin)
+{
+  PinName p = digitalPinToPinName(pin);
+  pin_function(p, CH_PIN_DATA(CH_MODE_OUTPUT_50MHz, CH_CNF_OUTPUT_PP, 0, 0));
 }

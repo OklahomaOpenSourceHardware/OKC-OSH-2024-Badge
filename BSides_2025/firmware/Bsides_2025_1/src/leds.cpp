@@ -3,6 +3,8 @@
 #include <Arduino.h>
 #include <HardwareTimer.h>
 
+#include "utils.h"
+
 #define X1 PC4
 #define X2 PC5
 #define X3 PC6
@@ -22,10 +24,10 @@ void timerCallback()
 
 void setupLit()
 {
-  pinMode(X1, INPUT);
-  pinMode(X2, INPUT);
-  pinMode(X3, INPUT);
-  pinMode(X4, INPUT);
+  configPinInput(X1);
+  configPinInput(X2);
+  configPinInput(X3);
+  configPinInput(X4);
 
   timer.setOverflow(UPDATE_INTERVAL, MICROSEC_FORMAT);
   timer.attachInterrupt(timerCallback);
@@ -39,9 +41,11 @@ int l1 = 0, l2 = 0;
 void noLit()
 {
   if (!l1 && !l2)
+  {
     return;
-  pinMode(pins[l1], INPUT);
-  pinMode(pins[l2], INPUT);
+  }
+  configPinInput(pins[l1]);
+  configPinInput(pins[l2]);
   l1 = l2 = 0;
 }
 
@@ -49,16 +53,16 @@ void lit(int i)
 {
   if (l1 || l2)
   {
-    pinMode(pins[l1], INPUT);
-    pinMode(pins[l2], INPUT);
+    configPinInput(pins[l1]);
+    configPinInput(pins[l2]);
   }
   l1 = (i / 3) % 4;
   l2 = i % 3;
   if (l2 >= l1)
     l2++;
-  pinMode(pins[l1], OUTPUT);
+  configPinOutput(pins[l1]);
   digitalWrite(pins[l1], LOW);
-  pinMode(pins[l2], OUTPUT);
+  configPinOutput(pins[l2]);
   digitalWrite(pins[l2], HIGH);
 }
 
