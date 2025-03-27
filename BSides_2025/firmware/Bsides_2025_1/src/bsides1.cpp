@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "i2c_mini.h"
+
 
 #include "leds.h"
 #include "phototrans.h"
@@ -7,15 +7,17 @@
 #include "screen.h"
 #include "utils.h"
 
+
 DefaultScreen defaultScreen;
 AnimationScreen animationScreen;
-AccelerometerScreen accelScreen;
-TextScreen textScreen;
+
+BreathingScreen breathingScreen;
+
 TestScreen testScreen;
 
 void setup()
 {
-  setupI2Cm();
+ 
 
   setupLit();
   setupPhoto();
@@ -49,7 +51,7 @@ void handleButton()
   ScreenBase::buttonState = btn;
   if (btn.clicked)
   {
-    if (btn.long_click)
+    if (btn.long_click || btn.long_hold)
     {
       defaultScreen.select();
     }
@@ -57,24 +59,44 @@ void handleButton()
     {
       switch (defaultScreen.level)
       {
+      case 1:
+        defaultScreen.select();
+        break;
       case 2:
         testScreen.select();
         break;
+      case 3:
+        breathingScreen.select();
+        break;
+      case 4:
+      breathingScreen.select();
+        break;
+
       case 5:
         animationScreen.setPattern1();
         animationScreen.select();
         break;
-      case 7:
-        if (hasAccel())
-        {
-          accelScreen.select();
-        }
+        case 6:
+        defaultScreen.select();
         break;
-      case 8:
-        if (hasOled())
-        {
-          textScreen.select();
-        }
+        case 7:
+        defaultScreen.select();
+        break;
+        case 8:
+        defaultScreen.select();
+        break;
+        case 9:
+        defaultScreen.select();
+        break;
+        case 10:
+        defaultScreen.select();
+        break;
+        case 11:
+        defaultScreen.select();
+        break;
+
+      default:
+        defaultScreen.select();
         break;
       }
     }
@@ -85,7 +107,7 @@ void loop()
 {
   handleAdc();
   handleButton();
-  scanI2C();
+
 
   ScreenBase::executeCurrent();
 }

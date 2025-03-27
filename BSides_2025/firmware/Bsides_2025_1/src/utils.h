@@ -8,7 +8,7 @@ void configPinOutput(uint32_t pin);
 
 int patan2(int y, int x);
 
-const int MAX_FRAMES = 15;
+const int MAX_FRAMES = 128;
 
 struct FramesData {
     uint16_t count;

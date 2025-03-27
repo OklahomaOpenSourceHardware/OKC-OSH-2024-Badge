@@ -56,7 +56,7 @@ class AccelerometerScreen : public ScreenBase {
 
 class AnimationScreen : public ScreenBase {
  private:
-   static const uint32_t FRAME_RATE = 333;
+   static const uint32_t FRAME_RATE = 20;
    static const int FRAMES_LEN = MAX_FRAMES;
    FramesData framesData;
    int next_frame;
@@ -74,4 +74,18 @@ class AnimationScreen : public ScreenBase {
 class TextScreen : public ScreenBase {
   public:
     virtual void enter() override;    
+};
+
+class GameScreen : public AnimationScreen {
+  public:
+    virtual void enter() override;
+    virtual void execute() override;
+    void setGame(int game);
+    void setLevel(int level); 
+};
+
+class BreathingScreen : public AnimationScreen {
+ public:
+   virtual void enter() override; // Add this declaration
+   virtual void execute() override;
 };

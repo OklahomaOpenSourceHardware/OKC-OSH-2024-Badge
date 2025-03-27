@@ -5,6 +5,7 @@
 struct ButtonState {
     bool clicked : 1;
     bool long_click : 1;
+    bool long_hold : 1;
     bool repeats: 4;
 };
 

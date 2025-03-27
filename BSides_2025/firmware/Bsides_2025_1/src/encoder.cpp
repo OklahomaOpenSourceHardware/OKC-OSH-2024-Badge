@@ -1,9 +1,9 @@
 #include "encoder.h"
 #include "WInterrupts.h"
 
-#define ROT_A PD0
-#define ROT_B PD2
-#define BUTTON PD3
+#define ROT_A PD2
+#define ROT_B PD3
+#define BUTTON PD4
 
 uint8_t getEncoderPos()
 {
@@ -37,6 +37,7 @@ void encoderISR()
 
 bool clicked = false;
 bool long_click = false;
+bool long_hold = false;
 uint32_t last_button_press;
 void buttonISR()
 {
@@ -59,6 +60,7 @@ ButtonState getButtonState()
   ButtonState state;
   state.clicked = clicked;
   state.long_click = long_click;
+  state.long_hold = long_click && (millis() - last_button_press) > 2000;
   state.repeats = 0;
   clicked = long_click = false;
   return state;
