@@ -4,6 +4,9 @@
 
 #include "PinConfigured.h"
 
+#define LONESHA256_STATIC
+#include "lonesha256.h"
+
 // Pseudo atan2.
 // Returns number from 0 to 11 that reflects the angle.
 int patan2(int y, int x)
@@ -57,4 +60,9 @@ void configPinOutput(uint32_t pin)
 {
   PinName p = digitalPinToPinName(pin);
   pin_function(p, CH_PIN_DATA(CH_MODE_OUTPUT_50MHz, CH_CNF_OUTPUT_PP, 0, 0));
+}
+
+
+void sha256(uint8_t hash[32], const uint8_t* data, int len) {
+  lonesha256(hash, data, len);
 }

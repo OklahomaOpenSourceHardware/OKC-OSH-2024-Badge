@@ -73,12 +73,17 @@ class AnimationScreen : public ScreenBase {
    void setPattern1() { framesData = pattern1; }
 };
 
-class GameScreen : public AnimationScreen {
+class GameScreen : public ScreenBase {
+  private:
+    static const int MAX_STEPS = 12;
+    int8_t steps[MAX_STEPS];
+    uint16_t lastEnc;
+    int startLed;
   public:
     virtual void enter() override;
     virtual void execute() override;
-    void setGame(int game);
-    void setLevel(int level); 
+    void addInput(int steps);
+    bool isDone() const;
 };
 
 class BreathingScreen : public StaticAnimationScreen {

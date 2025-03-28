@@ -10,7 +10,7 @@ DefaultScreen defaultScreen;
 AnimationScreen animationScreen;
 
 BreathingScreen breathingScreen;
-
+GameScreen gameScreen;
 TestScreen testScreen;
 
 void setup()
@@ -53,6 +53,9 @@ void handleButton()
     }
     else if (defaultScreen.isActive())
     {
+      // Reset button state to avoid duplicate click.
+      ScreenBase::buttonState = getButtonState();
+
       switch (defaultScreen.level)
       {
       case 1:
@@ -72,6 +75,9 @@ void handleButton()
 
       case 6:
       case 7:
+        gameScreen.select();
+        break;
+
       case 8:
       case 9:
       case 10:
@@ -90,4 +96,8 @@ void loop()
   handleButton();
 
   ScreenBase::executeCurrent();
+
+  if (gameScreen.isActive() && gameScreen.isDone()) {
+    breathingScreen.select();
+  }
 }

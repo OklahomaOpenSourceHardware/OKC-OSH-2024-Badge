@@ -56,7 +56,8 @@ void StaticAnimationScreen::execute()
   {
     return;
   }
-  if (next_frame >= framesCount()) {
+  if (next_frame >= framesCount())
+  {
     next_frame = 0;
   }
   last_frame_t = millis();
@@ -91,32 +92,41 @@ void AnimationScreen::setFrames(uint16_t *frames, int count)
 const FramesData AnimationScreen::pattern1{
     2,
     {0b1010, 0b0101}};
-// const uint16_t AnimationScreen::pattern1[2] PROGMEM = {
-//       0b1010, 0b0101
-//   };
 
 void GameScreen::enter()
 {
-  AnimationScreen::enter();
-  setGame(0);
+  startLed = 1;
+  lastEnc = getEncoderValue();
+  memset(steps, 42, MAX_STEPS);
 }
+
 void GameScreen::execute()
 {
-  AnimationScreen::execute();
+  int v = max(-11, min(11, int(int16_t(lastEnc - getEncoderValue()))));
+  int pattern = (1 << abs(v)) - 1;
+  int shift = (v >= 0 ? startLed + 1 : startLed + 12 + v) % 12;
+  setLitValue(((pattern >> (12 - shift)) | (pattern << shift)) & 0xFFF);
 
-}
-void GameScreen::setGame(int game)
-{
-  switch (game)
+  if (buttonState.clicked)
   {
-  case 0:
-    setPattern1();
-    break;
+    addInput(v);
+    startLed += v;
+    lastEnc = getEncoderValue();
   }
 }
 
+void GameScreen::addInput(int step)
+{
+  memmove(steps + 1, steps, MAX_STEPS - 1);
+  steps[0] = step;
+}
 
-int BreathingScreen::framesCount() const 
+bool GameScreen::isDone() const
+{
+  return steps[0] == 5 && steps[1] == -2 && steps[2] == 0 && steps[3] == 2;
+}
+
+int BreathingScreen::framesCount() const
 {
   return 22 * 4;
 }
@@ -124,6 +134,6 @@ int BreathingScreen::framesCount() const
 uint16_t BreathingScreen::frame(int i) const
 {
   i >>= 2;
-  int len = (i < 11) ? i : (22 - i); 
+  int len = (i < 11) ? i : (22 - i);
   return ((1 << len) - 1) << 2;
 }
