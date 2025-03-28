@@ -43,16 +43,18 @@ class TestScreen : public ScreenBase {
     virtual void execute() override;
 };
  
-
-class AccelerometerScreen : public ScreenBase {
+class StaticAnimationScreen : public ScreenBase {
  private:
-   int ax = 0, ay = 0, az = 0;
-   uint32_t last_frame_t;
+  static const uint32_t FRAME_RATE = 20;
+  int next_frame;
+  uint32_t last_frame_t;
  public:
-   virtual void enter() override;
-   virtual void execute() override;
+  StaticAnimationScreen() : ScreenBase() {}
+  virtual int framesCount() const = 0;
+  virtual uint16_t frame(int i) const = 0;
+  virtual void enter() override;
+  virtual void execute() override;
 };
-
 
 class AnimationScreen : public ScreenBase {
  private:
@@ -71,11 +73,6 @@ class AnimationScreen : public ScreenBase {
    void setPattern1() { framesData = pattern1; }
 };
 
-class TextScreen : public ScreenBase {
-  public:
-    virtual void enter() override;    
-};
-
 class GameScreen : public AnimationScreen {
   public:
     virtual void enter() override;
@@ -84,8 +81,8 @@ class GameScreen : public AnimationScreen {
     void setLevel(int level); 
 };
 
-class BreathingScreen : public AnimationScreen {
+class BreathingScreen : public StaticAnimationScreen {
  public:
-   virtual void enter() override; // Add this declaration
-   virtual void execute() override;
+  virtual int framesCount() const override;
+  virtual uint16_t frame(int i) const override;
 };

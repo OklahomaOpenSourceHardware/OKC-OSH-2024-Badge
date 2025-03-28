@@ -6,8 +6,6 @@
 #include "encoder.h"
 #include "phototrans.h"
 #include "utils.h"
-//#include "i2c_mini.h"
-//#include "ssd1306_mini.h"
 
 static const int FRAMES_LEN = 64; // Reduce from MAX_FRAMES to 64
 
@@ -46,38 +44,25 @@ void TestScreen::execute()
   setLitValue(0xFFF & (display >> (v1 % 12)));
 }
 
-void AccelerometerScreen::enter()
+void StaticAnimationScreen::enter()
 {
   last_frame_t = millis();
+  next_frame = 0;
 }
 
-void AccelerometerScreen::execute()
+void StaticAnimationScreen::execute()
 {
-//   if (millis() - last_frame_t < 10)
-//   {
-//     return; // let mpu6050 refreshd
-//   }
-//   last_frame_t = millis();
-
-//   int16_t data[3];
-//   if (!readAccel(data))
-//   {
-//     defaultScreen->select();
-//     return;
-//   }
-//   const int DECAY = 192;
-//   ax = (DECAY * ax + (256 - DECAY) * data[0]) / 256;
-//   ay = (DECAY * ay + (256 - DECAY) * data[1]) / 256;
-//   az = (DECAY * az + (256 - DECAY) * data[2]) / 256;
-
-//   // angle of lowest part of badge
-//   int a = patan2(ay, -ax);
-//   // esimate size of the curve based on incline of the badge
-//   int s = 2 * min(3, patan2(2 * abs(az), abs(ax) + abs(ay))) + 1;
-//   int v = (1 << (s + 1)) - 1; // curve binary
-//   int o = (s / 2 + a) % 12;   // ... and how to move it
-//   setLitValue(0xFFF & (v << (12 - o) | (v >> o)));
- }
+  if (millis() - last_frame_t < FRAME_RATE)
+  {
+    return;
+  }
+  if (next_frame >= framesCount()) {
+    next_frame = 0;
+  }
+  last_frame_t = millis();
+  setLitValue(frame(next_frame));
+  next_frame++;
+}
 
 void AnimationScreen::enter()
 {
@@ -109,13 +94,7 @@ const FramesData AnimationScreen::pattern1{
 // const uint16_t AnimationScreen::pattern1[2] PROGMEM = {
 //       0b1010, 0b0101
 //   };
-void TextScreen::enter()
-{
-  // oledDrawText(0, 0, "Hello,", 1, 1);
-  // oledDrawText(20, 16, "World!", 1, 1);
-  // oledRefresh();
-  setLitValue(0b111000111000);
-}
+
 void GameScreen::enter()
 {
   AnimationScreen::enter();
@@ -136,18 +115,15 @@ void GameScreen::setGame(int game)
   }
 }
 
-void BreathingScreen::enter()
+
+int BreathingScreen::framesCount() const 
 {
-    AnimationScreen::enter();
-    uint16_t* frames = new uint16_t[64]; // Dynamically allocate memory
-    for (int i = 0; i < 64; ++i) {
-        frames[i] = (i < 32) ? i * 2 : (63 - i) * 2;
-    }
-    setFrames(frames, 64);
-    delete[] frames; // Free memory after use
+  return 22 * 4;
 }
 
-void BreathingScreen::execute()
+uint16_t BreathingScreen::frame(int i) const
 {
-  AnimationScreen::execute(); // Reuse AnimationScreen's execute logic
+  i >>= 2;
+  int len = (i < 11) ? i : (22 - i); 
+  return ((1 << len) - 1) << 2;
 }
