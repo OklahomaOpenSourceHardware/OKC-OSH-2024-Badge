@@ -109,13 +109,7 @@ const FramesData AnimationScreen::pattern1{
 // const uint16_t AnimationScreen::pattern1[2] PROGMEM = {
 //       0b1010, 0b0101
 //   };
-void TextScreen::enter()
-{
-  // oledDrawText(0, 0, "Hello,", 1, 1);
-  // oledDrawText(20, 16, "World!", 1, 1);
-  // oledRefresh();
-  setLitValue(0b111000111000);
-}
+
 void GameScreen::enter()
 {
   AnimationScreen::enter();

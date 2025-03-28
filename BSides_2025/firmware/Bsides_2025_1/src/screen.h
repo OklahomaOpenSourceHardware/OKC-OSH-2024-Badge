@@ -71,11 +71,6 @@ class AnimationScreen : public ScreenBase {
    void setPattern1() { framesData = pattern1; }
 };
 
-class TextScreen : public ScreenBase {
-  public:
-    virtual void enter() override;    
-};
-
 class GameScreen : public AnimationScreen {
   public:
     virtual void enter() override;

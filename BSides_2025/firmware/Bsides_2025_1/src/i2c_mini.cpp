@@ -47,6 +47,7 @@ void scanI2C()
       _hasAccel = true;
     }
   }
+#ifdef HAS_OLED  
   if (!_hasOled) {
     static uint8_t NoDATA[] = {};
     if (I2C_OK == i2c_master_write(&I2Cm, SSD1306_I2C_ADDR << 1, NoDATA, 0, 1)) {
@@ -54,6 +55,7 @@ void scanI2C()
       ssd1306Init();
     }
   }
+#endif  
   last_scan = millis();
 }
 
