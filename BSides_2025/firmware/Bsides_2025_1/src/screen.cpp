@@ -44,6 +44,26 @@ void TestScreen::execute()
   setLitValue(0xFFF & (display >> (v1 % 12)));
 }
 
+void StaticAnimationScreen::enter()
+{
+  last_frame_t = millis();
+  next_frame = 0;
+}
+
+void StaticAnimationScreen::execute()
+{
+  if (millis() - last_frame_t < FRAME_RATE)
+  {
+    return;
+  }
+  if (next_frame >= framesCount()) {
+    next_frame = 0;
+  }
+  last_frame_t = millis();
+  setLitValue(frame(next_frame));
+  next_frame++;
+}
+
 void AnimationScreen::enter()
 {
   last_frame_t = millis();
@@ -95,18 +115,15 @@ void GameScreen::setGame(int game)
   }
 }
 
-void BreathingScreen::enter()
+
+int BreathingScreen::framesCount() const 
 {
-    AnimationScreen::enter();
-    uint16_t* frames = new uint16_t[64]; // Dynamically allocate memory
-    for (int i = 0; i < 64; ++i) {
-        frames[i] = (i < 32) ? i * 2 : (63 - i) * 2;
-    }
-    setFrames(frames, 64);
-    delete[] frames; // Free memory after use
+  return 22 * 4;
 }
 
-void BreathingScreen::execute()
+uint16_t BreathingScreen::frame(int i) const
 {
-  AnimationScreen::execute(); // Reuse AnimationScreen's execute logic
+  i >>= 2;
+  int len = (i < 11) ? i : (22 - i); 
+  return ((1 << len) - 1) << 2;
 }

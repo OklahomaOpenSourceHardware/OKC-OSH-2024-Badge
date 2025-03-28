@@ -43,6 +43,18 @@ class TestScreen : public ScreenBase {
     virtual void execute() override;
 };
  
+class StaticAnimationScreen : public ScreenBase {
+ private:
+  static const uint32_t FRAME_RATE = 20;
+  int next_frame;
+  uint32_t last_frame_t;
+ public:
+  StaticAnimationScreen() : ScreenBase() {}
+  virtual int framesCount() const = 0;
+  virtual uint16_t frame(int i) const = 0;
+  virtual void enter() override;
+  virtual void execute() override;
+};
 
 class AnimationScreen : public ScreenBase {
  private:
@@ -69,8 +81,8 @@ class GameScreen : public AnimationScreen {
     void setLevel(int level); 
 };
 
-class BreathingScreen : public AnimationScreen {
+class BreathingScreen : public StaticAnimationScreen {
  public:
-   virtual void enter() override; // Add this declaration
-   virtual void execute() override;
+  virtual int framesCount() const override;
+  virtual uint16_t frame(int i) const override;
 };
