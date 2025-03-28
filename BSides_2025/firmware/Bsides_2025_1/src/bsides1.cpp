@@ -47,7 +47,7 @@ void handleButton()
   ScreenBase::buttonState = btn;
   if (btn.clicked)
   {
-    if (btn.long_click || btn.long_hold)
+    if (btn.long_click)
     {
       defaultScreen.select();
     }
