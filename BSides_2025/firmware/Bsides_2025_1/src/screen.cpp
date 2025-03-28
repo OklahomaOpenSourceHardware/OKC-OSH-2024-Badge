@@ -6,8 +6,6 @@
 #include "encoder.h"
 #include "phototrans.h"
 #include "utils.h"
-//#include "i2c_mini.h"
-//#include "ssd1306_mini.h"
 
 static const int FRAMES_LEN = 64; // Reduce from MAX_FRAMES to 64
 
@@ -45,39 +43,6 @@ void TestScreen::execute()
   display |= (display << 12);
   setLitValue(0xFFF & (display >> (v1 % 12)));
 }
-
-void AccelerometerScreen::enter()
-{
-  last_frame_t = millis();
-}
-
-void AccelerometerScreen::execute()
-{
-//   if (millis() - last_frame_t < 10)
-//   {
-//     return; // let mpu6050 refreshd
-//   }
-//   last_frame_t = millis();
-
-//   int16_t data[3];
-//   if (!readAccel(data))
-//   {
-//     defaultScreen->select();
-//     return;
-//   }
-//   const int DECAY = 192;
-//   ax = (DECAY * ax + (256 - DECAY) * data[0]) / 256;
-//   ay = (DECAY * ay + (256 - DECAY) * data[1]) / 256;
-//   az = (DECAY * az + (256 - DECAY) * data[2]) / 256;
-
-//   // angle of lowest part of badge
-//   int a = patan2(ay, -ax);
-//   // esimate size of the curve based on incline of the badge
-//   int s = 2 * min(3, patan2(2 * abs(az), abs(ax) + abs(ay))) + 1;
-//   int v = (1 << (s + 1)) - 1; // curve binary
-//   int o = (s / 2 + a) % 12;   // ... and how to move it
-//   setLitValue(0xFFF & (v << (12 - o) | (v >> o)));
- }
 
 void AnimationScreen::enter()
 {

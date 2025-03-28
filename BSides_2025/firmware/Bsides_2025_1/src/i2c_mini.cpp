@@ -39,6 +39,7 @@ void scanI2C()
   {
     return;
   }
+#ifdef HAS_ACCEL
   if (!_hasAccel)
   {
     static uint8_t MPU6050Init[2] = {0x6B, 0};
@@ -47,6 +48,7 @@ void scanI2C()
       _hasAccel = true;
     }
   }
+#endif
 #ifdef HAS_OLED  
   if (!_hasOled) {
     static uint8_t NoDATA[] = {};

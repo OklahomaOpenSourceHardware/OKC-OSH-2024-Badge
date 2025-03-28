@@ -44,16 +44,6 @@ class TestScreen : public ScreenBase {
 };
  
 
-class AccelerometerScreen : public ScreenBase {
- private:
-   int ax = 0, ay = 0, az = 0;
-   uint32_t last_frame_t;
- public:
-   virtual void enter() override;
-   virtual void execute() override;
-};
-
-
 class AnimationScreen : public ScreenBase {
  private:
    static const uint32_t FRAME_RATE = 20;
