@@ -89,10 +89,6 @@ void AnimationScreen::setFrames(uint16_t *frames, int count)
   next_frame = 0;
 }
 
-const FramesData AnimationScreen::pattern1{
-    2,
-    {0b1010, 0b0101}};
-
 void TransmitScreen::enter()
 {
   bitIndex = 0;
