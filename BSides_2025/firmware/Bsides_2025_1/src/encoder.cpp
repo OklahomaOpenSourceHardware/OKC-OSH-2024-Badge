@@ -37,19 +37,20 @@ void encoderISR()
 
 bool clicked = false;
 bool long_click = false;
-bool long_hold = false;
+bool pressed = false;
+
 uint32_t last_button_press;
 void buttonISR()
 {
   if (digitalRead(BUTTON))
   {
     // Released
-    uint32_t t = millis() - last_button_press;
-    long_click = t > 2000;
-    clicked = true;
+    clicked = pressed;
+    pressed = false;
   }
   else
   {
+    pressed = true;
     clicked = false;
     last_button_press = millis();
   }
@@ -57,10 +58,15 @@ void buttonISR()
 
 ButtonState getButtonState()
 {
+  if (pressed && (millis() - last_button_press) > 2000) {
+    // auto-release after 2sec
+    clicked = true;
+    pressed = false;
+    long_click = true;
+  }
   ButtonState state;
   state.clicked = clicked;
   state.long_click = long_click;
-  state.long_hold = long_click && (millis() - last_button_press) > 2000;
   state.repeats = 0;
   clicked = long_click = false;
   return state;

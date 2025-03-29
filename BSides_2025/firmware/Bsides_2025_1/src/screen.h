@@ -43,20 +43,22 @@ class TestScreen : public ScreenBase {
     virtual void execute() override;
 };
  
-
-class AccelerometerScreen : public ScreenBase {
+class StaticAnimationScreen : public ScreenBase {
  private:
-   int ax = 0, ay = 0, az = 0;
-   uint32_t last_frame_t;
+  static const uint32_t FRAME_RATE = 20;
+  int next_frame;
+  uint32_t last_frame_t;
  public:
-   virtual void enter() override;
-   virtual void execute() override;
+  StaticAnimationScreen() : ScreenBase() {}
+  virtual int framesCount() const = 0;
+  virtual uint16_t frame(int i) const = 0;
+  virtual void enter() override;
+  virtual void execute() override;
 };
-
 
 class AnimationScreen : public ScreenBase {
  private:
-   static const uint32_t FRAME_RATE = 20;
+   static const uint32_t FRAME_RATE = 333;
    static const int FRAMES_LEN = MAX_FRAMES;
    FramesData framesData;
    int next_frame;
@@ -69,23 +71,36 @@ class AnimationScreen : public ScreenBase {
    virtual void execute() override;
    void setFrames(uint16_t* frames, int count);
    void setPattern1() { framesData = pattern1; }
+   const FramesData* framesDataPtr() const { return &framesData; }
 };
 
-class TextScreen : public ScreenBase {
-  public:
-    virtual void enter() override;    
+class TransmitScreen : public ScreenBase {
+ private:
+  static const uint32_t BIT_RATE = 80;
+  const FramesData* framesData;
+  int bitIndex;
+  uint32_t last_t;
+ public:
+  TransmitScreen(const FramesData* data) : ScreenBase(), framesData(data) {}
+  virtual void enter() override;
+  virtual void execute() override;
 };
 
-class GameScreen : public AnimationScreen {
+class GameScreen : public ScreenBase {
+  private:
+    static const int MAX_STEPS = 12;
+    int8_t steps[MAX_STEPS];
+    uint16_t lastEnc;
+    int startLed;
   public:
     virtual void enter() override;
     virtual void execute() override;
-    void setGame(int game);
-    void setLevel(int level); 
+    void addInput(int steps);
+    bool isDone() const;
 };
 
-class BreathingScreen : public AnimationScreen {
+class BreathingScreen : public StaticAnimationScreen {
  public:
-   virtual void enter() override; // Add this declaration
-   virtual void execute() override;
+  virtual int framesCount() const override;
+  virtual uint16_t frame(int i) const override;
 };
