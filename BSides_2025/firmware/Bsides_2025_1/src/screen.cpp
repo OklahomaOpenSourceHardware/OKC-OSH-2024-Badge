@@ -93,6 +93,44 @@ const FramesData AnimationScreen::pattern1{
     2,
     {0b1010, 0b0101}};
 
+void TransmitScreen::enter()
+{
+  bitIndex = 0;
+  last_t = millis() - BIT_RATE - 1;
+}
+
+void TransmitScreen::execute()
+{
+  if (millis() - last_t < BIT_RATE)
+  {
+    return;
+  }
+  int byteIndex = bitIndex >> 4;
+  uint8_t byte;
+  if (byteIndex < 3) {
+    if (byteIndex == 2)
+      byte = framesData->count * 2;
+    else
+      byte = byteIndex == 0 ? 0x55 : 0xD5; 
+  } else {
+    int frameIndex = (byteIndex - 3) >> 1;
+    if (frameIndex >= framesData->count) {
+      // end of transmit
+      setLitValue(0);
+      defaultScreen->select();
+      return;
+    }
+    byte = (byteIndex & 1) ? framesData->frames[frameIndex] : (framesData->frames[frameIndex] >> 8);
+  }
+  bool f = !(bitIndex & 1);
+  int bit = (bitIndex >> 1) & 7;
+  bool pos = (((byte >> bit) & 1) != 0) == f;
+  setLitValue(pos ? 0b111000 : 0b111000000000);
+  bitIndex++;
+  last_t = millis();
+}
+ 
+
 void GameScreen::enter()
 {
   startLed = 1;

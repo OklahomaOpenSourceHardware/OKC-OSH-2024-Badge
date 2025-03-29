@@ -58,7 +58,7 @@ class StaticAnimationScreen : public ScreenBase {
 
 class AnimationScreen : public ScreenBase {
  private:
-   static const uint32_t FRAME_RATE = 20;
+   static const uint32_t FRAME_RATE = 333;
    static const int FRAMES_LEN = MAX_FRAMES;
    FramesData framesData;
    int next_frame;
@@ -71,6 +71,19 @@ class AnimationScreen : public ScreenBase {
    virtual void execute() override;
    void setFrames(uint16_t* frames, int count);
    void setPattern1() { framesData = pattern1; }
+   const FramesData* framesDataPtr() const { return &framesData; }
+};
+
+class TransmitScreen : public ScreenBase {
+ private:
+  static const uint32_t BIT_RATE = 80;
+  const FramesData* framesData;
+  int bitIndex;
+  uint32_t last_t;
+ public:
+  TransmitScreen(const FramesData* data) : ScreenBase(), framesData(data) {}
+  virtual void enter() override;
+  virtual void execute() override;
 };
 
 class GameScreen : public ScreenBase {

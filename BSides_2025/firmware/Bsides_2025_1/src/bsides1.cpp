@@ -12,6 +12,7 @@ AnimationScreen animationScreen;
 BreathingScreen breathingScreen;
 GameScreen gameScreen;
 TestScreen testScreen;
+TransmitScreen txScreen(animationScreen.framesDataPtr());
 
 void setup()
 {
@@ -79,6 +80,9 @@ void handleButton()
         break;
 
       case 8:
+        txScreen.select();
+        break;
+
       case 9:
       case 10:
       case 11:
