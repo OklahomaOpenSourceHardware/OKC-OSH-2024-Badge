@@ -33,12 +33,20 @@ void handleAdc()
       delay(1000);
       return;
     }
-    int frames_len = 0;
-    uint16_t frames[MAX_FRAMES];
-    frames_len = receivedFrames();
-    getFrames(frames);
-    animationScreen.setFrames(frames, frames_len);
-    animationScreen.select();
+    {
+      int frames_len = 0;
+      uint16_t frames[MAX_FRAMES];
+      frames_len = receivedFrames();
+      getFrames(frames);
+      animationScreen.setFrames(frames, frames_len);
+      animationScreen.select();
+    }
+    {
+      // program Flash too
+      Storage tmp = storage;
+      tmp.frames = *animationScreen.framesDataPtr();
+      updateStorage(tmp);
+    }
   }
 }
 
@@ -101,7 +109,8 @@ void loop()
 
   ScreenBase::executeCurrent();
 
-  if (gameScreen.isActive() && gameScreen.isDone()) {
+  if (gameScreen.isActive() && gameScreen.isDone())
+  {
     breathingScreen.select();
   }
 }

@@ -62,7 +62,29 @@ void configPinOutput(uint32_t pin)
   pin_function(p, CH_PIN_DATA(CH_MODE_OUTPUT_50MHz, CH_CNF_OUTPUT_PP, 0, 0));
 }
 
-
-void sha256(uint8_t hash[32], const uint8_t* data, int len) {
+void sha256(uint8_t hash[32], const uint8_t *data, int len)
+{
   lonesha256(hash, data, len);
+}
+
+const Storage storage{
+    {2,
+     {0b1010, 0b0101}},
+};
+
+void updateStorage(const Storage &newData)
+{
+  const uint32_t *src = reinterpret_cast<const uint32_t *>(&newData);
+  uint32_t dest = uint32_t(&storage) | FLASH_BASE; // Alias flash region
+  static_assert(sizeof(storage) == 64);
+
+  FLASH_Unlock_Fast();
+  FLASH_ErasePage_Fast(dest);
+  FLASH_BufReset();
+  for (int i = 0; i < 16; i++)
+  {
+    FLASH_BufLoad(dest + (i << 2), src[i]);
+  }
+  FLASH_ProgramPage_Fast(dest);
+  FLASH_Lock_Fast();
 }

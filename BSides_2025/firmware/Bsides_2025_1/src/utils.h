@@ -16,3 +16,14 @@ struct FramesData {
 };
 
 void sha256(uint8_t hash[32], const uint8_t* data, int len);
+
+struct alignas(64) Storage {
+  FramesData frames;
+  uint8_t reserved[32];
+};
+
+static_assert(sizeof(Storage) % 64 == 0);
+
+extern const Storage storage;
+
+void updateStorage(const Storage& newData); 

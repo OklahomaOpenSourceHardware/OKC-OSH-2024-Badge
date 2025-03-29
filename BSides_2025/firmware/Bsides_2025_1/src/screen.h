@@ -63,14 +63,13 @@ class AnimationScreen : public ScreenBase {
    FramesData framesData;
    int next_frame;
    uint32_t last_frame_t;
-   static const FramesData pattern1;
 
   public:
    AnimationScreen() : ScreenBase(), framesData{0} {} 
    virtual void enter() override;
    virtual void execute() override;
    void setFrames(uint16_t* frames, int count);
-   void setPattern1() { framesData = pattern1; }
+   void setPattern1() { framesData = storage.frames; }
    const FramesData* framesDataPtr() const { return &framesData; }
 };
 
