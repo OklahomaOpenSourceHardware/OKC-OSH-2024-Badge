@@ -6,6 +6,10 @@
 #include "encoder.h"
 #include "phototrans.h"
 #include "utils.h"
+#define LONESHA256_STATIC
+#include <lonesha256.h> // Ensure the correct header file is included for lonesha256
+
+extern  int lonesha256(unsigned char out[32], const unsigned char *in, size_t len); // Declare the function
 
 static const int FRAMES_LEN = 64; // Reduce from MAX_FRAMES to 64
 
@@ -129,35 +133,62 @@ void TransmitScreen::execute()
 
 void GameScreen::enter()
 {
-  startLed = 1;
+  startLed = 0;
   lastEnc = getEncoderValue();
-  memset(steps, 42, MAX_STEPS);
+  //memset(steps, 42, MAX_STEPS);
 }
+
+
+
 
 void GameScreen::execute()
 {
   int v = max(-11, min(11, int(int16_t(lastEnc - getEncoderValue()))));
-  int pattern = (1 << abs(v)) - 1;
-  int shift = (v >= 0 ? startLed + 1 : startLed + 12 + v) % 12;
+  int pattern = (1 << abs(v))- 1;
+  int shift = (v >= 0 ? startLed + 2 : startLed + 13 + v) % 12;
   setLitValue(((pattern >> (12 - shift)) | (pattern << shift)) & 0xFFF);
 
   if (buttonState.clicked)
   {
+    
     addInput(v);
-    startLed += v;
+    startLed = 0; //+= v;
     lastEnc = getEncoderValue();
+    //steps[0] = v;
+    level = (level + 1) % 12;
+    if (level == 0)
+    {
+      //defaultScreen->select();
+      return;
+    }
+
   }
 }
 
 void GameScreen::addInput(int step)
 {
-  memmove(steps + 1, steps, MAX_STEPS - 1);
-  steps[0] = step;
+  uint8_t index = strlen(reinterpret_cast<const char*>(steps));
+  if (index >= MAX_STEPS)
+  {
+    return;
+  }
+  steps[index] = step;
+  steps[index + 1] = '\0';
 }
 
 bool GameScreen::isDone() const
 {
-  return steps[0] == 5 && steps[1] == -2 && steps[2] == 0 && steps[3] == 2;
+  //lonesha256 function:
+  unsigned char out[32];
+  /* 
+  strlen(steps)
+(static|extern) int lonesha256 (unsigned char out[32], &steps, MAX_STEPS)
+    writes the sha256 hash of the first "len" bytes in buffer "in" to buffer "out"
+    returns 0 on success, may return non-zero in future versions to indicate error
+*/
+
+  lonesha256(out, steps, strlen(reinterpret_cast<const char*>(steps)));
+  return (memcmp(out, hashes[(steps[0] >> 4)], 32) == 0); // Compare with fixed hash size
 }
 
 int BreathingScreen::framesCount() const

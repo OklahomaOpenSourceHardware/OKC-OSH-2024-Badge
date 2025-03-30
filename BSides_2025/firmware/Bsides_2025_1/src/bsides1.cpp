@@ -20,8 +20,8 @@ void setup()
   setupPhoto();
   setupEncoder();
 
-  ScreenBase::defaultScreen = &defaultScreen;
-  defaultScreen.select();
+  ScreenBase::defaultScreen = &gameScreen;
+  gameScreen.select();
 }
 
 void handleAdc()
@@ -58,42 +58,74 @@ void handleButton()
   {
     if (btn.long_click)
     {
-      defaultScreen.select();
+      gameScreen.select();
     }
-    else if (defaultScreen.isActive())
+    else if (gameScreen.isActive())
     {
       // Reset button state to avoid duplicate click.
       ScreenBase::buttonState = getButtonState();
 
-      switch (defaultScreen.level)
+      switch (gameScreen.level)
       {
+      case 0:
+        //defaultScreen.select();
+        gameScreen.addInput(0);
+        gameScreen.select();
+        break;
       case 1:
-        defaultScreen.select();
+        //defaultScreen.select();
+        gameScreen.addInput(1);
+        gameScreen.select();
         break;
       case 2:
-        testScreen.select();
+        //testScreen.select();
+        gameScreen.addInput(2);
+        gameScreen.select();
         break;
       case 3:
+        //animationScreen.setFrames(frames, frames_len);
+        //animationScreen.select();
+        gameScreen.addInput(3);
+        gameScreen.select();
+        break;
       case 4:
-        breathingScreen.select();
+        //breathingScreen.select();
+        gameScreen.addInput(4);
+        gameScreen.select();
         break;
       case 5:
-        animationScreen.setPattern1();
-        animationScreen.select();
-        break;
-
-      case 6:
-      case 7:
+        //animationScreen.setPattern1();
+        //animationScreen.select();
+        gameScreen.addInput(5);
         gameScreen.select();
         break;
 
+      case 6:
+        gameScreen.addInput(6);
+        gameScreen.select();
+      case 7:
+        gameScreen.addInput(7);
+        gameScreen.select();
+      break;
+
       case 8:
-        txScreen.select();
+        //txScreen.select();
+        gameScreen.addInput(8);
+        gameScreen.select();
         break;
 
       case 9:
+        gameScreen.addInput(9);
+        gameScreen.select();
+        break;
       case 10:
+        gameScreen.addInput(10);
+        gameScreen.select();
+        break;
       case 11:
+        gameScreen.addInput(11);
+        gameScreen.select();
+        break;
       default:
         defaultScreen.select();
         break;
