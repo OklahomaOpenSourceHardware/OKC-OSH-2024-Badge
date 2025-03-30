@@ -58,78 +58,16 @@ void handleButton()
   {
     if (btn.long_click)
     {
-      gameScreen.select();
-    }
-    else if (gameScreen.isActive())
-    {
+      if (!gameScreen.isActive()) {
+        gameScreen.select();
+      }
+      setLitValue(0b10101010101);
+      delay(300);
+      setLitValue(0b101010101010);
+      delay(300);
+      gameScreen.reset();
       // Reset button state to avoid duplicate click.
       ScreenBase::buttonState = getButtonState();
-
-      switch (gameScreen.level)
-      {
-      case 0:
-        //defaultScreen.select();
-        gameScreen.addInput(0);
-        gameScreen.select();
-        break;
-      case 1:
-        //defaultScreen.select();
-        gameScreen.addInput(1);
-        gameScreen.select();
-        break;
-      case 2:
-        //testScreen.select();
-        gameScreen.addInput(2);
-        gameScreen.select();
-        break;
-      case 3:
-        //animationScreen.setFrames(frames, frames_len);
-        //animationScreen.select();
-        gameScreen.addInput(3);
-        gameScreen.select();
-        break;
-      case 4:
-        //breathingScreen.select();
-        gameScreen.addInput(4);
-        gameScreen.select();
-        break;
-      case 5:
-        //animationScreen.setPattern1();
-        //animationScreen.select();
-        gameScreen.addInput(5);
-        gameScreen.select();
-        break;
-
-      case 6:
-        gameScreen.addInput(6);
-        gameScreen.select();
-      case 7:
-        gameScreen.addInput(7);
-        gameScreen.select();
-      break;
-
-      case 8:
-        //txScreen.select();
-        gameScreen.addInput(8);
-        gameScreen.select();
-        break;
-
-      case 9:
-        gameScreen.addInput(9);
-        gameScreen.select();
-        break;
-      case 10:
-        gameScreen.addInput(10);
-        gameScreen.select();
-        break;
-      case 11:
-        gameScreen.addInput(11);
-        gameScreen.select();
-        break;
-      default:
-        defaultScreen.select();
-        break;
-      }
     }
   }
 }
