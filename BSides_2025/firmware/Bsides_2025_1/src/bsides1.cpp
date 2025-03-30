@@ -22,6 +22,20 @@ void setup()
 
   ScreenBase::defaultScreen = &gameScreen;
   gameScreen.select();
+
+  gameScreen.onclick = [](const int8_t* steps, int len) {
+    if (len == 2 && steps[0] == 2) {
+      switch (steps[1])
+      {
+      case 1:
+        animationScreen.select();
+        break;
+      case -1:
+        txScreen.select();
+        break;
+      }
+    }
+  };
 }
 
 void handleAdc()

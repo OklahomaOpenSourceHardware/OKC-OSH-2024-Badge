@@ -213,6 +213,8 @@ void GameScreen::execute()
       delay(300);
       setLitValue(0);
       reset();
+    } else if (onclick) {
+      onclick(steps, stepIndex);
     }
   }
 }
