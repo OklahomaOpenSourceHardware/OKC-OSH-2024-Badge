@@ -186,7 +186,7 @@ void GameScreen::enter()
 
 void GameScreen::execute()
 {
-  int v = max(-11, min(11, int(int16_t(lastEnc - getEncoderValue()))/2));
+  int v = max(-11, min(11, int(int16_t(lastEnc - getEncoderValue()))/4));
   int pattern = (1 << abs(v))- 1;
   int shift = (v >= 0 ? startLed + 2 : startLed + 13 + v) % 12;
   setLitValue(((pattern >> (12 - shift)) | (pattern << shift)) & 0xFFF);
@@ -199,7 +199,7 @@ void GameScreen::execute()
     int q = hasHash(steps, stepIndex);
     if(q >= 0) {
       completedHashFlag |= (1 << q);
-      if (completedHashFlag == 0b111111111111) {
+      if (completedHashFlag == 0b0000011111111111) {
         setLitValue(0xFFF);
         delay(300);
         setLitValue(0);
@@ -213,6 +213,8 @@ void GameScreen::execute()
       delay(300);
       setLitValue(0);
       reset();
+    }else if(onClick) {
+      onClick(steps, stepIndex);
     }
   }
 }

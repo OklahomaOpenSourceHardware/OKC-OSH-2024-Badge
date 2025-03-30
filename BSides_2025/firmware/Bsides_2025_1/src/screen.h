@@ -100,6 +100,7 @@ class GameScreen : public DefaultScreen {
     void addInput(int steps);
     bool isDone() const;
     void reset();
+    void (*onClick)(const int8_t* steps, int len) = nullptr;
 };
 
 class BreathingScreen : public StaticAnimationScreen {
