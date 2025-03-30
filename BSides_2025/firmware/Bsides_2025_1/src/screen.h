@@ -92,6 +92,7 @@ class GameScreen : public DefaultScreen {
     int stepIndex;
     uint16_t lastEnc;
     int startLed;
+    uint16_t completedHashFlag = 0;
 
   public:
     virtual void enter() override;
