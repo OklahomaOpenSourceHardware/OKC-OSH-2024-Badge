@@ -186,7 +186,7 @@ void GameScreen::enter()
 
 void GameScreen::execute()
 {
-  int v = max(-11, min(11, int(int16_t(lastEnc - getEncoderValue()))));
+  int v = max(-11, min(11, int(int16_t(lastEnc - getEncoderValue()))/2));
   int pattern = (1 << abs(v))- 1;
   int shift = (v >= 0 ? startLed + 2 : startLed + 13 + v) % 12;
   setLitValue(((pattern >> (12 - shift)) | (pattern << shift)) & 0xFFF);
