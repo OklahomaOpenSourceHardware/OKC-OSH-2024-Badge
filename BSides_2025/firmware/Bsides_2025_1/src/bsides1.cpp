@@ -35,6 +35,48 @@ void setup()
       case 3:
         breathingScreen.select();
         break;
+      case 4:
+        defaultScreen.select();
+        break;
+      case 5:
+            setLitValue(0b00001011001);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00001010101);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00001010010);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00001011001);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00000100110);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00001001100);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00001001111);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00001001011);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+            setLitValue(0b00001001001);
+            delay(300);
+            setLitValue(0b00000000000);
+            delay(300);
+              break;
+
       case -1:
         txScreen.select();
         break;
@@ -98,8 +140,5 @@ void loop()
 
   ScreenBase::executeCurrent();
 
-  if (gameScreen.isActive() && gameScreen.isDone())
-  {
-    breathingScreen.select();
-  }
+
 }
