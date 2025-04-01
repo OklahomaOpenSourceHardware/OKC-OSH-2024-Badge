@@ -22,6 +22,7 @@ void setup()
 
   ScreenBase::defaultScreen = &gameScreen;
   gameScreen.select();
+
   gameScreen.onClick = [](const int8_t* steps, int len) {
     if (len == 2 && steps[0] == 2) {
       switch (steps[1])
