@@ -10,7 +10,9 @@
 *-backups
 *.kicad_prl
 *.sch-bak
+*.lck
 *~
+
 _autosave-*
 *.tmp
 *-save.pro
@@ -27,3 +29,19 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+
+\#*
+
+### VisualStudioCode ###
+.vscode/*      # Maybe .vscode/**/* instead - see comments
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+**/.history
+
+# End of https://www.gitignore.io/api/visualstudiocode
