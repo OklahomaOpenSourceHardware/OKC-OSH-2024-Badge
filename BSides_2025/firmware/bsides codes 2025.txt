@@ -1,0 +1,79 @@
+The 12 Patterns (Starting Digits 0-11):
+Pattern 0: Root Privilege
+Sequence: 0
+sha256: 0: 5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9
+Connection: (Hacker/InfoSec) UID 0 signifies 'root' access in Unix/Linux – the ultimate goal. It's the absolute base level of control.
+Pattern 1: Loopback Address
+Sequence: 1, 2, 7, 0, 0, 1 (from 127.0.0.1)
+sha256: 127001: 053abfc48963f2cb94ebde98f96d10979cda070733331e3e9cf408f0df2d8cc9
+Connection: (Hacker/InfoSec/Networking) Represents localhost (your own machine), fundamental for testing network tools and configurations.
+Pattern 2: Phreaker Tone
+Sequence: 2, 6, 0, 0
+sha256: 2600 : 3a0e14026c6b1d6b4cae899e451e9ebcbd9646c44a956440f2227b2212447be6
+Connection: (Hacker History) 2600 Hz frequency used in early phone hacking (phreaking) with blue boxes. A nod to hacking roots and 2600 Magazine.
+Pattern 3: Pi Fragment
+Sequence: 3, 1, 4, 1, 5
+sha256: 31415 : 9183c29ea013b982ff923f04bcf81bb79eb481d42659ea19fe42bbfe2d0264d0
+Connection: (Math/Computation) The beginning of Pi (π). Represents complex calculations, algorithms, or maybe cracking cyclical encryption patterns.
+Pattern 4: Not Found Error
+Sequence: 4, 0, 4
+sha256: 404 : 6b3c238ebcf1f3c07cf0e556faa82c6b8fe96840ff4b6b7e9962a2d855843a0b
+Connection: (Web/InfoSec) HTTP 404 error. Represents hitting a dead end, something hidden, or information leakage encountered during web reconnaissance.
+Pattern 5: DNS Port
+Sequence: 5, 3
+sha256: 53: 2858dcd1057d3eae7f7d5f782167e24b61153c01551450a628cee722509f6529
+Connection: (Networking/InfoSec) Port 53 is used for DNS (Domain Name System). Crucial internet infrastructure, often targeted for spoofing, cache poisoning, or reconnaissance.
+Pattern 6: Integer Overflow / Max Short
+Sequence: 6, 5, 5, 3, 5
+sha256: 65535 : f2f89ede8e7d4b3d2243dea1ca96b8ece56f793811d9708b4a0181bf81a50011
+Connection: (Math/InfoSec) Maximum value for a 16-bit unsigned integer. Hitting this limit can cause overflow vulnerabilities – a classic exploit technique.
+Pattern 7: leet backwards
+Sequence: 7, 3, 3, 1 
+Connection: (Math/InfoSec) Sequence of prime numbers, fundamental to cryptography (like RSA keys). Could represent stages of decryption or a required activation sequence.
+Pattern 8: Fibonacci sequence
+Sequence: 8, 5, 3, 2, 1, 1 
+sha256: 853211 : c94d8348d75a297c77947056ee8912f8ccbd573031bbac1e48c166e5e54f19e4
+Connection: (Networking/InfoSec) Represents standard HTTP (80) and HTTPS (443) ports. Common entry points for attacking web applications.
+Pattern 9: IMAPS Port
+Sequence: 9, 9, 3
+sha256: 993 : 40fb7164e459a38813f304e3b45db2b074be149818924e46fdc49cc38a3e4955
+Connection: (Networking/InfoSec) Port 993 is used for IMAP over SSL/TLS (secure email access). Represents secure communication channels that might be probed or analyzed.
+Pattern 10: Private Network Start
+Sequence: 10, 0, 0, 1 : 
+sha256: a001: 05784188DBCEBD806696B847AB7ADE546D8BC94727D90DCC867F0FEC4264C055
+Connection: (Networking/InfoSec) A common starting IP address in the 10.x.x.x private network range (RFC 1918). Represents internal network mapping and reconnaissance.
+Pattern 11: Beyond Limits / Spinal Tap primes
+Sequence: 11, 7, 5, 3, 2
+sha256: b7532 : 1e736c380ec6ec6d7f0445baed77f212289005a58b7ec79bba34bec6cbcf2093
+Connection: (Hacker Culture/Tagline) Directly references your conference tagline "Turn it to 11". Represents pushing boundaries, exceeding limits, the final step, or achieving the ultimate goal in the game/CTF.
+
+
+Python 3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import hashlib
+>>>
+>>> def hash(b):
+...
+...   m = hashlib.sha256()
+...   m.update(b)
+...   d = m.digest()
+...   s = "  {"
+...   for i in range(0, len(d)):
+...     s += hex(d[i]) + ", "
+...   print(s + "},")
+...
+1ccw,2cw,3ccw
+clockwise - then counterclockwise - then clockwise
+print(hash(bytearray([ 0 ])),
+hash(bytearray([1 , -2 & 255, 7, 0, 0, -1 & 255])),
+hash(bytearray([2, -6 & 255, 0, 0])),
+hash(bytearray([3, -1  & 255, 4, -1 & 255, 5])),
+hash(bytearray([4, 0, 4])),
+hash(bytearray([5, -3 & 255])),
+hash(bytearray([6, -5 & 255, 5, -3 & 255, 5])),
+hash(bytearray([7, -3 & 255, 3, -1 & 255])),
+hash(bytearray([8, -5 & 255, 3, -2 & 255, 1, -1 & 255, 0])),
+hash(bytearray([9, -9 & 255, 3])),
+hash(bytearray([10, 0, 0, -1 & 255])),
+hash(bytearray([11,-7 & 255, 5, -3 & 255, 2])))
+

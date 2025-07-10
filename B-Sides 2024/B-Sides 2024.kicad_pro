@@ -566,7 +566,7 @@
     "net_colors": null,
     "netclass_assignments": {
       "+1V2": "micro",
-      "+3.3V": "power",
+      "+3.3V": "micro",
       "/A0": "micro",
       "/A1": "micro",
       "/A2": "micro",
