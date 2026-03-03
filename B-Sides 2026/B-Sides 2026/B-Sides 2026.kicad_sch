@@ -3091,7 +3091,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 58.42) (xy 132.08 58.42)
+			(xy 132.08 58.42) (xy 153.67 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3138,6 +3138,16 @@
 			(type default)
 		)
 		(uuid "3a3a655c-7dd7-4fa2-8da7-15cbacfab547")
+	)
+	(wire
+		(pts
+			(xy 132.08 81.28) (xy 147.32 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a6aa449-b30e-4a53-b52a-42e00be0be57")
 	)
 	(wire
 		(pts
@@ -3241,7 +3251,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 71.12) (xy 101.6 71.12)
+			(xy 151.13 50.8) (xy 132.08 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3338,6 +3348,16 @@
 			(type default)
 		)
 		(uuid "a0c3020f-7d65-4dc8-8c77-6db44547ea4d")
+	)
+	(wire
+		(pts
+			(xy 158.75 58.42) (xy 162.56 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae50df66-93d3-41ea-b000-c26e6fe424e4")
 	)
 	(wire
 		(pts
@@ -3529,6 +3549,16 @@
 		)
 		(uuid "31907d67-c72d-49b0-be71-e5ddf54f00df")
 	)
+	(label "Battery_VIN"
+		(at 86.36 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "34d503b4-e9f3-45ca-9836-e0252e77da6d")
+	)
 	(label "CS{slash}MISO"
 		(at 186.944 54.61 0)
 		(effects
@@ -3630,12 +3660,12 @@
 		(uuid "695b68ed-5237-484c-addc-49c2092a1f45")
 	)
 	(label "buzzer"
-		(at 86.36 71.12 0)
+		(at 151.13 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "7efa342c-4af5-4aa5-ad04-c02ce1ba8aa6")
 	)
@@ -3769,6 +3799,16 @@
 		)
 		(uuid "e218e648-a6f7-414a-97a8-065242649bdf")
 	)
+	(label "DIO"
+		(at 147.32 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e2747c43-ccfc-4c21-9892-0ae1b5c4a489")
+	)
 	(label "Battery_VIN"
 		(at 176.022 107.95 0)
 		(effects
@@ -3845,7 +3885,7 @@
 	)
 	(symbol
 		(lib_id "bs2026:WS2812B-4020")
-		(at 191.77 83.82 0)
+		(at 222.25 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3854,7 +3894,7 @@
 		(fields_autoplaced yes)
 		(uuid "07e0ac55-3157-4d20-9450-30ad0ffa9d7c")
 		(property "Reference" "D37"
-			(at 214.63 74.8598 0)
+			(at 245.11 74.8598 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3862,7 +3902,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 214.63 77.3998 0)
+			(at 245.11 77.3998 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3870,7 +3910,7 @@
 			)
 		)
 		(property "Footprint" "footprints:WS2812B-4020"
-			(at 193.04 91.44 0)
+			(at 223.52 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3880,7 +3920,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 194.31 93.345 0)
+			(at 224.79 93.345 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3890,7 +3930,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 214.63 79.9398 0)
+			(at 245.11 79.9398 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3898,7 +3938,7 @@
 			)
 		)
 		(property "Alternate Part Number 1" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3907,7 +3947,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3916,7 +3956,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3925,7 +3965,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3934,7 +3974,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3943,7 +3983,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3952,7 +3992,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3961,7 +4001,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3970,7 +4010,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3979,7 +4019,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3988,7 +4028,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3997,7 +4037,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4006,7 +4046,7 @@
 			)
 		)
 		(property "LCSC" "C3647024"
-			(at 191.77 83.82 0)
+			(at 222.25 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4382,6 +4422,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C105872"
+			(at 108.712 116.332 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7966e6a0-b6f7-4034-b1e1-9e0066bf5a53")
 		)
@@ -4392,6 +4441,72 @@
 			(project "B-Sides 2026"
 				(path "/e05eb343-654a-456b-91cb-37f3de38219b"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "23f01aff-31cb-471a-b8b8-bd97eec867d2")
+		(property "Reference" "#PWR04"
+			(at 86.36 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 86.36 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.36 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 86.36 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f1ffd766-d999-466e-8629-f4987498b870")
+		)
+		(instances
+			(project "B-Sides 2026"
+				(path "/e05eb343-654a-456b-91cb-37f3de38219b"
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -4576,7 +4691,7 @@
 	)
 	(symbol
 		(lib_id "bs2026:WS2812B-4020")
-		(at 222.25 83.82 0)
+		(at 191.77 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4585,7 +4700,7 @@
 		(fields_autoplaced yes)
 		(uuid "303f161c-97fe-47ac-b890-2b9b9b6edad4")
 		(property "Reference" "D38"
-			(at 245.11 74.8598 0)
+			(at 214.63 74.8598 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4593,7 +4708,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 245.11 77.3998 0)
+			(at 214.63 77.3998 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4601,7 +4716,7 @@
 			)
 		)
 		(property "Footprint" "footprints:WS2812B-4020"
-			(at 223.52 91.44 0)
+			(at 193.04 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4611,7 +4726,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 224.79 93.345 0)
+			(at 194.31 93.345 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4621,7 +4736,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 245.11 79.9398 0)
+			(at 214.63 79.9398 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4629,7 +4744,7 @@
 			)
 		)
 		(property "Alternate Part Number 1" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4638,7 +4753,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4647,7 +4762,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4656,7 +4771,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4665,7 +4780,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4674,7 +4789,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4683,7 +4798,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4692,7 +4807,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4701,7 +4816,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4710,7 +4825,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4719,7 +4834,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4728,7 +4843,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4737,7 +4852,7 @@
 			)
 		)
 		(property "LCSC" "C3647024"
-			(at 222.25 83.82 0)
+			(at 191.77 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5785,6 +5900,247 @@
 		)
 	)
 	(symbol
+		(lib_id "temp-sensor-rescue:R_Small_US-Device-temp-sensor-rescue")
+		(at 156.21 58.42 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7cd01f4c-eb7f-4687-830c-4136f7dd8439")
+		(property "Reference" "R5"
+			(at 155.448 56.388 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 155.194 61.214 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/447/Yageo_03_18_2021_PYu_RC_Group_51_RoHS_L_11-2199992.pdf"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Thick Film Resistors - SMD 5.1K ohm 1%"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Bourns"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CR0603-FX-5101ELF"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "652-CR0603FX-5101ELF"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "$0.10/78000"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "V3"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Configuration" "all"
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Alternate Part Number 1" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Availability" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description_1" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MP" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Package" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 156.21 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C105872"
+			(at 156.21 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0b29d163-53ca-4779-a020-0dab274da8e2")
+		)
+		(pin "2"
+			(uuid "630bf0e8-68b3-4ff8-b6c5-a3192770855d")
+		)
+		(instances
+			(project "B-Sides 2026"
+				(path "/e05eb343-654a-456b-91cb-37f3de38219b"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 191.77 91.44 0)
 		(unit 1)
@@ -6485,6 +6841,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C138021"
+			(at 187.198 64.516 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "666381ed-7356-4a9f-bbd7-171d24aa142e")
 		)
@@ -6559,6 +6924,85 @@
 			(project "B-Sides 2026"
 				(path "/e05eb343-654a-456b-91cb-37f3de38219b"
 					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 86.36 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bec7f294-14ed-4dc2-8187-7d557adf55d2")
+		(property "Reference" "C6"
+			(at 88.9 36.8362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 88.9 39.3762 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 86.36 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 86.36 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 86.36 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 86.36 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4dcae1f4-c2e2-490a-8336-16d83fbf0a26")
+		)
+		(pin "1"
+			(uuid "f9f66ff6-e464-4338-b97f-59064c36aac1")
+		)
+		(instances
+			(project "B-Sides 2026"
+				(path "/e05eb343-654a-456b-91cb-37f3de38219b"
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -7791,7 +8235,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
-		(at 152.4 58.42 180)
+		(at 167.64 58.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7800,7 +8244,7 @@
 		(fields_autoplaced yes)
 		(uuid "f9c5ed4e-27ff-474c-9f4f-aaaa9e5dffb6")
 		(property "Reference" "J1"
-			(at 151.765 53.34 0)
+			(at 167.005 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7808,7 +8252,7 @@
 			)
 		)
 		(property "Value" "Conn_01x01_Pin"
-			(at 151.765 55.88 0)
+			(at 167.005 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7816,7 +8260,7 @@
 			)
 		)
 		(property "Footprint" "footprints:Swoosh"
-			(at 152.4 58.42 0)
+			(at 167.64 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7825,7 +8269,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 152.4 58.42 0)
+			(at 167.64 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7834,7 +8278,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 152.4 58.42 0)
+			(at 167.64 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8124,6 +8568,15 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 92.71 129.032 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C138021"
 			(at 92.71 129.032 90)
 			(effects
 				(font
