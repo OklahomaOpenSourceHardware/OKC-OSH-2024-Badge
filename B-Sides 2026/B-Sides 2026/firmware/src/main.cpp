@@ -4,9 +4,9 @@
 #include <avr/io.h>
 
 // Using confirmed PIN_Pxn naming from btbm.ch
-#define PIEZO_PIN   PIN_PA4
-#define TOUCH_PIN   PIN_PA5
-#define LED_DATA    PIN_PA6
+#define PIEZO_PIN   PIN_PA1
+#define TOUCH_PIN   PIN_PA4
+#define LED_DATA    PIN_PB4
 #define LED_PWR_EN  PIN_PA7
 #define NUM_LEDS    4
 
@@ -14,12 +14,26 @@ Adafruit_NeoPixel strip(NUM_LEDS, LED_DATA, NEO_GRB + NEO_KHZ800);
 
 // Updated VDD Read from btbm.ch notes
 long readVcc() {
-  analogReference(INTERNAL1V024);
+  analogReference(INTERNAL1V1);
   // ADC_VDDDIV10 reads VDD/10. 
+
+
   // Result of 1024 at 10-bit = 1.024V (meaning VDD is 10.24V)
-  int32_t vdd = analogReadEnh(ADC_VDDDIV10, 12); 
-  vdd >>= 2; // Adjust for 12-bit to 10-bit
-  return vdd * 10; // Returns millivolts
+
+// We use the direct register constant confirmed by your grep
+    // ADC_MUXPOS_VDDDIV10_gc is the raw hardware bitmask for VDD/10
+    ADC0.MUXPOS = ADC_MUXPOS_AIN10_gc;
+    ADC0.CTRLA = ADC_ENABLE_bm;
+    ADC0.COMMAND = ADC_STCONV_bm;
+while(!(ADC0.INTFLAGS & ADC_RESRDY_bm));
+    uint16_t reading = ADC0.RES;
+
+  if (reading == 0) return 0;
+    // 1.1V * 1024 * 10 = 11264000
+    return (11264000L / reading);
+ // int32_t vdd = analogReadEnh(ADC_VDDDIV10, 12); 
+//  vdd >>= 2; // Adjust for 12-bit to 10-bit
+//  return vdd * 10; // Returns millivolts
 }
 
 void setLedPower(bool on) {
