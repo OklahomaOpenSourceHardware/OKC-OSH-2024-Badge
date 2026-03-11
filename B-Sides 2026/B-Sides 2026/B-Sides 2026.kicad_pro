@@ -191,8 +191,7 @@
       ],
       "track_widths": [
         0.0,
-        0.2,
-        1.0
+        0.2
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -528,8 +527,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "gerbers",
-      "pos_files": "./",
+      "plot": "",
+      "pos_files": "",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -726,12 +725,6 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "price",
-          "name": "price",
           "show": false
         }
       ],
