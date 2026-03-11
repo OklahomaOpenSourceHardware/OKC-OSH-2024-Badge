@@ -1,0 +1,8 @@
+### Footprint positions - created on 2026-02-18T16:22:37-0600 ###
+### Printed by KiCad version 9.0.7
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                           Package                         PosX       PosY       Rot  Side
+J1        Conn_01x01_Pin                Swoosh                      110.0700   -62.1556    0.0000  top
+J2        Conn_02x03_Counter_Clockwise  Simple_Addon_v2-BADGE-2x3    93.8400   -44.5200    0.0000  top
+## End
