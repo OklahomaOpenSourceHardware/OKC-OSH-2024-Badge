@@ -1,0 +1,29 @@
+### Footprint positions - created on 2025-02-05T00:23:05-0600 ###
+### Printed by KiCad version 8.0.8
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val               Package                                     PosX       PosY       Rot  Side
+BT1       Battery           BatteryHolder_Keystone_3008_1x2450      161.9000  -106.4650  180.0000  bottom
+C1        100n              C_0402_1005Metric                       161.8200   -82.0200  180.0000  bottom
+C2        100n              C_0402_1005Metric                       155.6100   -73.8000   90.0000  bottom
+C3        100n              C_0402_1005Metric                       157.6100   -73.7700   90.0000  bottom
+C4        2u                C_0402_1005Metric                       161.2000   -81.0800  180.0000  bottom
+J1        Conn_01x03_Pin    PinHeader_1x03_P2.54mm_Vertical         168.0800   -80.0800    0.0000  bottom
+Q1        PT19-21C/L41/TR8  D_0603_1608Metric                       190.0400   -87.2400  -90.0000  bottom
+Q2        PT19-21C/L41/TR8  D_0603_1608Metric                       140.2600   -88.8900  -90.0000  bottom
+R1        1k                R_0402_1005Metric                       161.2100   -83.1900  180.0000  bottom
+R2        10k               R_0402_1005Metric                       160.7700   -73.7100   90.0000  bottom
+R3        1k                R_0402_1005Metric                       156.0400   -80.7100   90.0000  bottom
+R4        1k                R_0402_1005Metric                       162.8000   -75.7400    0.0000  bottom
+R5        1k                R_0402_1005Metric                       161.9200   -73.7700   90.0000  bottom
+R6        1k                R_0402_1005Metric                       153.9300   -75.3200    0.0000  bottom
+R7        10k               R_0402_1005Metric                       159.6800   -73.7600   90.0000  bottom
+R8        10k               R_0402_1005Metric                       158.6400   -73.7700   90.0000  bottom
+R9        10k               R_0402_1005Metric                       158.6700   -82.7100   90.0000  bottom
+R10       10k               R_0402_1005Metric                       156.0800   -83.6300  180.0000  bottom
+R11       1k                R_0402_1005Metric                       156.6100   -73.7700  -90.0000  bottom
+R12       1k                R_0402_1005Metric                       153.9900   -74.1900  180.0000  bottom
+R13       10k               R_0402_1005Metric                       155.1700   -82.6700  180.0000  bottom
+R14       10k               R_0402_1005Metric                       157.6600   -82.7100   90.0000  bottom
+U2        CH32V003FxUx      QFN-20-1EP_3x3mm_P0.4mm_EP1.65x1.65mm   159.1700   -78.0000  180.0000  bottom
+## End
