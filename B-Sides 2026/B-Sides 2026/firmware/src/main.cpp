@@ -2,6 +2,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <avr/sleep.h>
 #include <avr/io.h>
+#include <ptc.h>
 
 // Using confirmed PIN_Pxn naming from btbm.ch
 #define PIEZO_PIN   PIN_PA1
@@ -11,6 +12,9 @@
 #define NUM_LEDS    4
 
 Adafruit_NeoPixel strip(NUM_LEDS, LED_DATA, NEO_GRB + NEO_KHZ800);
+uint32_t nextSleep = 10000;
+// Global touch node handle
+cap_sensor_t touch_node;   // as an example, could also be part of the array
 
 // Updated VDD Read from btbm.ch notes
 long readVcc() {
@@ -65,28 +69,66 @@ void playStarTrekChirp() {
   }
   setLedPower(false);
 }
+// callbacks that are called by ptc_process at different points to ease user interaction
+void ptc_event_cb_touch(const ptc_cb_event_t eventType, cap_sensor_t *node) {
+  if (PTC_CB_EVENT_TOUCH_DETECT == eventType) {
+    playStarTrekChirp();
+  } 
+}
+
+void ptc_event_cb_calibration(const ptc_cb_event_t eventType, cap_sensor_t* node)  {
+  if (PTC_CB_EVENT_ERR_CALIB_LOW == eventType || PTC_CB_EVENT_ERR_CALIB_HIGH == eventType) {
+    playStarTrekChirp(); // Alert us if calibration fails
+  }
+}
 
 void setup() {
   // Enable WDT for 2s wakeup as seen in btbm.ch code
-  _PROTECTED_WRITE(WDT.CTRLA, WDT_PERIOD_2KCLK_gc);
+  //_PROTECTED_WRITE(WDT.CTRLA, WDT_PERIOD_2KCLK_gc);
+  //// Initialize the PTC hardware
+  // Add PA4 as a self-capacitance sensor
+  // Parameters: pin, gain, freq_hop, oversampling
+  ptc_add_selfcap_node(&touch_node, 0, PIN_TO_PTC(TOUCH_PIN));
+ // In low-power mode, the ADC is triggered based on positive Event fanks
+  // Due to the big variety of possible Event sources, it is up to the
+  // User to set up the Routing of the Event System.
+  // This example will use the RTC PIT as Event generator, as it allows us
+  // to use the low-power oscillator.
+ // ptc_node_set_thresholds(&touch_node, int16_t th_in, int16_t th_out);
+  // Enable PIT for the EVSYS with 32kHz / 4096 giving us about 8Hz
+  
+  uint32_t start_time = millis();
+  while (millis() - start_time < 1000) {
+      ptc_process(millis());
+  }
+  
+  RTC.PITCTRLA = RTC_PITEN_bm;
+  EVSYS.ASYNCCH3 = EVSYS_ASYNCCH3_PIT_DIV4096_gc;
+  EVSYS.ASYNCUSER1 = EVSYS_ASYNCUSER1_ASYNCCH3_gc;
+  // Stand-by sleep
+  SLPCTRL.CTRLA = SLEEP_MODE_STANDBY | SLPCTRL_SEN_bm;
   
   pinMode(LED_PWR_EN, OUTPUT);
   setLedPower(false);
   pinMode(PIEZO_PIN, OUTPUT);
-  pinMode(TOUCH_PIN, INPUT_PULLUP);
 }
 
 void loop() {
-  // Direct reading of the touch pin
-  // If you are using the PTC hardware, touchRead(TOUCH_PIN) is still preferred
-  // but if the library fails to link, this pull-up method works:
-  if (digitalRead(TOUCH_PIN) == LOW) { 
-    playStarTrekChirp();
-  }
+// Trigger a measurement cycle
+  ptc_process(millis());    // main ptc task, requires regular calls
+
+
+  // Check the touch status
+  // ptc_is_node_touched returns true if the change exceeds the threshold
+  //if (ptc_get_node_touched(touchNode)) {
+  //  playStarTrekChirp();
+  //  delay(500); 
+ // }
 
   // Low power sleep
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  set_sleep_mode(SLEEP_MODE_STANDBY);
   sleep_enable();
   sleep_cpu();
   sleep_disable();
+  //delay(100);
 }
