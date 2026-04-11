@@ -519,6 +519,10 @@
       {
         "netclass": "data",
         "pattern": ""
+      },
+      {
+        "netclass": "data",
+        "pattern": "/LED_VIN"
       }
     ]
   },
@@ -527,8 +531,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
-      "pos_files": "",
+      "plot": "gerbers",
+      "pos_files": "./",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -726,6 +730,12 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "price",
+          "name": "price",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -764,7 +774,7 @@
     },
     "net_format_name": "",
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "gerbers/",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",

@@ -3059,13 +3059,23 @@
 		(at 193.04 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7c2a2a45-c341-4d45-bdb0-0efb8f07538e")
+		(uuid "99b49f42-124c-49af-909a-3ba6ed69d6e3")
 	)
 	(junction
 		(at 208.28 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e7a749e4-470a-4212-ab9e-65c5f8d87ee1")
+	)
+	(wire
+		(pts
+			(xy 50.8 64.77) (xy 52.07 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01cc692f-5836-417d-97bf-8c2a809573ee")
 	)
 	(wire
 		(pts
@@ -3176,6 +3186,16 @@
 			(type default)
 		)
 		(uuid "3a3a655c-7dd7-4fa2-8da7-15cbacfab547")
+	)
+	(wire
+		(pts
+			(xy 50.8 63.5) (xy 50.8 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a085ecc-cde6-495f-a520-1668e8b491b9")
 	)
 	(wire
 		(pts
@@ -3459,6 +3479,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 76.2) (xy 208.28 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c262f0dc-84b6-4995-9b15-d31377828f39")
+	)
+	(wire
+		(pts
 			(xy 231.14 66.04) (xy 243.84 66.04)
 		)
 		(stroke
@@ -3516,16 +3546,6 @@
 			(type default)
 		)
 		(uuid "e306032c-72b8-41ad-8977-d078c1b4cab7")
-	)
-	(wire
-		(pts
-			(xy 193.04 76.2) (xy 208.28 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e5a94dc8-5245-4220-b53f-2b1b22434850")
 	)
 	(wire
 		(pts
@@ -3657,25 +3677,15 @@
 		)
 		(uuid "39db9dd8-cd41-462d-a49f-ee8e76c1bf2a")
 	)
-	(label "Battery_VIN"
-		(at 190.5 109.22 0)
+	(label "LED_VIN"
+		(at 177.8 76.2 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "40060d30-b032-41be-b2fe-05d1ab4a6b3a")
-	)
-	(label "Battery_VIN"
-		(at 193.04 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4206d516-ab84-49da-af57-e1f284314802")
+		(uuid "4b3ab9f1-53e2-432b-b92c-221e02349a80")
 	)
 	(label "Battery_VIN"
 		(at 167.64 63.5 0)
@@ -3736,16 +3746,6 @@
 			(justify left bottom)
 		)
 		(uuid "5ed00644-b1fd-4c57-b603-c1980d6b0d85")
-	)
-	(label "Battery_VIN"
-		(at 223.52 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "65ddbad7-3956-4dfb-b0a0-c487537cfd1f")
 	)
 	(label "PTC_0"
 		(at 147.32 58.42 180)
@@ -3817,25 +3817,15 @@
 		)
 		(uuid "aeeb6ea6-1f68-49ef-b415-edba214a4090")
 	)
-	(label "Battery_VIN"
-		(at 165.1 106.68 0)
+	(label "LED_VIN"
+		(at 175.26 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "c65bffb7-67b7-4e1c-b7d4-a43b653abf81")
-	)
-	(label "Battery_VIN"
-		(at 208.28 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cfe20cf2-8185-4a97-b956-8a95a7bdf483")
+		(uuid "b8fc45c2-8f25-4173-a93f-80f84368a12d")
 	)
 	(label "SCL{slash}SCK"
 		(at 238.76 60.96 180)
@@ -3877,7 +3867,17 @@
 		)
 		(uuid "d6b67700-da92-4a9d-9595-8d5503b04600")
 	)
-	(label "Battery_VIN"
+	(label "LED_VIN"
+		(at 165.1 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d78cb2c1-812b-405f-bdff-687defe23aca")
+	)
+	(label "LED_VIN"
 		(at 203.2 109.22 0)
 		(effects
 			(font
@@ -3886,6 +3886,16 @@
 			(justify left bottom)
 		)
 		(uuid "de62e1a2-d639-4873-a9d7-bdc3d22934aa")
+	)
+	(label "LED_VIN"
+		(at 190.5 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1b196d1-0ad3-4542-8919-d679ba1c25c3")
 	)
 	(label "Battery_VIN"
 		(at 116.84 35.56 0)
@@ -3906,16 +3916,6 @@
 			(justify right bottom)
 		)
 		(uuid "e2747c43-ccfc-4c21-9892-0ae1b5c4a489")
-	)
-	(label "Battery_VIN"
-		(at 175.26 109.22 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "eaf2f2d4-e552-4f73-97eb-470654290258")
 	)
 	(label "RGB_EN"
 		(at 162.56 93.98 90)
@@ -3993,7 +3993,7 @@
 	)
 	(symbol
 		(lib_id "bs2026:WS2812B-4020")
-		(at 223.52 83.82 0)
+		(at 193.04 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4002,7 +4002,7 @@
 		(fields_autoplaced yes)
 		(uuid "07e0ac55-3157-4d20-9450-30ad0ffa9d7c")
 		(property "Reference" "D37"
-			(at 246.38 74.8598 0)
+			(at 215.9 74.8598 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4010,7 +4010,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 246.38 77.3998 0)
+			(at 215.9 77.3998 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4018,7 +4018,7 @@
 			)
 		)
 		(property "Footprint" "footprints:WS2812B-4020"
-			(at 224.79 91.44 0)
+			(at 194.31 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4028,7 +4028,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 226.06 93.345 0)
+			(at 195.58 93.345 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4038,7 +4038,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 246.38 79.9398 0)
+			(at 215.9 79.9398 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4046,7 +4046,7 @@
 			)
 		)
 		(property "Alternate Part Number 1" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4055,7 +4055,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4064,7 +4064,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4073,7 +4073,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4082,7 +4082,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4091,7 +4091,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4100,7 +4100,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4109,7 +4109,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4118,7 +4118,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4127,7 +4127,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4136,7 +4136,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4145,7 +4145,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4154,7 +4154,7 @@
 			)
 		)
 		(property "LCSC" "C3647024"
-			(at 223.52 83.82 0)
+			(at 193.04 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4987,7 +4987,7 @@
 	)
 	(symbol
 		(lib_id "bs2026:WS2812B-4020")
-		(at 193.04 83.82 0)
+		(at 223.52 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4996,7 +4996,7 @@
 		(fields_autoplaced yes)
 		(uuid "303f161c-97fe-47ac-b890-2b9b9b6edad4")
 		(property "Reference" "D38"
-			(at 215.9 74.8598 0)
+			(at 246.38 74.8598 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5004,7 +5004,7 @@
 			)
 		)
 		(property "Value" "WS2812B"
-			(at 215.9 77.3998 0)
+			(at 246.38 77.3998 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5012,7 +5012,7 @@
 			)
 		)
 		(property "Footprint" "footprints:WS2812B-4020"
-			(at 194.31 91.44 0)
+			(at 224.79 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5022,7 +5022,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 195.58 93.345 0)
+			(at 226.06 93.345 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5032,7 +5032,7 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller"
-			(at 215.9 79.9398 0)
+			(at 246.38 79.9398 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5040,7 +5040,7 @@
 			)
 		)
 		(property "Alternate Part Number 1" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5049,7 +5049,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5058,7 +5058,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5067,7 +5067,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5076,7 +5076,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5085,7 +5085,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5094,7 +5094,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5103,7 +5103,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5112,7 +5112,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5121,7 +5121,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5130,7 +5130,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5139,7 +5139,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5148,7 +5148,7 @@
 			)
 		)
 		(property "LCSC" "C3647024"
-			(at 193.04 83.82 0)
+			(at 223.52 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
