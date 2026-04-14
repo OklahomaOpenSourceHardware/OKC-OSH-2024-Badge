@@ -10,8 +10,6 @@
 #define LED_PWR_EN  PIN_PB5
 #define NUM_LEDS    4
 
-//#define DEBUG_BOOT_LEDS
-
 Adafruit_NeoPixel strip(NUM_LEDS, LED_DATA, NEO_GRB + NEO_KHZ800);
 cap_sensor_t touch_node;
 
@@ -118,21 +116,6 @@ void ptc_event_cb_calibration(const ptc_cb_event_t eventType, cap_sensor_t* node
 }
 
 void setup() {
-  // --- STOP THE 2mA POWER LEAK (Locking Floating Pins) ---
-  // We enable the internal pull-up resistors on all unused pins and the SAO header
-  // so their internal CMOS logic gates don't float and short-circuit.
-  
-  const uint8_t unusedPins[] = {
-    PIN_PA2, PIN_PA3, PIN_PA5, PIN_PA6, PIN_PA7, 
-    PIN_PB0, PIN_PB1, PIN_PB2, PIN_PB3, // Includes SDA_SAO and SCL_SAO
-    PIN_PC0, PIN_PC1, PIN_PC2, PIN_PC3  // Includes PC3_SAO
-    // Note: We deliberately exclude PIN_PA0 (UPDI Programming Pin) to prevent locking ourselves out
-  };
-
-  for (uint8_t pin : unusedPins) {
-    pinMode(pin, INPUT_PULLUP);
-  }
-  
   pinMode(PIEZO_PIN, OUTPUT);
   digitalWrite(PIEZO_PIN, LOW);
 
@@ -140,29 +123,28 @@ void setup() {
   ptc_node_set_thresholds(&touch_node, 15, 10); 
 
   // --- LOW POWER HARDWARE CONFIGURATION ---
+  // 1. Disable the Brown-Out Detector during sleep
   _PROTECTED_WRITE(BOD.CTRLA, BOD_SLEEP_DIS_gc);
-  
+
+  // 2. Configure the RTC Timer to use the internal 32.768 kHz oscillator
   while (RTC.STATUS > 0); 
   RTC.CLKSEL = RTC_CLKSEL_INT32K_gc;
+  
+  // 3. Set the PIT to wake the chip every ~31ms (1024 cycles)
   RTC.PITCTRLA = RTC_PERIOD_CYC1024_gc | RTC_PITEN_bm;
-  RTC.PITINTCTRL = RTC_PI_bm; 
+  RTC.PITINTCTRL = RTC_PI_bm; // Enable PIT interrupts
+
+  // 4. Arm the Standby Sleep Mode
   SLPCTRL.CTRLA = SLEEP_MODE_STANDBY | SLPCTRL_SEN_bm;
 
-  // Always initialize the NeoPixel object in memory
+  setLedPower(true);
   strip.begin();
   strip.clear();
-
-#ifdef DEBUG_BOOT_LEDS
-  // Show PURPLE so the user knows to take their finger off!
-  setLedPower(true);
+  
+  // Purple Boot Phase
   for(int i=0; i<NUM_LEDS; i++) strip.setPixelColor(i, strip.Color(10, 0, 10)); 
   strip.show();
-#else
-  // Keep the power rail to the LEDs completely severed for accurate profiling
-  setLedPower(false);
-#endif
 
-  // Give the library 1 second to calibrate
   uint32_t start_time = getCustomMillis();
   while (getCustomMillis() - start_time < 1000) {
       ptc_process(getCustomMillis());
@@ -174,6 +156,7 @@ void setup() {
 
   lastInteractionTime = getCustomMillis(); 
 }
+
 void loop() {
   // Feed the touch library with our custom shadow clock
   ptc_process(getCustomMillis());

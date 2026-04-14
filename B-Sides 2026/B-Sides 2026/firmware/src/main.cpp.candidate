@@ -1,0 +1,172 @@
+#include <Arduino.h>
+#include <Adafruit_NeoPixel.h>
+#include <ptc.h>
+
+#define PIEZO_PIN   PIN_PA1
+#define TOUCH_PIN   PIN_PA4
+#define LED_DATA    PIN_PB4
+#define LED_PWR_EN  PIN_PB5
+#define NUM_LEDS    4
+
+Adafruit_NeoPixel strip(NUM_LEDS, LED_DATA, NEO_GRB + NEO_KHZ800);
+cap_sensor_t touch_node;
+
+volatile bool rawTouched = false; 
+bool cleanTouchState = false; 
+uint32_t lastDebounceTime = 0; 
+const uint32_t debounceDelay = 50; 
+
+// --- THE HEALING CLOCK ---
+uint32_t lastInteractionTime = 0; 
+
+void setLedPower(bool on) {
+  if (on) {
+    pinMode(LED_PWR_EN, OUTPUT);
+    digitalWrite(LED_PWR_EN, LOW); 
+    delay(20); 
+  } else {
+    digitalWrite(LED_PWR_EN, HIGH);
+    pinMode(LED_DATA, OUTPUT); 
+    digitalWrite(LED_DATA, LOW);
+  }
+}
+
+// Bypasses the hardware timer to prevent crashing the PTC library
+void safeTone(int freq, int duration_ms) {
+  uint32_t halfPeriodUs = 1000000UL / freq / 2;
+  uint32_t numCycles = ((uint32_t)freq * duration_ms) / 1000;
+  for (uint32_t k = 0; k < numCycles; k++) {
+    digitalWrite(PIEZO_PIN, HIGH);
+    delayMicroseconds(halfPeriodUs);
+    digitalWrite(PIEZO_PIN, LOW);
+    delayMicroseconds(halfPeriodUs);
+  }
+}
+
+void playStarTrekChirp() {
+  setLedPower(true);
+  
+  for (int j = 0; j < 2; j++) {
+    int startFreq = (j == 0) ? 800 : 1000;
+    
+    // --- PHASE 1: AUDIO ONLY ---
+    for (int i = 0; i < 20; i++) {
+      int freq = startFreq + (i * 20);
+      safeTone(freq, 3); 
+      ptc_process(millis()); // Keep PTC alive during animation
+    }
+    
+    digitalWrite(PIEZO_PIN, LOW); 
+    
+    // --- PHASE 2: VISUAL ONLY ---
+    for(int l = 0; l < NUM_LEDS; l++) {
+      strip.setPixelColor(l, strip.Color(0, 15, 15)); // Cyan
+    }
+    strip.show();
+    
+    // Hold the light, feed the library
+    uint32_t waitStart = millis();
+    while(millis() - waitStart < 20) { ptc_process(millis()); } 
+    
+    strip.clear();
+    strip.show();
+    
+    if (j == 0) {
+       waitStart = millis();
+       while(millis() - waitStart < 40) { ptc_process(millis()); }
+    }
+  }
+
+  strip.clear();
+  strip.show();
+  uint32_t waitStart = millis();
+  while(millis() - waitStart < 5) { ptc_process(millis()); }
+  
+  setLedPower(false);
+}
+
+void ptc_event_cb_touch(const ptc_cb_event_t eventType, cap_sensor_t *node) {
+  if (PTC_CB_EVENT_TOUCH_DETECT == eventType) {
+    rawTouched = true;
+  } else if (PTC_CB_EVENT_TOUCH_RELEASE == eventType) {
+    rawTouched = false;
+  }
+}
+
+void ptc_event_cb_calibration(const ptc_cb_event_t eventType, cap_sensor_t* node) {
+  // ERROR CATCHER: If the library throws a calibration error, instantly reboot!
+  if (eventType == PTC_CB_EVENT_ERR_CALIB_LOW || eventType == PTC_CB_EVENT_ERR_CALIB_HIGH) {
+    _PROTECTED_WRITE(RSTCTRL.SWRR, RSTCTRL_SWRE_bm); // CORRECTED REGISTER
+  }
+  rawTouched = false;
+}
+
+void setup() {
+  pinMode(PIEZO_PIN, OUTPUT);
+  digitalWrite(PIEZO_PIN, LOW);
+
+  ptc_add_selfcap_node(&touch_node, 0, PIN_TO_PTC(TOUCH_PIN));
+  ptc_node_set_thresholds(&touch_node, 15, 10); 
+
+  setLedPower(true);
+  strip.begin();
+  strip.clear();
+  
+  // BOOT PHASE: Show PURPLE so the user knows to take their finger off!
+  for(int i=0; i<NUM_LEDS; i++) strip.setPixelColor(i, strip.Color(10, 0, 10)); 
+  strip.show();
+
+  // Give the library 1 second to calibrate
+  uint32_t start_time = millis();
+  while (millis() - start_time < 1000) {
+      ptc_process(millis());
+  }
+
+  strip.clear();
+  strip.show();
+  setLedPower(false);
+
+  lastInteractionTime = millis(); // Start the healing clock
+}
+
+void loop() {
+  ptc_process(millis());
+
+  // --- SOFTWARE DEBOUNCE LOGIC ---
+  if (rawTouched != cleanTouchState) {
+    if ((millis() - lastDebounceTime) > debounceDelay) {
+      cleanTouchState = rawTouched; 
+      
+      // Reset the healing clock the moment a legitimate state change happens
+      lastInteractionTime = millis(); 
+
+      // If it was just pressed, play the animation!
+      if (cleanTouchState) {
+        playStarTrekChirp(); 
+      }
+    }
+  } else {
+    lastDebounceTime = millis();
+  }
+
+  // --- THE SELF-HEALING STATE MACHINE ---
+  
+  if (cleanTouchState) {
+    // NET 1 (Stuck Green): Held for more than 2 seconds
+    if (millis() - lastInteractionTime > 2000) {
+      setLedPower(true);
+      for(int i=0; i<NUM_LEDS; i++) strip.setPixelColor(i, strip.Color(10, 5, 0)); // Orange warning
+      strip.show();
+      delay(500); 
+      _PROTECTED_WRITE(RSTCTRL.SWRR, RSTCTRL_SWRE_bm); // CORRECTED REGISTER
+    }
+  } else {
+    // NET 2 (Stuck Red / Deaf): Untouched for 30 seconds
+    if (millis() - lastInteractionTime > 30000) {
+      // The baseline has likely drifted. Silently reboot to recalibrate.
+      _PROTECTED_WRITE(RSTCTRL.SWRR, RSTCTRL_SWRE_bm); // CORRECTED REGISTER
+    }
+  }
+
+  delay(5);
+}
