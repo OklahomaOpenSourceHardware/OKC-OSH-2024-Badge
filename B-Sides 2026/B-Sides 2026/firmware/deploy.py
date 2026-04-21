@@ -7,7 +7,7 @@ import serial.tools.list_ports
 # --- CONFIGURATION ---
 DEBOUNCE_DELAY = 0.8  
 COOLDOWN = 1.0        
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Determine PIO path based on OS
 if sys.platform == "win32":
     PIO_PATH = os.path.join("prod_env", "Scripts", "pio.exe")
@@ -28,18 +28,37 @@ def check_chip(port):
     cmd = [PIO_PATH, "pkg", "exec", "-p", "tool-avrdude", "--", 
            "avrdude", "-c", "serialupdi", "-P", port, "-p", "t816", "-n"]
     # We suppress output to keep the terminal clean during polling
-    res = subprocess.run(cmd, capture_output=True)
+    res = subprocess.run(cmd, capture_output=True, text=True)
     return res.returncode == 0
 
 def flash_all():
-    """Flashes Fuses + Firmware."""
+    """Flashes Fuses and Firmware. Cross-platform compatible."""
     print("\n[!] TARGET DETECTED. DO NOT REMOVE...")
-    # -t setfuses: Ensures BOD/Clock are locked in
-    # -t upload: Flashes the code
-    cmd = [PIO_PATH, "run", "-t", "setfuses", "-t", "upload"]
-    res = subprocess.run(cmd)
-    return res.returncode == 0
 
+    # 1. Define the Targets
+    # We use 'fuses' as the target name for megaTinyCore
+    targets = ["fuses", "upload"]
+    
+    for target in targets:
+        print(f"  -> Executing: {target.upper()}...")
+        
+        # Build the command parts
+        cmd_args = [PIO_PATH, "run", "-e", "tiny816", "--target", target]
+        
+        if sys.platform == "win32":
+            # Windows needs the command as a string and shell=True 
+            # to correctly resolve the .exe in the virtual env
+            cmd = " ".join(f'"{arg}"' if " " in arg else arg for arg in cmd_args)
+            res = subprocess.run(cmd, cwd=BASE_DIR, shell=True)
+        else:
+            # Linux/macOS works best with a list and no shell
+            res = subprocess.run(cmd_args, cwd=BASE_DIR)
+
+        if res.returncode != 0:
+            print(f"  ❌ {target.upper()} Failed.")
+            return False
+
+    return True
 def main():
     print(f"--- ATtiny816 Production Station (OS: {sys.platform}) ---")
     
